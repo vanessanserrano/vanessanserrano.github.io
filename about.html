@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Vanessa Serrano</title>
+    <meta name="description" content="I design and build calm, accessible interfaces. CS + DAS @ UF. Currently @CinemaVerde | Previously @Publix Technology." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="nav">
+    <div class="nav__inner">
+        <a class="logo" href="index.html">VS</a>
+        <nav class="nav__links">
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+        <button class="nav__toggle" aria-label="Menu">Menu</button>
+    </div>
+</header>
+
+<main class="section">
+
+    <!-- Intro -->
+    <section class="container kv-2">
+        <div>
+            <h2>Hi, I’m Vanessa.</h2>
+            <p class="muted">
+                I’m a CS + Digital Arts student focused on human-centered interfaces. I pair UX research with front-end engineering to ship clean, accessible products.
+                Recent work spans a GS1 barcode tool at Publix, a first-responder app prototype, and a campus events experience for UF.
+                I value clarity, empathy, and calm design.
+            </p>
+            <div class="badges" aria-label="Skills">
+                <span class="badge">React / TypeScript</span>
+                <span class="badge">Figma</span>
+                <span class="badge">Xamarin.Forms</span>
+                <span class="badge">Node &amp; Flask</span>
+                <span class="badge">HCI Research</span>
+            </div>
+        </div>
+
+        <!-- Portrait / about image -->
+        <figure class="figure" style="aspect-ratio:3/4;">
+            <img src="assets/images/vs_headshot.jpg" alt="Vanessa Serrano" style="width:100%;height:100%;object-fit:cover;" />
+        </figure>
+    </section>
+
+    <!-- Background & Experience -->
+    <section class="section container">
+        <h2>Background &amp; Experience</h2>
+        <div class="grid">
+            <article class="card reveal">
+                <div class="card__body">
+                    <div class="card__title">UX Design &amp; Web Developer Intern — <a class="text-link" href="https://cinemaverde.org" target="_blank" rel="noopener">Cinema Verde</a></div>
+                    <div class="card__meta">Aug 2025 — Present</div>
+                    <p class="prose">Redesigned Webflow site for navigation &amp; accessibility. Built Squarespace site with mobile-first layouts. Maintained Roku channel.</p>
+                </div>
+            </article>
+
+            <article class="card reveal">
+                <div class="card__body">
+                    <div class="card__title">Software Engineer Intern — <a class="text-link" href="https://www.publix.com" target="_blank" rel="noopener">Publix Technology</a></div>
+                    <div class="card__meta">May — Jul 2025</div>
+                    <p class="prose">Designed the Vendor Label Validation tool (GS1 DataMatrix). Reduced validation from ~15 minutes to ~15 seconds. Xamarin.Forms + Telerik RadDataForm.</p>
+                </div>
+            </article>
+
+            <article class="card reveal">
+                <div class="card__body">
+                    <div class="card__title">Resident Assistant — <a class="text-link" href="https://housing.ufl.edu/" target="_blank" rel="noopener">UF Housing</a></div>
+                    <div class="card__meta">Aug 2022 — May 2024</div>
+                    <p class="prose">Built inclusive communities, mediated conflicts, and led events.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+<!--    &lt;!&ndash; Photo Gallery &ndash;&gt;-->
+<!--    <section class="section container">-->
+<!--        <h2>Photo Gallery</h2>-->
+<!--        <p class="lead">A few snapshots beyond the desk.</p>-->
+
+<!--        &lt;!&ndash; Use your own images; add data-cap for captions &ndash;&gt;-->
+<!--        <div class="gallery" id="gallery">-->
+<!--            <img class="figure" src="assets/gallery/01.jpg" alt="Workshop snapshot" data-cap="Workshop snapshot" />-->
+<!--            <img class="figure" src="assets/gallery/02.jpg" alt="Sketching flows" data-cap="Sketching flows" />-->
+<!--            <img class="figure" src="assets/gallery/03.jpg" alt="Nature break" data-cap="Nature break" />-->
+<!--            <img class="figure" src="assets/gallery/04.jpg" alt="Hackathon team" data-cap="Hackathon team" />-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Lightbox dialog &ndash;&gt;-->
+<!--        <dialog id="lightbox" class="rec" aria-label="Image viewer">-->
+<!--            <img id="lbImg" alt="" style="width:100%;height:auto;border-radius:12px;" />-->
+<!--            <p id="lbCap" class="muted" style="margin:6px 0 0"></p>-->
+<!--            <div class="row">-->
+<!--                <button id="lbClose" class="btn">Close</button>-->
+<!--            </div>-->
+<!--        </dialog>-->
+<!--    </section>-->
+
+    <!-- Currently… -->
+    <section class="now container">
+        <h2>Currently…</h2>
+        <div class="now-grid">
+
+            <!-- Working On -->
+            <article class="now-card">
+                <div class="now-title">Currently Working On</div>
+                <p class="now-sub">Ongoing projects</p>
+                <ul class="bullets">
+                    <li><strong>Cinema Verde Website</strong> — accessibility + navigation refresh.</li>
+                    <li><strong>OptiPath</strong> — task scheduling experiments (Next.js).</li>
+                    <li><strong>Swamp Path</strong> — UF-focused events aggregator.</li>
+                    <li><strong>ViewCue</strong> — media tracker prototype.</li>
+                </ul>
+                <div><a class="btn" href="projects.html">View all projects →</a></div>
+            </article>
+
+            <!-- Listening -->
+            <article class="now-card">
+                <div class="now-title">Currently Listening</div>
+                <p class="now-sub">Playlist of the month</p>
+                <iframe
+                        class="spotify"
+                        src="https://open.spotify.com/embed/playlist/3fnYbqVZ45oj1muHAdakM1?utm_source=generator"
+                        loading="lazy"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        title="Spotify playlist embed">
+                </iframe>
+            </article>
+
+            <!-- Reading -->
+            <article class="now-card">
+                <div class="now-title">Currently Reading</div>
+                <p class="now-sub">On my nightstand</p>
+                <div class="media-grid">
+                    <figure>
+                        <img class="cover" src="assets/images/fahrenheit.jpg" alt="Fahrenheit 451 cover" />
+                        <figcaption class="caption">Fahrenheit 451</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="cover" src="assets/images/design.jpg" alt="The Design of Everyday Things cover" />
+                        <figcaption class="caption">Design of Everyday Things</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="cover" src="assets/images/1984.jpg" alt="1984 cover" />
+                        <figcaption class="caption">1984</figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- Watching -->
+            <article class="now-card">
+                <div class="now-title">Currently Watching</div>
+                <p class="now-sub">Top 4 this month</p>
+                <div class="media-grid">
+                    <figure>
+                        <img class="cover" src="assets/images/succession.jpg" alt="Succession poster" />
+                        <figcaption class="caption">Succession</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="cover" src="assets/images/arrival.jpg" alt="Arrival poster" />
+                        <figcaption class="caption">Arrival</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="cover" src="assets/images/truman.jpg" alt="The Truman Show poster" />
+                        <figcaption class="caption">Truman Show</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="cover" src="assets/images/shogun.webp" alt="Shōgun poster" />
+                        <figcaption class="caption">Shōgun</figcaption>
+                    </figure>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Recommend button -->
+        <div class="center" style="margin-top:18px">
+            <button id="recBtn" class="btn btn--primary">Recommend media</button>
+        </div>
+    </section>
+
+    <!-- Modal: Recommend -->
+    <dialog class="rec" id="recDialog" aria-label="Recommend media">
+        <form id="recForm" method="dialog">
+            <h3 style="margin:0 0 6px">Recommend something</h3>
+            <p class="muted" style="margin:0 0 8px">I love new finds—send a song, book, film, or show.</p>
+
+            <div>
+                <label for="type">Type</label>
+                <select id="type" name="type" required>
+                    <option value="Song/Album">Song/Album</option>
+                    <option value="Book">Book</option>
+                    <option value="Film/Show">Film/Show</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="title">Title</label>
+                <input id="title" name="title" placeholder="e.g., Arrival (2016)" required />
+            </div>
+
+            <div>
+                <label for="link">Link (optional)</label>
+                <input id="link" name="link" placeholder="URL to Spotify, Goodreads, IMDb…" />
+            </div>
+
+            <div class="row">
+                <button type="button" id="recCancel" class="btn">Cancel</button>
+                <button type="submit" class="btn btn--primary">Send</button>
+            </div>
+
+            <p class="muted" style="font-size:.8rem;margin:6px 0 0">
+                No modal support? <a href="mailto:vanessa@email.com?subject=Media%20recommendation">Email me</a>.
+            </p>
+        </form>
+    </dialog>
+
+</main>
+
+<footer class="footer">
+    <div class="cols">
+        <div>
+            <h3>Contact</h3>
+            <a href="mailto:vanessa@email.com">Email</a>
+            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div>
+            <h3>Work</h3>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">Github</a>
+        </div>
+        <div>
+            <h3>Navigation</h3>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+    <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+</footer>
+
+<script>
+    // mobile menu
+    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
+    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+
+    // active nav state
+    (function(){
+        const p=location.pathname.split('/').pop()||'index.html';
+        document.querySelectorAll('.nav__links a').forEach(a=>{
+            const h=a.getAttribute('href');
+            if((p===''&&h==='index.html')||h===p) a.setAttribute('aria-current','page');
+        });
+    })();
+
+    // reveal cards
+    (function(){
+        const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('is-in')}),{threshold:.12});
+        document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    })();
+
+    // Recommend dialog
+    (function(){
+        const recBtn = document.getElementById('recBtn');
+        const recDlg = document.getElementById('recDialog');
+        const recCancel = document.getElementById('recCancel');
+        const recForm = document.getElementById('recForm');
+        if (!recBtn || !recDlg) return;
+        recBtn.addEventListener('click', () => recDlg.showModal());
+        recCancel.addEventListener('click', () => recDlg.close());
+        recForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const type = recForm.type.value.trim();
+            const title = recForm.title.value.trim();
+            const link = recForm.link.value.trim();
+            const body = `Media recommendation\nType: ${type}\nTitle: ${title}\nLink: ${link || '(none)'}\n\nSent from vanessa-portfolio`;
+            const mailto = `mailto:vanessa@email.com?subject=${encodeURIComponent('Media recommendation')}&body=${encodeURIComponent(body)}`;
+            window.open(mailto, '_blank');
+            recDlg.close();
+            recForm.reset();
+        });
+    })();
+
+    // Lightbox for gallery
+    (function(){
+        const g = document.getElementById('gallery');
+        const dlg = document.getElementById('lightbox');
+        if(!g || !dlg) return;
+        const img = document.getElementById('lbImg');
+        const cap = document.getElementById('lbCap');
+        const closeBtn = document.getElementById('lbClose');
+
+        g.addEventListener('click', (e)=>{
+            const el = e.target.closest('img');
+            if(!el) return;
+            img.src = el.src;
+            img.alt = el.alt || '';
+            cap.textContent = el.dataset.cap || '';
+            dlg.showModal();
+        });
+        closeBtn.addEventListener('click', ()=> dlg.close());
+        dlg.addEventListener('click', (e)=>{ if(e.target === dlg) dlg.close(); });
+    })();
+</script>
+</body>
+</html>

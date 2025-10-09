@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Azenda — A Zen Approach to Time Management</title>
+    <meta name="description" content="Interactive agenda that schedules around sleep habits, preferred work times, and urgency with a calm, minimalist UX." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="nav"><div class="nav__inner">
+    <a class="logo" href="index.html">VS</a>
+    <nav class="nav__links"><a href="about.html">About</a><a href="projects.html">Projects</a><a href="resume.pdf">Resume</a></nav>
+    <button class="nav__toggle" aria-label="Menu">Menu</button>
+</div></header>
+
+<main class="article">
+    <div class="container project-hero">
+        <h1>Azenda — A Zen Approach to Time Management</h1>
+        <p class="project-subtitle">Schedules tasks around energy and constraints; keeps planning clear and quiet.</p>
+
+        <div class="project-meta">
+            <div class="meta-item"><b>Role</b> UX Designer & Full-Stack Developer</div>
+            <div class="meta-item"><b>Tools</b> Figma, Next.js, Django REST API, GitHub</div>
+            <div class="meta-item"><b>Timeline</b> Fall 2025 · 10 weeks + ongoing</div>
+        </div>
+
+        <img class="figure" src="assets/images/azenda-cover.jpg" alt="Azenda calendar and tasks" style="aspect-ratio:16/9; margin-bottom:10px" />
+
+        <div class="chips" style="margin-top:4px">
+            <a class="chip" href="GITHUB_URL" target="_blank" rel="noopener">GitHub repository</a>
+        </div>
+    </div>
+
+    <div class="container project-wrap">
+        <aside class="toc">
+            <h3>On this page</h3>
+            <a href="#problem">Problem</a>
+            <a href="#solution">Solution</a>
+            <a href="#research">Research</a>
+            <a href="#needs">User needs</a>
+            <a href="#flow">Wireframes & flow</a>
+            <a href="#design">Visual design</a>
+            <a href="#dev">Development</a>
+            <a href="#iteration">Iteration</a>
+            <a href="#impact">Impact & next</a>
+        </aside>
+
+        <div>
+            <!-- identical section content to your cleaned version -->
+            <section id="problem" class="proj-section prose">
+                <h2>Problem space</h2>
+                <ul class="checklist"><li>Balancing academics, personal care, and wellness is difficult</li><li>General tools are complex or rigid</li><li>People know what to do, but not when to do it</li></ul>
+            </section>
+            <section id="solution" class="proj-section prose">
+                <h2>Solution</h2><p>Azenda auto-schedules tasks across 48 daily blocks, respecting sleep windows and preferred work times while keeping the UI minimal and legible.</p>
+            </section>
+            <section id="research" class="proj-section prose">
+                <h2>Research & discovery</h2>
+                <ul class="checklist"><li>Four interviews</li><li>Competitive audit</li><li>Pain points: clutter, rigidity, low accessibility</li></ul>
+            </section>
+            <section id="needs" class="proj-section prose">
+                <h2>User needs</h2>
+                <table class="table"><thead><tr><th>Need</th><th>Solution in Azenda</th></tr></thead><tbody>
+                <tr><td>Flexible schedule</td><td>Auto-scheduled tasks based on best times</td></tr>
+                <tr><td>Lower overwhelm</td><td>Simple UI with clear priorities</td></tr>
+                <tr><td>Protect rest</td><td>Sleep/wake settings reserved</td></tr>
+                <tr><td>Recurring items</td><td>Weekly view with repeat rules</td></tr>
+                </tbody></table>
+            </section>
+            <section id="flow" class="proj-section prose">
+                <h2>Wireframes & user flow</h2>
+                <div class="grid-2">
+                    <div><p>Key screens: Login, Dashboard, Interactive calendar (48 × 30-minute blocks), Add Task modal.</p></div>
+                    <div class="gallery">
+                        <img class="figure" src="assets/images/azenda-wire-1.jpg" alt="Low-fi dashboard" />
+                        <img class="figure" src="assets/images/azenda-wire-2.jpg" alt="Low-fi calendar" />
+                    </div>
+                </div>
+            </section>
+            <section id="design" class="proj-section prose">
+                <h2>Visual design</h2>
+                <ul class="checklist"><li>Soft neutrals; accessible contrast</li><li>Sans-serif type; large targets</li><li>Subtle transitions</li></ul>
+            </section>
+            <section id="dev" class="proj-section prose">
+                <h2>Development</h2>
+                <div class="grid-2">
+                    <div><p><strong>Frontend:</strong> Next.js (App Router), CSS Modules.</p><p><strong>Backend:</strong> Django REST API.</p></div>
+                    <div><div class="pre">class Event(models.Model):
+                        event_user = models.ForeignKey(Account, on_delete=models.CASCADE)
+                        start_time = models.IntegerField()  # 0–47
+                        end_time   = models.IntegerField()
+                        priority   = models.IntegerField()</div></div>
+                </div>
+            </section>
+            <section id="iteration" class="proj-section prose">
+                <h2>Iteration & feedback</h2>
+                <ul class="checklist"><li>All-day list → next three tasks + minimal preview</li><li>Focus vs Overview mode</li></ul>
+            </section>
+            <section id="impact" class="proj-section prose">
+                <h2>Impact & next</h2>
+                <ul class="checklist"><li>MVP delivered; continuing</li><li>Planned: Calendar sync, mobile views, theme toggle</li></ul>
+                <p><a class="btn" href="projects.html">← Back to Projects</a></p>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="cols">
+        <div>
+            <h3>Contact</h3>
+            <a href="mailto:vanessa@email.com">Email</a>
+            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <div>
+            <h3>Work</h3>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">Github</a>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+</footer>
+
+<script>
+    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
+    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+    const secs=[...document.querySelectorAll('.proj-section')], links=[...document.querySelectorAll('.toc a')];
+    const byId=id=>links.find(a=>a.getAttribute('href')==='#'+id);
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ links.forEach(a=>a.removeAttribute('aria-current')); const a=byId(e.target.id); if(a) a.setAttribute('aria-current','true'); } }),{rootMargin:'-30% 0px -60% 0px'});
+    secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

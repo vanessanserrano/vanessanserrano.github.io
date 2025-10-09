@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ARC — Action, Resources, Care</title>
+    <meta name="description" content="Confidential mobile support for first responders. Built in 36 hours at ShellHacks 2025: post-call check-ins, resources, and private connections to care." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="nav"><div class="nav__inner">
+    <a class="logo" href="index.html">VS</a>
+    <nav class="nav__links"><a href="about.html">About</a><a href="projects.html">Projects</a><a href="resume.pdf">Resume</a></nav>
+    <button class="nav__toggle" aria-label="Menu">Menu</button>
+</div></header>
+
+<main class="article">
+    <div class="container project-hero">
+        <h1>ARC — Action, Resources, Care</h1>
+        <p class="project-subtitle">Confidential support for first responders after high-intensity calls.</p>
+        <div class="project-meta">
+            <div class="meta-item"><b>Project</b> ShellHacks 2025 (36 hours)</div>
+            <div class="meta-item"><b>Role</b> UX Designer, Front-End Developer</div>
+            <div class="meta-item"><b>Stack</b> React Native (Expo), TypeScript, Flask, MongoDB, Auth0</div>
+        </div>
+        <img class="figure" src="assets/images/arc-cover.jpg" alt="ARC prototype screens" style="aspect-ratio:16/9; margin-bottom:10px" />
+    </div>
+
+    <div class="container project-wrap">
+
+
+        <div>
+            <section id="demo" class="proj-section prose">
+                <h2>Demo</h2>
+
+                <div class="embed">
+                    <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+
+                    aria-label="ARC prototype walkthrough">
+                    <source src="assets/arc-demo.mp4" type="video/webm">
+                    </video>
+                </div>
+
+                <div class="chips" style="margin-top:10px">
+                    <a class="chip" href="https://github.com/johanfortus/First-Responders-App" target="_blank" rel="noopener">GitHub repository</a>
+                </div>
+
+            </section>
+
+
+            <section id="overview" class="proj-section prose">
+                <h2>Overview</h2>
+                <p>ARC provides post-call check-ins, access to resources, and confidential connections to therapists or peer mentors—reducing stigma and making support easier to reach.</p>
+            </section>
+
+            <section id="research" class="proj-section prose">
+                <h2>Research</h2>
+                <p>Surveyed 41 first responders to understand habits, comfort, and needs.</p>
+                <div class="project-meta">
+                    <div class="meta-item"><b>61%</b> aware of resources but not using them</div>
+                    <div class="meta-item"><b>40%</b> cite stigma or fear of judgment</div>
+                    <div class="meta-item"><b>78%</b> rate the concept useful (3+/5)</div>
+                </div>
+                <div class="callout">Top requests: peer mentor chat and therapist scheduling. Pillars: confidentiality, speed, trust.</div>
+            </section>
+
+            <section id="design" class="proj-section prose">
+                <h2>Design</h2>
+                <ul class="checklist">
+                    <li>User flows for onboarding, post-call check-ins, and resource access</li>
+                    <li>Low-fidelity wires for check-ins, contacts, and library</li>
+                    <li>High-fidelity prototypes (navy/orange palette, Poppins)</li>
+                    <li>Accessibility: strong contrast and large touch targets</li>
+                    <li>Heuristic reviews to validate tone and flow</li>
+                </ul>
+            </section>
+
+            <section id="development" class="proj-section prose">
+                <h2>Development</h2>
+                <div class="grid-2">
+                    <div><p>React Native front-end with Flask API; Auth0 for authentication; Expo Router for navigation.</p></div>
+                    <div>
+                        <ul class="checklist">
+                            <li>Implemented Figma components in React Native</li>
+                            <li>Prototype AI to analyze call transcripts and time check-ins</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="outcome" class="proj-section prose">
+                <h2>Outcome</h2>
+                <ul class="checklist">
+                    <li>Real-time post-call check-in flow</li>
+                    <li>Confidential contact options (therapist, mentor, trusted contact)</li>
+                    <li>AI-based severity cues and guided chat</li>
+                    <li>Resource hub with curated materials</li>
+                </ul>
+            </section>
+
+            <section id="next" class="proj-section prose">
+                <h2>Next steps</h2>
+                <ul class="checklist">
+                    <li>Richer AI for nuanced emotion detection</li>
+                    <li>Follow-up reminders after tough calls</li>
+                    <li>Trusted contact notifications</li>
+                    <li>Pilot with local fire/EMS departments</li>
+                </ul>
+                <p><a class="btn" href="projects.html">← Back to Projects</a></p>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="cols">
+        <div>
+            <h3>Contact</h3>
+            <a href="mailto:vanessa@email.com">Email</a>
+            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <div>
+            <h3>Work</h3>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">Github</a>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+</footer>
+
+<script>
+    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
+    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+    const secs=[...document.querySelectorAll('.proj-section')], links=[...document.querySelectorAll('.toc a')];
+    const byId=id=>links.find(a=>a.getAttribute('href')==='#'+id);
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ links.forEach(a=>a.removeAttribute('aria-current')); const a=byId(e.target.id); if(a) a.setAttribute('aria-current','true'); } }),{rootMargin:'-30% 0px -60% 0px'});
+    secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

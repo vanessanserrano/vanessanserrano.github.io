@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vendor Label Validation Tool — Publix Technology</title>
+    <meta name="description" content="Xamarin.Forms tool to validate seafood vendor labels via GS1 barcode scanning; reduced validation from 15 minutes to ~15 seconds." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="nav">
+    <div class="nav__inner">
+        <a class="logo" href="index.html">VS</a>
+        <nav class="nav__links">
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.pdf">Resume</a>
+        </nav>
+        <button class="nav__toggle" aria-label="Menu">Menu</button>
+    </div>
+</header>
+
+<main class="article">
+    <div class="container project-intro">
+        <h1>Vendor Label Validation Tool</h1>
+        <p class="project-subtitle">Publix Technology · Summer 2025 Software Engineer Intern</p>
+
+        <div class="project-meta">
+            <div class="meta-card"><b>One-liner</b> Xamarin.Forms tool that validates seafood labels via GS1 scanning—cutting processing time from 15 minutes to ~15 seconds.</div>
+            <div class="meta-card"><b>Role</b> UX design, front-end (C#/.NET), validation logic, Xamarin.Forms UI</div>
+            <div class="meta-card"><b>Timeline</b> 10 weeks</div>
+        </div>
+
+        <img class="figure" src="assets/images/vlv-cover.jpg" alt="Vendor Label Validation app UI" style="aspect-ratio:16/9; margin-bottom:16px" />
+    </div>
+
+    <div class="container prose">
+        <h2>Tools &amp; Stack</h2>
+        <div class="chips">
+            <span class="chip">C#/.NET</span><span class="chip">Xamarin.Forms</span><span class="chip">MVVM</span>
+            <span class="chip">SQL</span><span class="chip">Telerik UI</span><span class="chip">GS1 Parser</span>
+            <span class="chip">Visual Studio</span><span class="chip">Azure DevOps</span>
+        </div>
+
+        <h2>Problem</h2>
+        <p>Before: associates manually validated labels by checking GTINs, vendor info, weight, and harvest data up to 15 minutes per label and error-prone.</p>
+
+        <h2>Solution</h2>
+        <p>Mobile barcode scanning parses GS1 DataMatrix and validates label metadata instantly, improving accuracy and compliance.</p>
+
+        <h2>Goals &amp; Hypothesis</h2>
+        <p><strong>H1:</strong> Automating validation through scanning reduces time by &gt;90% and improves accuracy.</p>
+        <div class="project-meta">
+            <div class="meta-card"><b>&lt; 20s</b> Target validation time</div>
+            <div class="meta-card"><b>100%</b> Scan accuracy for supported GS1 barcodes</div>
+            <div class="meta-card"><b>Positive</b> Feedback from field testers</div>
+        </div>
+
+        <h2>Research</h2>
+        <ul class="checklist">
+            <li>Interviews with internal team and seafood QA specialists</li>
+            <li>GS1 AI documentation for parsing and decoding</li>
+            <li>Review of existing validation workflows</li>
+        </ul>
+        <div class="callout">Common rejection reasons: incorrect weights, missing pack dates, and vendor details—automation reduces rework.</div>
+
+        <h2>Persona / JTBD</h2>
+        <p><strong>Publix QA Associate</strong> — “When I receive seafood shipments, I want to quickly validate the vendor label so I can approve it without manual entry or errors.”</p>
+
+        <h2>Information Architecture</h2>
+        <ul class="checklist">
+            <li>Home → Vendor Label Validation</li>
+            <li>Scan Barcode → Display Label Info → Warnings/Errors</li>
+            <li>Past Scans List → Detail</li>
+        </ul>
+
+        <h2>Design</h2>
+
+        <h3>High-Fidelity</h3>
+        <ul class="checklist">
+            <li>Telerik RadDataForm for clean, grouped fields</li>
+            <li>Fields: GTIN, Vendor, Stewardship, Harvest Method, Weight, Pack Date, State of Origin</li>
+            <li>Invalid/missing fields highlighted clearly</li>
+        </ul>
+        <div class="embed embed--tall" style="margin-top:8px">
+            <!-- Use your prototype share link after url= -->
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/wdfXEhDdfQpoVy2UlLEjlM/VLV-Walkthrough?node-id=5-31&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=40%3A3&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>p
+        </div>
+
+        <div class="chips" style="margin-top:10px">
+            <a class="chip" href="https://www.figma.com/proto/wdfXEhDdfQpoVy2UlLEjlM/VLV-Walkthrough?node-id=5-31&p=f&t=OitQ1R4cEjeIDzbq-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=40%3A3&show-proto-sidebar=1" target="_blank" rel="noopener">Open in Figma</a>
+        </div>
+
+        <h2>Development Highlights</h2>
+        <div class="grid-2">
+            <div>
+                <h3>GS1 Parsing</h3>
+                <p>Application Identifiers: 01 (GTIN), 10 (Lot), 310x (Net Weight), 11/13 (Dates). Mapped to the domain model and validated.</p>
+                <h3>Custom Validation</h3>
+                <ul class="checklist">
+                    <li>Presence of required fields</li>
+                    <li>State of origin rules (USA/RTC only)</li>
+                    <li>Quantity vs. Weight (at least one required)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Display &amp; Binding</h3>
+                <ul class="checklist">
+                    <li>Image bound by SKU (not surfaced directly)</li>
+                    <li>Weight conversion (e.g., 001550 → 15.50 lbs)</li>
+                    <li>Pack date formatted dd/MM/yy</li>
+                    <li>Graceful fallbacks on enums/nulls</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Results</h2>
+        <ul class="checklist">
+            <li>Validation time reduced from ~15 minutes to ~15 seconds</li>
+            <li>Real-time scan results and history</li>
+            <li>Android enterprise devices supported</li>
+            <li>Higher trust via clear validation indicators and raw fallback</li>
+        </ul>
+
+        <h2>Lessons</h2>
+        <ul class="checklist">
+            <li>Design for imperfect data; fallbacks matter</li>
+            <li>Real-world GS1 data requires broad testing</li>
+            <li>Accessibility (contrast, size, spacing) is critical in field apps</li>
+        </ul>
+
+        <p style="margin-top:12px"><a class="btn" href="projects.html">← Back to Projects</a></p>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="cols">
+        <div>
+            <h3>Contact</h3>
+            <a href="mailto:vanessa@email.com">Email</a>
+            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <div>
+            <h3>Work</h3>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">Github</a>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+</footer>
+
+<script>
+    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
+    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+    (function(){
+        const p=location.pathname.split('/').pop()||'index.html';
+        document.querySelectorAll('.nav__links a').forEach(a=>{
+            const h=a.getAttribute('href');
+            if((p===''&&h==='index.html')||h===p) a.setAttribute('aria-current','page');
+        });
+    })();
+</script>
+</body>
+</html>
+rv
