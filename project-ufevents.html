@@ -3,164 +3,257 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UF Events — Campus events hub</title>
-    <meta name="description" content="Research-to-prototype course project: a centralized campus events experience with fast discovery, filters, saves, reminders, and calendar planning." />
-    <link rel="stylesheet" href="style.css" />
+    <title>UF Events — Campus Events Hub</title>
+    <meta name="description" content="Research-to-prototype HCI project: a centralized campus events experience with fast discovery, filters, saves, reminders, and calendar planning." />
+    <link rel="stylesheet" href="case.css" />
+    <style>
+        /* Light UF-flavored theme without shouting */
+        body.theme-ufe{
+            --hero-a:#0f2a6d;          /* softened UF blue */
+            --hero-b:#1f3f8f;
+            --accent:#fa5a2a;          /* softened UF orange */
+            --accent-ink:#fff;
+            --muted:#6a7285;
+            --link:var(--accent);
+        }
+    </style>
 </head>
-<body>
-<header class="nav">
+<body class="theme-ufe">
+<!-- Top Nav -->
+<nav class="nav">
     <div class="nav__inner">
         <a class="logo" href="index.html">VS</a>
-        <nav class="nav__links">
+        <div class="nav__links">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="resume.pdf">Resume</a>
-        </nav>
-        <button class="nav__toggle" aria-label="Menu">Menu</button>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+        <button class="nav__toggle" aria-label="Menu">☰</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="case-hero">
+    <div class="container hero-content">
+        <h1>UF Events — Campus Events Hub</h1>
+        <p class="hero-sub">
+            A centralized, student-first way to discover and plan campus events across clubs, colleges, and departments.
+        </p>
+
+        <div class="meta-grid" role="list">
+            <div class="meta-card" role="listitem">
+                <label>Scope</label><div class="val">HCI course project (research → prototype)</div>
+            </div>
+            <div class="meta-card" role="listitem">
+                <label>Team</label><div class="val">Vanessa Serrano · Frederick Blanco · Andres Cortes</div>
+            </div>
+            <div class="meta-card" role="listitem">
+                <label>Tools</label><div class="val">Figma (research, wires, hi-fi prototype)</div>
+            </div>
+        </div>
+
+<!--        <div class="media" style="margin-top:18px">-->
+<!--            <img src="assets/images/ufevents-cover.jpg" alt="UF Events high-fidelity mockups" loading="lazy" />-->
+<!--        </div>-->
     </div>
 </header>
 
-<main class="article">
-    <div class="container project-hero">
-        <h1>UF Events — Campus events hub</h1>
-        <p class="project-subtitle">A centralized, student-first way to discover and plan campus events.</p>
+<!-- Sticky Tabs -->
+<!--<div class="case-tabs" aria-label="Section navigation">-->
+<!--    <div class="tab-row container">-->
+<!--        <a class="tab" href="#prototype">Prototype</a>-->
+<!--        <a class="tab" href="#overview">Overview</a>-->
+<!--        <a class="tab" href="#research">Research</a>-->
+<!--        <a class="tab" href="#personas">Personas</a>-->
+<!--        <a class="tab" href="#flows">Flows & Wires</a>-->
+<!--        <a class="tab" href="#solution">Solution</a>-->
+<!--        <a class="tab" href="#outcomes">Outcomes & Next</a>-->
+<!--        <a class="tab" href="#more">More</a>-->
+<!--    </div>-->
+<!--</div>-->
 
-        <div class="project-meta">
-            <div class="meta-item"><b>Scope</b> HCI course project (research → prototype)</div>
-            <div class="meta-item"><b>Team</b> Vanessa Serrano, Frederick Blanco, Andres Cortes</div>
-            <div class="meta-item"><b>Tools</b> Figma (research, wireframes, hi-fi prototype)</div>
+<main>
+    <!-- PROTOTYPE -->
+    <section id="prototype" class="section section--alt">
+        <div class="container">
+            <div class="head">
+                <h2>Interactive prototype</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="media media--tall">
+                <iframe
+                        title="UF Events — interactive prototype"
+                        allowfullscreen loading="lazy"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FusC5UQhXPWuqM8bA1qMP9h%2FUser-Design%3Fnode-id%3D252-187%26node-type%3Dcanvas%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1%26starting-point-node-id%3D252%253A187%26show-proto-sidebar%3D1">
+                </iframe>
+            </div>
+
+            <div class="chips" style="margin-top:10px">
+                <a class="btn primary" href="https://www.figma.com/proto/usC5UQhXPWuqM8bA1qMP9h/User-Design?node-id=252-187&page-id=0%3A1&starting-point-node-id=252%3A187&scaling=scale-down&content-scaling=fixed&show-proto-sidebar=1" target="_blank" rel="noopener">
+                    Open in Figma →
+                </a>
+            </div>
         </div>
+    </section>
 
-        <!-- Optional hero image -->
-        <img class="figure" src="assets/images/ufevents-cover.jpg" alt="UF Events cover" style="aspect-ratio:16/9; margin-bottom:10px" />
-    </div>
-
-    <div class="container project-wrap">
-        <aside class="toc">
-            <h3>On this page</h3>
-            <a href="#prototype">Prototype</a>
-            <a href="#overview">Overview</a>
-            <a href="#research">Research insights</a>
-            <a href="#personas">Personas</a>
-            <a href="#flows">Flows & wireframes</a>
-            <a href="#solution">Solution</a>
-            <a href="#outcomes">Outcomes & next</a>
-            <a href="#license">License</a>
-        </aside>
-
-        <div>
-            <!-- Prototype -->
-            <section id="prototype" class="proj-section prose">
-                <h2>Prototype</h2>
-                <div class="embed embed--tall">
-                    <!-- Figma Present/Prototype embed -->
-                    <iframe
-                            title="UF Events — interactive prototype"
-                            allowfullscreen
-                            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FusC5UQhXPWuqM8bA1qMP9h%2FUser-Design%3Fnode-id%3D252-187%26node-type%3Dcanvas%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1%26starting-point-node-id%3D252%253A187%26show-proto-sidebar%3D1">
-                    </iframe>
-                </div>
-                <div class="chips" style="margin-top:10px">
-                    <a class="chip" href="https://www.figma.com/proto/usC5UQhXPWuqM8bA1qMP9h/User-Design?node-id=252-187&page-id=0%3A1&starting-point-node-id=252%3A187&scaling=scale-down&content-scaling=fixed&show-proto-sidebar=1" target="_blank" rel="noopener">Open in Figma</a>
-                </div>
-            </section>
-
-            <!-- Overview -->
-            <section id="overview" class="proj-section prose">
+    <!-- OVERVIEW -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="head">
                 <h2>Overview</h2>
-                <p>Freshmen and newly involved students struggle to find accurate, timely event information scattered across Instagram, websites, posters, and Discord. UF Events proposes a single destination with powerful filters, a searchable catalog, favorites/RSVP, and calendar planning to boost awareness and attendance.</p>
-            </section>
+                <div class="underline"></div>
+            </div>
 
-            <!-- Research -->
-            <section id="research" class="proj-section prose">
+            <p style="max-width:860px; color:var(--muted)">
+                Students—especially newcomers—struggle to find timely, accurate event information scattered across Instagram,
+                flyers, club sites, and email blasts. <strong>UF Events</strong> consolidates everything into one place with
+                powerful filtering, a searchable catalog, favorites/RSVP, and calendar planning to boost awareness and attendance.
+            </p>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section section--alt">
+        <div class="container">
+            <div class="head">
                 <h2>Research insights</h2>
-                <ul class="checklist">
-                    <li>Students miss events due to fragmented information and last-minute discovery.</li>
-                    <li>Instagram is common but unreliable for full coverage; emails are noisy; official pages can be hard to navigate.</li>
-                    <li>Students want recommendations by interests/major and reminders without inbox overload.</li>
-                </ul>
-            </section>
+                <div class="underline"></div>
+            </div>
 
-            <!-- Personas -->
-            <section id="personas" class="proj-section prose">
+            <ul class="checklist">
+                <li>Students miss events due to fragmented sources and last-minute discovery.</li>
+                <li>Instagram is common but unreliable for full coverage; official pages are inconsistent; email is noisy.</li>
+                <li>Personalization matters: interests/major-based recommendations and reminders without inbox overload.</li>
+            </ul>
+
+            <div class="card note" style="margin-top:16px">
+                <strong>Design pillars</strong>
+                Fast discovery · Clear filters · Trustworthy details · Light-touch reminders.
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONAS -->
+    <section id="personas" class="section">
+        <div class="container">
+            <div class="head">
                 <h2>Personas</h2>
-                <div class="grid-2">
-                    <div>
-                        <h3>Jasmine — Organized planner</h3>
-                        <ul class="checklist">
-                            <li>Needs centralized, scheduled information; prefers calendar-style views.</li>
-                            <li>Wants integration with existing tools and interest-based recommendations.</li>
-                        </ul>
+                <div class="underline"></div>
+            </div>
+
+            <div class="split">
+                <div class="card">
+                    <h3>Jasmine — Organized planner</h3>
+                    <ul class="checklist">
+                        <li>Needs centralized, scheduled info; prefers calendar and week views.</li>
+                        <li>Wants integration with existing tools and interest-based suggestions.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Sal — Exploring campus</h3>
+                    <ul class="checklist">
+                        <li>Wants an easy way to find weekend events and meet people.</li>
+                        <li>Needs clear event details and simple reminders.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOWS & WIRES -->
+    <section id="flows" class="section section--alt">
+        <div class="container">
+            <div class="head">
+                <h2>Flows & wireframes</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="split">
+                <div class="card">
+                    <h3>Key flows</h3>
+                    <ul class="checklist">
+                        <li>Discover → Filter by category/date → View details → Save/RSVP</li>
+                        <li>Search by keyword → Open event → Add to calendar → Reminder</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="media">
+                        <img src="assets/images/uf-wireflow-1.jpg" alt="UF Events wireflow 1" loading="lazy">
                     </div>
-                    <div>
-                        <h3>Sal — Exploring campus</h3>
-                        <ul class="checklist">
-                            <li>Wants an easy way to find weekend events and meet people.</li>
-                            <li>Needs reminders and simple event details.</li>
-                        </ul>
+                    <div class="media" style="margin-top:10px">
+                        <img src="assets/images/uf-wireflow-2.jpg" alt="UF Events wireflow 2" loading="lazy">
                     </div>
                 </div>
-            </section>
-
-<!--            &lt;!&ndash; Flows & Wireframes &ndash;&gt;-->
-<!--            <section id="flows" class="proj-section prose">-->
-<!--                <h2>Flows & wireframes</h2>-->
-<!--                <div class="grid-2">-->
-<!--                    <div>-->
-<!--                        <h3>Key flows</h3>-->
-<!--                        <ul class="checklist">-->
-<!--                            <li>Discover events → Filter by category/date → View details → Save/RSVP</li>-->
-<!--                            <li>Search by keyword → Open event → Add to calendar → Reminder</li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                    <div>-->
-<!--                        &lt;!&ndash; Optional thumbnails you can replace &ndash;&gt;-->
-<!--                        <div class="gallery">-->
-<!--                            <img class="figure" src="assets/images/uf-wireflow-1.jpg" alt="Wireflow 1" />-->
-<!--                            <img class="figure" src="assets/images/uf-wireflow-2.jpg" alt="Wireflow 2" />-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </section>-->
-
-            <!-- Solution -->
-            <section id="solution" class="proj-section prose">
-                <h2>Solution</h2>
-                <ul class="checklist">
-                    <li>Unified listing of campus events with clear categories and filters.</li>
-                    <li>Search, interest-based recommendations, and favorites/RSVP.</li>
-                    <li>Calendar preview with reminders and simple sharing.</li>
-                </ul>
-            </section>
-
-            <!-- Outcomes & Next -->
-            <section id="outcomes" class="proj-section prose">
-                <h2>Outcomes & next</h2>
-                <ul class="checklist">
-                    <li>Delivered high-fidelity prototype for evaluation and usability feedback.</li>
-                    <li>Next: connect to official feeds, refine recommendations, pilot with first-year cohorts.</li>
-                </ul>
-                <p><a class="btn" href="projects.html">← Back to Projects</a></p>
-            </section>
-
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section id="solution" class="section">
+        <div class="container">
+            <div class="head">
+                <h2>Solution</h2>
+                <div class="underline"></div>
+            </div>
+
+            <ul class="checklist">
+                <li>Unified listing of campus events with clear categories and quick filters.</li>
+                <li>Interest-based recommendations, search, and favorites/RSVP.</li>
+                <li>Calendar preview, add-to-calendar, and light reminders (push/OS calendar).</li>
+                <li>Shareable event cards for socials or group chats.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- OUTCOMES & NEXT -->
+    <section id="outcomes" class="section section--alt">
+        <div class="container">
+            <div class="head">
+                <h2>Outcomes & next</h2>
+                <div class="underline"></div>
+            </div>
+
+            <ul class="checklist">
+                <li>Delivered high-fidelity prototype for evaluation and usability feedback.</li>
+                <li><strong>Next:</strong> connect official feeds, refine recommendations, pilot with first-year cohorts.</li>
+            </ul>
+
+            <div class="chips" style="margin-top:10px">
+                <a class="btn" href="projects.html">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MORE -->
+    <section id="more" class="section">
+        <div class="container" style="text-align:center">
+            <div class="head">
+                <h2>More projects</h2>
+                <div class="underline"></div>
+            </div>
+            <p style="color:var(--muted)">See additional UX & engineering work:</p>
+            <div class="chips" style="justify-content:center; margin-top:10px">
+                <a class="btn" href="project-arc.html">ARC — First Responder Care</a>
+                <a class="btn" href="project-vlv.html">Vendor Label Validation</a>
+            </div>
+        </div>
+    </section>
 </main>
 
+<!-- Footer -->
 <footer class="footer">
-    <div class="cols">
+    <div class="footer-grid container">
         <div>
             <h3>Contact</h3>
-            <a href="mailto:vanessa@email.com">Email</a>
-            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:vanessannserrano@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-
         <div>
             <h3>Work</h3>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">Github</a>
+            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-
         <div>
             <h3>Navigation</h3>
             <a href="index.html">Home</a>
@@ -168,29 +261,29 @@
             <a href="about.html">About</a>
         </div>
     </div>
-
-    <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+    <p class="copyright" style="text-align:center; opacity:.7">© 2025 Vanessa Serrano</p>
 </footer>
 
-
+<!-- Minimal JS: mobile menu + tab scrollspy -->
 <script>
-    // mobile menu
-    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
+    const t=document.querySelector('.nav__toggle'), l=document.querySelector('.nav__links');
     if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
 
-    // left TOC active state
-    const secs=[...document.querySelectorAll('.proj-section')];
-    const links=[...document.querySelectorAll('.toc a')];
-    const byId=id=>links.find(a=>a.getAttribute('href')==='#'+id);
-    const io=new IntersectionObserver(es=>{
-        es.forEach(e=>{
-            if(e.isIntersecting){
-                links.forEach(a=>a.removeAttribute('aria-current'));
-                const a=byId(e.target.id); if(a) a.setAttribute('aria-current','true');
-            }
-        });
-    },{rootMargin:'-30% 0px -60% 0px', threshold:0.01});
-    secs.forEach(s=>io.observe(s));
+    (function(){
+        const tabs=[...document.querySelectorAll('.tab-row .tab')];
+        const sections=tabs.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+        if(!tabs.length||!sections.length) return;
+        const io=new IntersectionObserver(es=>{
+            es.forEach(e=>{
+                if(e.isIntersecting){
+                    tabs.forEach(a=>a.removeAttribute('aria-current'));
+                    const active=tabs.find(a=>a.getAttribute('href')==='#'+e.target.id);
+                    if(active) active.setAttribute('aria-current','true');
+                }
+            });
+        },{rootMargin:'-45% 0px -50% 0px',threshold:.1});
+        sections.forEach(s=>io.observe(s));
+    })();
 </script>
 </body>
 </html>

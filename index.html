@@ -8,49 +8,67 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="nav">
+<!-- NAV -->
+<header class="nav" role="banner">
     <div class="nav__inner">
-        <a class="logo" href="index.html">VS</a>
-        <nav class="nav__links">
+        <a class="logo" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf">Resume</a>
+            <a href="assets/Vanessa_Serrano_Resume.pdf" target="_blank" rel="noopener">Resume</a>
         </nav>
-        <button class="nav__toggle" aria-label="Menu">Menu</button>
+
+        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+            Menu
+        </button>
     </div>
 </header>
 
-<main>
-    <!-- Hero -->
-    <section class="hero hero--intro">
+<main id="content">
+    <!-- HERO -->
+    <section class="hero hero--intro" id="about">
         <div class="container">
             <div class="hero__panel">
                 <h1>Vanessa Serrano</h1>
 
                 <p class="hero__lede">
-                    Computer Science &amp; Digital Arts Student at UF and
-                    <a class="text-link" href="https://cinemaverde.org" target="_blank" rel="noopener">@CinemaVerde</a>.
-                    Previously with <a class="text-link" href="https://www.publix.com" target="_blank" rel="noopener">@Publix</a>.
+                    Computer Science &amp; Digital Arts @ UF — UX-minded Frontend Engineer. Currently
+                    <a class="text-link" href="https://cinemaverde.org" target="_blank" rel="noopener">@CinemaVerde</a>; previously
+                    <a class="text-link" href="https://www.publix.com" target="_blank" rel="noopener">@Publix</a>.
                 </p>
 
-                <div class="social">
-                    <a class="icon-btn" href="https://www.linkedin.com/in/your-handle" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
-                    <a class="icon-btn" href="mailto:vanessa@email.com" aria-label="Email">✉️</a>
-                    <a class="icon-btn" href="assets/resume.pdf" aria-label="Resume" target="_blank" rel="noopener">CV</a>
+                <div class="social" aria-label="External links">
+                    <a class="icon-btn" href="https://www.linkedin.com/in/vanessa-n-serrano" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+                    <a class="icon-btn" href="mailto:vanessannserrano@gmail.com" aria-label="Email">✉️</a>
+                    <a class="icon-btn" href="assets/Vanessa_Serrano_Resume.pdf" aria-label="Resume PDF" target="_blank" rel="noopener">CV</a>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Highlighted Work -->
-    <section id = "work" class="section reveal-on-scroll">
+    <!-- WORK -->
+    <section id="work" class="section reveal-on-scroll" aria-labelledby="work-title">
         <div class="container">
-            <h2>Highlighted Work</h2>
+            <h2 id="work-title">Highlighted Work</h2>
             <div class="grid">
-                <a class="card reveal" href="project-arc.html">
-                    <img class="thumb" src="assets/images/arc-cover.jpg" alt="ARC app mockups" />
+                <!-- PrepTalk (NEW) -->
+                <a class="card reveal" href="https://youtu.be/1btN20MOyxc" target="_blank" rel="noopener" aria-label="Open PrepTalk AI Interviewer demo on YouTube">
+                    <img class="thumb" loading="lazy" decoding="async"
+                         src="https://img.youtube.com/vi/1btN20MOyxc/hqdefault.jpg"
+                         alt="PrepTalk — AI Interviewer demo thumbnail" />
+                    <div class="card__body">
+                        <div class="card__eyebrow">Hackathon • Team</div>
+                        <div class="card__title">PrepTalk — AI Interviewer</div>
+                        <div class="card__meta">React + FastAPI + OpenAI · résumé parsing, mock interviews, feedback</div>
+                    </div>
+                </a>
+
+                <!-- ARC -->
+                <a class="card reveal" href="project-arc.html" aria-label="Open ARC: After Response Care case study">
+                    <img class="thumb" loading="lazy" decoding="async"
+                         src="assets/images/arc-cover.jpg"
+                         alt="ARC app mockups for post-response check-ins" />
                     <div class="card__body">
                         <div class="card__eyebrow">Hackathon • 4-person team</div>
                         <div class="card__title">ARC: After Response Care</div>
@@ -58,8 +76,11 @@
                     </div>
                 </a>
 
-                <a class="card reveal" href="project-vlv.html">
-                    <img class="thumb" src="assets/images/vlv-cover.jpg" alt="Scanner UI for GS1 barcode" />
+                <!-- Vendor Label Validation -->
+                <a class="card reveal" href="project-vlv.html" aria-label="Open Vendor Label Validation case study">
+                    <img class="thumb" loading="lazy" decoding="async"
+                         src="assets/images/vlv-cover.jpg"
+                         alt="Scanner UI for GS1 barcode validation" />
                     <div class="card__body">
                         <div class="card__eyebrow">Publix Technology • Internship</div>
                         <div class="card__title">Vendor Label Validation</div>
@@ -67,128 +88,103 @@
                     </div>
                 </a>
 
-<!--                <a class="card reveal" href="project-ufevents.html">-->
-<!--                    <img class="thumb" src="assets/images/ufevents-cover.jpg" alt="UF Events prototype screens" />-->
-<!--                    <div class="card__body">-->
-<!--                        <div class="card__eyebrow">UX • Design</div>-->
-<!--                        <div class="card__title">UF Events App</div>-->
-<!--                        <div class="card__meta">Research • Wireframes • Prototype</div>-->
-<!--                    </div>-->
-<!--                </a>-->
+                <!-- (Optional) bring back UF Events later
+                <a class="card reveal" href="project-ufevents.html">
+                  <img class="thumb" loading="lazy" decoding="async"
+                       src="assets/images/ufevents-cover.jpg"
+                       alt="UF Events prototype screens" />
+                  <div class="card__body">
+                    <div class="card__eyebrow">UX • Design</div>
+                    <div class="card__title">UF Events App</div>
+                    <div class="card__meta">Research • Wireframes • Prototype</div>
+                  </div>
+                </a>
+                -->
             </div>
         </div>
     </section>
-
-    <!-- Optional: Accordion buckets -->
-<!--    <section class="section container">-->
-<!--        <details class="acc">-->
-<!--            <summary><span>Branding</span></summary>-->
-<!--            <div class="acc__panel">-->
-<!--                <ul class="links">-->
-<!--                    <li><a href="#">Zenko identity system</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </details>-->
-<!--        <details class="acc">-->
-<!--            <summary><span>UX/UI Designs</span></summary>-->
-<!--            <div class="acc__panel">-->
-<!--                <ul class="links">-->
-<!--                    <li><a href="project-arc.html">ARC — After Response Care</a></li>-->
-<!--                    <li><a href="project-ufevents.html">UF Events App</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </details>-->
-<!--        <details class="acc">-->
-<!--            <summary><span>Motion &amp; Animation</span></summary>-->
-<!--            <div class="acc__panel"><p class="muted">Coming soon.</p></div>-->
-<!--        </details>-->
-<!--        <details class="acc">-->
-<!--            <summary><span>Mobile</span></summary>-->
-<!--            <div class="acc__panel">-->
-<!--                <ul class="links">-->
-<!--                    <li><a href="project-arc.html">ARC — React Native prototype</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </details>-->
-<!--    </section>-->
 </main>
 
-<footer class="footer">
-    <div class="cols">
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+    <div class="cols" aria-label="Footer">
         <div>
             <h3>Contact</h3>
-            <a href="mailto:vanessa@email.com">Email</a>
-            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:vanessannserrano@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-
         <div>
             <h3>Work</h3>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">Github</a>
+            <a href="assets/Vanessa_Serrano_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-
         <div>
             <h3>Navigation</h3>
-            <a href="index.html">Home</a>
+            <a href="index.html" aria-current="page">Home</a>
             <a href="projects.html">Projects</a>
             <a href="about.html">About</a>
         </div>
     </div>
-
-    <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+    <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
-
-<!-- Minimal JS (menu + active link + reveal) -->
+<!-- Minimal JS -->
 <script>
-    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
-    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+    // Mobile menu
     (function(){
-        const p=location.pathname.split('/').pop()||'index.html';
+        const toggle = document.querySelector('.nav__toggle');
+        const nav = document.getElementById('site-nav');
+        if(!toggle || !nav) return;
+        toggle.addEventListener('click', ()=>{
+            const open = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(open));
+        });
+        document.addEventListener('click', (e)=>{
+            if(!e.target.closest('.nav')){
+                nav.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded','false');
+            }
+        }, {passive:true});
+    })();
+
+    // Mark current link
+    (function(){
+        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
         document.querySelectorAll('.nav__links a').forEach(a=>{
-            const h=a.getAttribute('href');
-            if((p===''&&h==='index.html')||h===p) a.setAttribute('aria-current','page');
+            const href = (a.getAttribute('href')||'').toLowerCase();
+            if(href.endsWith(path)) a.setAttribute('aria-current','page');
         });
     })();
+
+    // Reveal on scroll (respects reduced motion)
     (function(){
-        const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('is-in')}),{threshold:.12});
-        document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-    })();
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const work = document.getElementById('work');
-        if (!work) return;
-
-        // Ensure the class is present even if HTML missed it
-        work.classList.add('reveal-on-scroll');
-
-        // Respect reduced motion
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            work.classList.add('is-revealed');
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const revealSection = document.getElementById('work');
+        if(!revealSection) return;
+        if(prefersReduced){
+            revealSection.classList.add('is-revealed');
+            document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-in'));
             return;
         }
+        // Section fade
+        const sIO = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                if(e.isIntersecting){ e.target.classList.add('is-revealed'); sIO.unobserve(e.target); }
+            });
+        }, {threshold: .15, rootMargin: '0px 0px -10% 0px'});
+        sIO.observe(revealSection);
 
-        const io = new IntersectionObserver((entries) => {
-            for (const entry of entries) {
-                if (entry.isIntersecting) {
-                    work.classList.add('is-revealed');
-                    io.unobserve(work);
-                    break;
-                }
-            }
-        }, {
-            root: null,
-            threshold: 0.15,         // ~15% of the section visible
-            rootMargin: '0px 0px -10% 0px'
-        });
+        // Card lift
+        const cIO = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                if(e.isIntersecting){ e.target.classList.add('is-in'); cIO.unobserve(e.target); }
+            });
+        }, {threshold: .2});
+        document.querySelectorAll('.reveal').forEach(el=>cIO.observe(el));
+    })();
 
-        io.observe(work);
-    });
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
-
-
 </body>
 </html>

@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SwampPath — UF Schedule Planner</title>
+  <meta name="description" content="UF course-planning tool: unified calendar + class list, prerequisite awareness, multi-semester planning, and profile tracking. Research → prototype with UF blue/orange UI." />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root{
+      --blue:#00529b;         /* UF Blue */
+      --blue-dark:#003f77;
+      --orange:#fa4616;       /* UF Orange */
+      --bg:#f7fafc;
+      --text:#2c3e50;
+      --text-light:#526a79;
+      --border:#e2e8f0;
+      --white:#ffffff;
+      --success:#10b981;
+    }
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,system-ui,sans-serif;
+      line-height:1.6; color:var(--text); background:var(--bg);
+    }
+    /* Nav */
+    .nav{ position:sticky; top:0; z-index:100; background:rgba(255,255,255,.95); border-bottom:1px solid var(--border); backdrop-filter:blur(10px); }
+    .nav__inner{ max-width:1200px; margin:0 auto; padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; }
+    .logo{ font-weight:800; color:var(--blue); text-decoration:none; font-size:1.25rem; }
+    .nav__links{ display:flex; gap:2rem; }
+    .nav__links a{ color:var(--text); text-decoration:none; }
+    .nav__links a:hover{ color:var(--orange); }
+    .nav__toggle{ display:none; background:transparent; border:none; font-size:1.25rem; }
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);
+      color:#fff; padding:4rem 2rem; position:relative; overflow:hidden;
+    }
+    .hero::before{
+      content:''; position:absolute; inset:auto -10% -25% auto; width:380px; height:380px;
+      background:radial-gradient(circle at 30% 30%, rgba(250,70,22,.45), transparent 60%),
+      radial-gradient(circle at 70% 70%, rgba(255,255,255,.2), transparent 55%);
+      filter:blur(30px); opacity:.65; border-radius:50%;
+    }
+    .hero-content{ max-width:1200px; margin:0 auto; position:relative; z-index:1; }
+    .hero h1{ font-size:3rem; font-weight:800; letter-spacing:.2px; }
+    .hero-sub{ margin-top:.75rem; font-size:1.1rem; color:rgba(255,255,255,.92); max-width:780px; }
+
+    .meta-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:2rem; }
+    .meta-card{ background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25); border-radius:12px; padding:1rem 1.25rem; backdrop-filter:blur(8px); }
+    .meta-card label{ display:block; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:rgba(255,255,255,.75); margin-bottom:.35rem; }
+    .meta-card .val{ color:#fff; }
+
+    .chip-row{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+    .chip{ display:inline-flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.25); padding:.45rem .75rem; border-radius:999px; font-size:.85rem; }
+
+    /* Sections */
+    .container{ max-width:1200px; margin:0 auto; padding:0 2rem; }
+    .content-section{ padding:4rem 2rem; }
+    .content-section:nth-child(even){ background:#fff; }
+    .section-header{ text-align:center; margin-bottom:2.25rem; }
+    .section-header h2{ font-size:2rem; color:var(--blue); }
+    .underline{ width:64px; height:4px; background:var(--orange); border-radius:2px; margin:.75rem auto 0; }
+
+    /* Video / gallery placeholder */
+    .video-wrapper{ max-width:960px; margin:1.5rem auto 0; border-radius:16px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.15); background:#000; }
+    .video-wrapper .shot{ width:100%; height:540px; display:grid; place-items:center; color:#d9e2ec; font-weight:600; letter-spacing:.03em; }
+    .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+    .shot{ background:#0f172a; border:1px solid #0b1220; border-radius:12px; aspect-ratio:16/9; display:grid; place-items:center; color:#cbd5e1; }
+
+    /* Layout bits */
+    .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.25rem; box-shadow:0 2px 8px rgba(0,0,0,.04); }
+    .checklist{ list-style:none; display:grid; gap:.75rem; }
+    .checklist li{ background:#f8fafc; border:1px solid var(--border); border-radius:8px; padding:.75rem .9rem; position:relative; }
+    .checklist li::before{ content:'✓'; position:absolute; left:.6rem; top:.7rem; width:20px; height:20px; display:grid; place-items:center; background:var(--orange); color:#fff; border-radius:50%; font-size:.8rem; font-weight:700; }
+    .checklist li{ padding-left:2.2rem; }
+
+    /* Results */
+    .results-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+    .result{ background:#fff; border:1px solid var(--border); border-top:4px solid var(--success); border-radius:12px; padding:1rem 1.1rem; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+    .result h4{ color:var(--blue); margin-bottom:.25rem; }
+    .result .icon{ width:40px; height:40px; border-radius:50%; background:var(--success); color:#fff; display:grid; place-items:center; font-weight:700; margin-bottom:.5rem; }
+
+    /* Chips actions */
+    .chip-group{ display:flex; gap:1rem; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
+    .a-chip{ display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.25rem; border-radius:999px; text-decoration:none; background:var(--blue); color:#fff; border:2px solid transparent; transition:.2s; }
+    .a-chip:hover{ background:var(--orange); transform:translateY(-1px); }
+
+    /* CTA */
+    .cta{ background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%); color:#fff; text-align:center; padding:3rem 2rem; }
+    .cta .btn{ display:inline-block; margin:.35rem .35rem 0; padding:.9rem 1.25rem; border-radius:999px; text-decoration:none; background:#fff; color:var(--blue); border:2px solid transparent; }
+    .cta .btn--ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,.6); }
+    .cta .btn:hover{ transform:translateY(-1px); }
+
+    /* Footer */
+    .footer{ background:#0b1220; color:rgba(255,255,255,.85); padding:3rem 2rem 2rem; }
+    .footer-grid{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; }
+    .footer h3{ color:#fff; margin-bottom:.6rem; font-size:1.05rem; }
+    .footer a{ color:rgba(255,255,255,.8); text-decoration:none; display:block; margin:.25rem 0; }
+    .footer a:hover{ color:var(--orange); }
+    .copyright{ text-align:center; opacity:.6; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,.1); }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .video-wrapper .shot{ height:360px; }
+    }
+    @media (max-width: 768px){
+      .hero h1{ font-size:2rem; }
+      .nav__links{ display:none; }
+      .nav__toggle{ display:block; }
+      .two-col{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="logo" href="index.html">VS</a>
+    <div class="nav__links">
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+    <button class="nav__toggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>SwampPath — UF Schedule Planner</h1>
+    <p class="hero-sub">
+      A student-first planner for the University of Florida: unified calendar + selected classes,
+      prerequisite awareness, multi-semester planning, and a profile that keeps you on track.
+    </p>
+
+    <div class="meta-grid">
+      <div class="meta-card">
+        <label>Scope</label><div class="val">HCI course project · Research → High-fi prototype</div>
+      </div>
+      <div class="meta-card">
+        <label>Team</label><div class="val">Vanessa Serrano · +2 collaborators</div>
+      </div>
+      <div class="meta-card">
+        <label>Stack</label><div class="val">React + Vite · TypeScript · CSS · Local Storage (demo)</div>
+      </div>
+    </div>
+
+    <div class="chip-row" aria-label="Key badges">
+      <span class="chip">UF Blue & Orange</span>
+      <span class="chip">Schedule Builder</span>
+      <span class="chip">Multi-Semester Planner</span>
+      <span class="chip">Prereq Awareness</span>
+    </div>
+  </div>
+</header>
+
+<section id="demo" class="section section--alt">
+  <div class="container">
+    <div class="head">
+      <h2>See it in action</h2><div class="underline"></div>
+    </div>
+    <div class="media">
+      <video autoplay muted loop playsinline preload="metadata" aria-label="ARC prototype walkthrough">
+        <source src="assets/swamppath.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="chips">
+      <a class="chip" href="https://github.com/Chris-Enlow/swamppath-project" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Challenge -->
+<section class="content-section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>The Challenge</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Problem</h3>
+        <p style="color:var(--text-light); margin-top:.5rem;">
+          ONE.UF separates course selection from the calendar, making conflict checks and future planning slow and error-prone—especially during tight registration windows.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Solution</h3>
+        <p style="color:var(--text-light); margin-top:.5rem;">
+          SwampPath puts the weekly calendar and selected classes side-by-side, flags prerequisite issues, and lets students save multi-semester plans tied to their profile.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Research -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Research Insights</h2>
+      <div class="underline"></div>
+    </div>
+    <ul class="checklist">
+      <li>Students juggle tabs and spreadsheets to verify time conflicts and prerequisites.</li>
+      <li>Discovery often starts from requirements and professor preferences, not just course codes.</li>
+      <li>Saving “what-if” semester plans reduces stress when registration opens.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Design -->
+<section class="content-section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>Design Process</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Key Flows</h3>
+        <ul class="checklist" style="margin-top:.5rem;">
+          <li>Browse/Search Catalog → Add section → View calendar conflicts</li>
+          <li>Planner → Map future semesters → Save to Profile → Load into builder</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>UI Priorities</h3>
+        <ul class="checklist" style="margin-top:.5rem;">
+          <li>Single-screen schedule building (calendar + selection list)</li>
+          <li>Conflict and prereq cues with clear copy</li>
+          <li>UF brand coloring with accessible contrast</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Development -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Development</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Architecture</h3>
+        <pre style="white-space:pre-wrap; background:#f8fafc; padding:12px; border-radius:8px; border:1px solid var(--border); margin-top:.5rem; font-size:.9rem;">
+app/
+  pages: Catalog, Schedule, Planner, Profile
+  state: selectedCourses, displayedWeek, savedPlans[userId]
+  data: mock catalog (sections, credits, prereqs, professor), demo users (CS, Marine Science)
+          </pre>
+      </div>
+      <div class="card">
+        <h3>Highlights</h3>
+        <ul class="checklist" style="margin-top:.5rem;">
+          <li>Week grid with instant conflict visualization</li>
+          <li>Prerequisite checks (demo rules) and warnings</li>
+          <li>Multi-semester planner with quick load to schedule</li>
+          <li>Local storage for saved plans in the demo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Features -->
+<section class="content-section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>Key Features</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Unified Schedule Builder</h3>
+        <p style="color:var(--text-light); margin-top:.5rem;">Live weekly calendar next to your selected classes for quick drag/remove and conflict checks.</p>
+      </div>
+      <div class="card">
+        <h3>Personalized Catalog</h3>
+        <p style="color:var(--text-light); margin-top:.5rem;">Search by code/title/professor; toggle UF-specific filters; one-click add/remove.</p>
+      </div>
+    </div>
+    <div class="two-col" style="margin-top:1rem;">
+      <div class="card">
+        <h3>Prereq Awareness</h3>
+        <p style="color:var(--text-light); margin-top:.5rem;">Warns when prerequisites aren’t met so you don’t waste registration attempts.</p>
+      </div>
+      <div class="card">
+        <h3>Planner & Profile</h3>
+        <p style="color:var(--text-light); margin-top:.5rem;">Map future semesters, save multiple plans, and reload them during registration windows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Results & Impact</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="results-grid">
+      <div class="result">
+        <div class="icon">⚡</div>
+        <h4>Fewer Clicks</h4>
+        <p>Side-by-side calendar + classes trimmed ~40% of clicks in a pilot vs. ONE.UF.</p>
+      </div>
+      <div class="result">
+        <div class="icon">📅</div>
+        <h4>Faster Planning</h4>
+        <p>Saved multi-semester plans reduced “where do these fit?” confusion.</p>
+      </div>
+      <div class="result">
+        <div class="icon">✅</div>
+        <h4>Prereq Clarity</h4>
+        <p>Early warnings prevented dead-end schedules before registration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Next -->
+<section class="content-section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>Next Steps</h2>
+      <div class="underline"></div>
+    </div>
+    <ul class="checklist">
+      <li>Import real catalog + degree audit APIs</li>
+      <li>Conflict-free auto-suggestions and professor rating signals</li>
+      <li>Team plan sharing and advisor notes</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Explore SwampPath</h2>
+    <p style="opacity:.88; max-width:720px; margin:6px auto 14px;">
+      Try the prototype workflow and skim the repo to see the schedule builder, planner, and prereq cues in action.
+    </p>
+    <a class="btn" href="https://github.com/Chris-Enlow/swamppath-project" target="_blank" rel="noopener">GitHub Repo</a>
+    <a class="btn btn--ghost" href="projects.html">← Back to Projects</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h3>Contact</h3>
+      <a href="mailto:vanessa@email.com">Email</a>
+      <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div>
+      <h3>Work</h3>
+      <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div>
+      <h3>Navigation</h3>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+  <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+</footer>
+
+<script>
+  // Mobile menu
+  const t=document.querySelector('.nav__toggle'), l=document.querySelector('.nav__links');
+  if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projects — Vanessa Serrano</title>
-    <meta name="description" content="Selected work across research, design, and front-end: ARC, Vendor Label Validation, UF Events." />
+    <meta name="description" content="Selected work across research, design, and front-end: ARC, Vendor Label Validation, PrepTalk, OptiPath, SwampPath, UF Events, RecipeGrind." />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,51 +24,77 @@
     <div class="container">
         <h2>Projects</h2>
         <p class="lead">A mix of internship work, hackathons, courses, and personal projects showing process and outcomes.</p>
+
         <div class="grid">
+            <!-- ARC -->
             <a class="card reveal" href="project-arc.html">
                 <img class="thumb" src="assets/images/arc-cover.jpg" alt="ARC app mockups" />
                 <div class="card__body">
                     <div class="card__eyebrow">Hackathon • Prototyping</div>
                     <div class="card__title">ARC — After Response Care</div>
-                    <div class="card__meta">RN + Flask • 40+ interviews • Crisis UX</div>
+                    <div class="card__meta">React Native + Flask • 40+ interviews • Crisis UX</div>
                 </div>
             </a>
 
+            <!-- VLV -->
             <a class="card reveal" href="project-vlv.html">
                 <img class="thumb" src="assets/images/vlv-cover.jpg" alt="Scanner UI for GS1 barcode" />
                 <div class="card__body">
                     <div class="card__eyebrow">Internship • Dev</div>
                     <div class="card__title">Vendor Label Validation</div>
-                    <div class="card__meta">Xamarin.Forms • GS1 • RadDataForm</div>
+                    <div class="card__meta">Xamarin.Forms • GS1 • RadDataForm • 15m → 15s</div>
                 </div>
             </a>
 
+            <!-- PrepTalk -->
+            <a class="card reveal" href="project-preptalk.html">
+                <img class="thumb" src="assets/images/prep-talk.jpg" alt="PrepTalk AI Interviewer demo screens" />
+                <div class="card__body">
+                    <div class="card__eyebrow">Hackathon • Finalist & 1st (Education)</div>
+                    <div class="card__title">PrepTalk — AI Interviewer</div>
+                    <div class="card__meta">React + TS • FastAPI • OpenAI • Résumé parser</div>
+                </div>
+            </a>
+
+<!--            &lt;!&ndash; OptiPath &ndash;&gt;-->
+<!--            <a class="card reveal" href="project-optipath.html">-->
+<!--                <img class="thumb" src="assets/images/optipath-cover.jpg" alt="OptiPath route optimization UI" />-->
+<!--                <div class="card__body">-->
+<!--                    <div class="card__eyebrow">Personal • Case Study</div>-->
+<!--                    <div class="card__title">OptiPath — Route Optimization</div>-->
+<!--                    <div class="card__meta">Vue 3 + TS • Fuel-aware • Traffic & constraints</div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+            <!-- SwampPath -->
+            <a class="card reveal" href="project-swamppath.html">
+                <img class="thumb" src="assets/images/swamp-path.jpg" alt="SwampPath scheduling screens" />
+                <div class="card__body">
+                    <div class="card__eyebrow">UF • Team Project</div>
+                    <div class="card__title">SwampPath — Schedule Builder</div>
+                    <div class="card__meta">Unified calendar + classes • Prereq awareness</div>
+                </div>
+            </a>
+
+            <!-- UF Events -->
             <a class="card reveal" href="project-ufevents.html">
                 <img class="thumb" src="assets/images/ufevents-cover.jpg" alt="UF Events prototype screens" />
                 <div class="card__body">
                     <div class="card__eyebrow">UX Design course • Team</div>
                     <div class="card__title">UF Events App</div>
-                    <div class="card__meta">User flows • Wireframes • Prototype</div>
+                    <div class="card__meta">Research • Filters • Saves • Reminders</div>
                 </div>
             </a>
 
+            <!-- RecipeGrind -->
             <a class="card reveal" href="project-recipe.html">
-                <img class="thumb" src="assets/images/recipe-cover.jpg" alt="Recipe Grind cover" />
+                <img class="thumb" src="assets/images/recipe-cover.jpg" alt="RecipeGrind Pantry Mode results" />
                 <div class="card__body">
                     <div class="card__eyebrow">Personal • Dev</div>
                     <div class="card__title">RecipeGrind</div>
-                    <div class="card__meta">API • Web+Mobile</div>
+                    <div class="card__meta">React/TS • Node/Express • Pantry Mode</div>
                 </div>
             </a>
-
-<!--            <a class="card reveal" href="project-azenda.html">-->
-<!--                <img class="thumb" src="assets/images/recipe.png" alt="Recipe Grind cover" />-->
-<!--                <div class="card__body">-->
-<!--                    <div class="card__eyebrow">SWE Course • Design</div>-->
-<!--                    <div class="card__title">Azenda</div>-->
-<!--                    <div class="card__meta">User flows • Wireframes • Prototype</div>-->
-<!--                </div>-->
-<!--            </a>-->
         </div>
     </div>
 </main>
@@ -98,7 +124,6 @@
     <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
 </footer>
 
-
 <script>
     const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
     if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
@@ -116,3 +141,4 @@
 </script>
 </body>
 </html>
+
