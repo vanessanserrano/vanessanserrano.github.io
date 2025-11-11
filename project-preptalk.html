@@ -5,128 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PrepTalk — AI Interviewer</title>
     <meta name="description" content="Finalist and 1st Place (Education Track). Full-stack platform that simulates personalized interviews, analyzes résumés, generates role/company-aware questions, and gives AI feedback." />
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        :root{
-            --indigo: #272c22;
-            --indigo-b: #334529;
-            --accent: #74a662;
-            --accent-2: #9caf88;
-            --bg:#fafbfc;
-            --text: #334529;
-            --text-light: #356739;
-            --border:#e1e8ed;
-            --white:#fff;
-            --success: #74a662;
-        }
-        body{
-            font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Inter,system-ui,sans-serif;
-            line-height:1.6; color:var(--text); background:var(--bg);
-        }
-        /* Nav */
-        .nav{ position:sticky; top:0; z-index:100; background:rgba(255,255,255,.95); border-bottom:1px solid var(--border); backdrop-filter:blur(10px); }
-        .nav__inner{ max-width:1200px; margin:0 auto; padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; }
-        .logo{ font-weight:800; color:var(--indigo); text-decoration:none; font-size:1.25rem; }
-        .nav__links{ display:flex; gap:2rem; }
-        .nav__links a{ color:var(--text); text-decoration:none; }
-        .nav__links a:hover{ color:var(--accent); }
-        .nav__toggle{ display:none; }
-        /* Hero */
-        .hero{ background:linear-gradient(135deg,var(--indigo) 0%,var(--indigo-b) 100%); color:#fff; padding:4rem 2rem; position:relative; overflow:hidden; }
-        .hero::before{ content:''; position:absolute; inset:auto -10% -20% auto; width:360px; height:360px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); filter:blur(60px); opacity:.35; border-radius:50%; }
-        .hero-content{ max-width:1200px; margin:0 auto; position:relative; z-index:1; }
-        .hero h1{ font-size:3rem; font-weight:800; letter-spacing:.2px; }
-        .hero-sub{ margin-top:.75rem; font-size:1.15rem; color:rgba(255,255,255,.9); max-width:720px; }
-        .meta-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:2rem; }
-        .meta-card{ background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:12px; padding:1rem 1.25rem; backdrop-filter:blur(8px); }
-        .meta-card label{ display:block; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.75); margin-bottom:.35rem; }
-        .meta-card .val{ color:#fff; }
-        /* Badges row */
-        .chip-row{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
-        .chip{ display:inline-flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.2); padding:.45rem .75rem; border-radius:999px; font-size:.85rem; }
-        /* Container & sections */
-        .container{ max-width:1200px; margin:0 auto; padding:0 2rem; }
-        .content-section{ padding:4rem 2rem; }
-        .content-section:nth-child(even){ background:#fff; }
-        .section-header{ text-align:center; margin-bottom:2.25rem; }
-        .section-header h2{ font-size:2rem; color:var(--indigo); }
-        .underline{ width:64px; height:4px; background:var(--accent); border-radius:2px; margin:.75rem auto 0; }
-        /* Video */
-        .video-wrapper{ max-width:960px; margin:1.5rem auto 0; border-radius:16px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.15); background:#000; }
-        .video-wrapper iframe, .video-wrapper video{ width:100%; height:540px; display:block; }
-        /* Chips actions */
-        .chip-group{ display:flex; gap:1rem; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
-        .a-chip{ display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.25rem; border-radius:999px; text-decoration:none; background:var(--indigo); color:#fff; transition:.2s; }
-        .a-chip:hover{ background:var(--accent); transform:translateY(-1px); }
-        /* Grids */
-        .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
-        .card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.25rem; box-shadow:0 2px 8px rgba(0,0,0,.04); }
-        .checklist{ list-style:none; display:grid; gap:.75rem; }
-        .checklist li{ background:var(--bg); border-radius:8px; padding:.75rem .9rem; position:relative; }
-        .checklist li::before{ content:'✓'; position:absolute; left:.6rem; top:.7rem; width:20px; height:20px; display:grid; place-items:center; background:var(--accent); color:#002; border-radius:50%; font-size:.8rem; font-weight:700; }
-        .checklist li{ padding-left:2.2rem; }
-        /* Awards banner */
-        .award{ background:linear-gradient(135deg, #74a662 0%, #9caf88 100%); color:#032; padding:2.25rem 2rem; text-align:center; }
-        .award h3{ font-size:1.35rem; font-weight:800; }
-        .award p{ opacity:.85; }
-        /* Results cards */
-        .results-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
-        .result{ background:#fff; border:1px solid var(--border); border-top:4px solid var(--success); border-radius:12px; padding:1rem 1.1rem; box-shadow:0 2px 8px rgba(0,0,0,.05); }
-        .result h4{ color:var(--indigo); margin-bottom:.25rem; }
-        .result .icon{ width:40px; height:40px; border-radius:50%; background:var(--success); color:#fff; display:grid; place-items:center; font-weight:700; margin-bottom:.5rem; }
-        /* CTA */
-        .cta{ background:var(--indigo); color:#fff; text-align:center; padding:3rem 2rem; }
-        .cta .btn{ display:inline-block; margin:.35rem .35rem 0; padding:.9rem 1.25rem; border-radius:999px; text-decoration:none; background:#fff; color:var(--indigo); border:2px solid transparent; }
-        .cta .btn--ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,.6); }
-        .cta .btn:hover{ transform:translateY(-1px); }
-        /* Footer */
-        .footer{ background:#15202b; color:rgba(255,255,255,.85); padding:3rem 2rem 2rem; }
-        .footer-grid{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; }
-        .footer h3{ color:#fff; margin-bottom:.6rem; font-size:1.05rem; }
-        .footer a{ color:rgba(255,255,255,.8); text-decoration:none; display:block; margin:.25rem 0; }
-        .footer a:hover{ color:var(--accent); }
-        .copyright{ text-align:center; opacity:.6; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,.1); }
-        /* Responsive */
-        @media (max-width: 920px){
-            .video-wrapper iframe, .video-wrapper video{ height:360px; }
-        }
-        @media (max-width: 768px){
-            .hero h1{ font-size:2rem; }
-            .nav__links{ display:none; }
-            .nav__toggle{ display:block; background:transparent; border:none; font-size:1.25rem; }
-            .two-col{ grid-template-columns:1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="theme-preptalk">
 <!-- Nav -->
-<nav class="nav">
+<header class="nav" role="banner">
     <div class="nav__inner">
-        <a class="logo" href="index.html">VS</a>
-        <div class="nav__links">
+        <a class="logo" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-        </div>
-        <button class="nav__toggle" aria-label="Menu">☰</button>
+        </nav>
+
+        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+            Menu
+        </button>
     </div>
-</nav>
+</header>
 
 <!-- Hero -->
-<header class="hero">
-    <div class="hero-content">
+<header class="case-hero">
+    <div class="container hero-content">
         <h1>PrepTalk — AI Interviewer</h1>
         <p class="hero-sub">AI-powered interview prep that analyzes résumés, generates tailored questions by role/company, and simulates realistic interviews with live feedback.</p>
 
-        <div class="meta-grid">
-            <div class="meta-card">
-                <label>Project</label><div class="val">Hackathon finalist · 1st Place (Education Track)</div>
+        <div class="meta-grid" role="list">
+            <div class="meta-card" role="listitem">
+                <label>Project</label>
+                <div class="val">Hackathon finalist · 1st Place (Education Track)</div>
             </div>
-            <div class="meta-card">
-                <label>Role</label><div class="val">UX Designer · Front-End Developer</div>
+            <div class="meta-card" role="listitem">
+                <label>Role</label>
+                <div class="val">UX Designer · Front-End Developer</div>
             </div>
-            <div class="meta-card">
-                <label>Stack</label><div class="val">React + TypeScript (Vite, Tailwind), FastAPI, OpenAI</div>
+            <div class="meta-card" role="listitem">
+                <label>Stack</label>
+                <div class="val">React + TypeScript (Vite, Tailwind), FastAPI, OpenAI</div>
             </div>
         </div>
 
@@ -150,14 +66,13 @@
 </section>
 
 <!-- Demo -->
-<section class="content-section">
+<section id="demo" class="section section--alt">
     <div class="container">
-        <div class="section-header">
+        <div class="head">
             <h2>See it in action</h2>
             <div class="underline"></div>
         </div>
-
-        <div class="video-wrapper" aria-label="PrepTalk demo video">
+        <div class="media">
             <iframe
                     src="https://www.youtube.com/embed/1btN20MOyxc"
                     title="PrepTalk — AI Interviewer demo"
@@ -166,48 +81,40 @@
                     allowfullscreen
             ></iframe>
         </div>
-
-        <div class="chip-group">
-            <a class="a-chip" href="https://youtu.be/1btN20MOyxc?si=06a5C1haO9EErw_T" target="_blank" rel="noopener">Watch Demo →</a>
-            <a class="a-chip" href="https://www.hackathonparty.com/hackathons/26/projects/375" target="_blank" rel="noopener">Hackathon Page →</a>
-            <a class="a-chip" href="https://github.com/johanfortus/AI-Interviewer" target="_blank" rel="noopener">GitHub →</a>
+        <div class="chips">
+            <a class="chip" href="https://youtu.be/1btN20MOyxc?si=06a5C1haO9EErw_T" target="_blank" rel="noopener">Watch Demo →</a>
+            <a class="chip" href="https://www.hackathonparty.com/hackathons/26/projects/375" target="_blank" rel="noopener">Hackathon Page →</a>
+            <a class="chip" href="https://github.com/johanfortus/AI-Interviewer" target="_blank" rel="noopener">GitHub →</a>
         </div>
     </div>
 </section>
 
 <!-- Challenge -->
-<section class="content-section" style="background:#fff;">
+<section id="challenge" class="section">
     <div class="container">
-        <div class="section-header">
-            <h2>The Challenge</h2>
+        <div class="head">
+            <h2>The challenge</h2>
             <div class="underline"></div>
         </div>
-        <div class="two-col">
-            <div class="card">
-                <h3>Problem</h3>
-                <p style="color:var(--text-light); margin-top:.5rem;">
-                    Interview prep is stressful and time-consuming. Candidates lack realistic practice, tailored questions, and actionable feedback in a single place—especially without mentors or mock-interview access.
-                </p>
-            </div>
-            <div class="card">
-                <h3>Solution</h3>
-                <p style="color:var(--text-light); margin-top:.5rem;">
-                    PrepTalk analyzes a résumé, generates role/company-aware questions, and runs mock interviews (HR/Manager/Technical) with webcam and technical coding rounds—then returns structured feedback.
-                </p>
-            </div>
+        <p style="text-align:center; max-width:800px; margin:0 auto; color:var(--muted)">
+            Interview prep is stressful and time-consuming. Candidates lack realistic practice, tailored questions, and actionable feedback in a single place—especially without mentors or mock-interview access.
+        </p>
+        <div class="card note" style="margin-top:16px">
+            <strong style="color:var(--accent)">Our solution</strong>
+            PrepTalk analyzes a résumé, generates role/company-aware questions, and runs mock interviews (HR/Manager/Technical) with webcam and technical coding rounds—then returns structured feedback.
         </div>
     </div>
 </section>
 
 <!-- Research -->
-<section class="content-section">
+<section id="research" class="section section--alt">
     <div class="container">
-        <div class="section-header">
-            <h2>Research Insights</h2>
+        <div class="head">
+            <h2>Research insights</h2>
             <div class="underline"></div>
         </div>
         <ul class="checklist">
-            <li>Candidates spend hours searching for “likely questions” yet get little personalized practice.</li>
+            <li>Candidates spend hours searching for "likely questions" yet get little personalized practice.</li>
             <li>Students want concise company context (culture, values) before mock interviews.</li>
             <li>Immediate, specific feedback (structure, tone, confidence) drives improvement.</li>
         </ul>
@@ -215,58 +122,42 @@
 </section>
 
 <!-- Design -->
-<section class="content-section" style="background:#fff;">
+<section id="design" class="section">
     <div class="container">
-        <div class="section-header">
-            <h2>Design Process</h2>
+        <div class="head">
+            <h2>Design process</h2>
             <div class="underline"></div>
         </div>
-        <div class="two-col">
+        <div class="split">
+            <ul class="checklist">
+                <li>Interview Start → upload résumé, choose role/company, select round type</li>
+                <li>Prep Page → résumé feedback, company snapshot, practice tips</li>
+                <li>Interview → HR/Manager rounds or Technical editor with prompts</li>
+                <li>Minimal layout with clear timers and prompts</li>
+            </ul>
             <div class="card">
-                <h3>Flows</h3>
-                <ul class="checklist" style="margin-top:.5rem;">
-                    <li>Interview Start → upload résumé, choose role/company, select round type</li>
-                    <li>Prep Page → résumé feedback, company snapshot, practice tips</li>
-                    <li>Interview → HR/Manager rounds or Technical editor with prompts</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>UI Priorities</h3>
-                <ul class="checklist" style="margin-top:.5rem;">
-                    <li>Minimal layout, clear timers and prompts</li>
-                    <li>High-contrast controls and large touch targets</li>
-                    <li>Panelized feedback with examples and next steps</li>
-                </ul>
+                <strong>UI Priorities</strong>
+                <p>High-contrast controls and large touch targets. Panelized feedback with examples and next steps.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Development -->
-<section class="content-section">
+<!-- Dev -->
+<section id="dev" class="section section--alt">
     <div class="container">
-        <div class="section-header">
+        <div class="head">
             <h2>Development</h2>
             <div class="underline"></div>
         </div>
-        <div class="two-col">
+        <div class="split">
             <div class="card">
                 <h3>Architecture</h3>
-                <pre style="white-space:pre-wrap; background:var(--bg); padding:12px; border-radius:8px; border:1px solid var(--border); margin-top:.5rem; font-size:.9rem;">
-frontend/
-  React + TypeScript (Vite, Tailwind)
-  Pages: Home, InterviewStart, InterviewPrep, Interview, Technical
-  Monaco editor for coding round
-backend/
-  FastAPI
-  POST /api/parse_resume
-  POST /api/generate_questions
-  OpenAI JSON responses · résumé parsing (PyPDF2 / python-docx)
-          </pre>
+                <p>React Native (Expo) front-end, Flask API, Auth0 auth, Expo Router navigation.</p>
             </div>
             <div class="card">
-                <h3>Highlights</h3>
-                <ul class="checklist" style="margin-top:.5rem;">
+                <h3>Key work</h3>
+                <ul class="checklist">
                     <li>Structured prompts for reliable JSON (questions, rubrics)</li>
                     <li>Webcam integration for live mock sessions</li>
                     <li>Monaco editor + local JS runner for technical tasks</li>
@@ -277,97 +168,49 @@ backend/
     </div>
 </section>
 
-<!-- Key Features -->
-<section class="content-section" style="background:#fff;">
+<!-- Features -->
+<section id="features" class="section">
     <div class="container">
-        <div class="section-header">
-            <h2>Key Features</h2>
+        <div class="head">
+            <h2>Key features</h2>
             <div class="underline"></div>
         </div>
-        <div class="two-col">
-            <div class="card">
-                <h3>Résumé-aware Questions</h3>
-                <p style="color:var(--text-light); margin-top:.5rem;">Generates HR/Manager/Technical prompts grounded in your actual experience and target role.</p>
-            </div>
-            <div class="card">
-                <h3>Company Prep</h3>
-                <p style="color:var(--text-light); margin-top:.5rem;">Concise summaries of culture, values, and example interview themes to prime candidates.</p>
-            </div>
-        </div>
-        <div class="two-col" style="margin-top:1rem;">
-            <div class="card">
-                <h3>Mock Interviews</h3>
-                <p style="color:var(--text-light); margin-top:.5rem;">Webcam + timed sessions; structured rubrics for tone, clarity, and confidence.</p>
-            </div>
-            <div class="card">
-                <h3>Technical Round</h3>
-                <p style="color:var(--text-light); margin-top:.5rem;">Monaco editor with sample tests; JS local runner (extensible to TS/Python via backend).</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Results -->
-<section class="content-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Results & Impact</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="results-grid">
-            <div class="result">
-                <div class="icon">⚡</div>
-                <h4>48-hr Prototype</h4>
-                <p>Full front-to-back flow (parse → generate → interview → feedback) delivered during the hackathon.</p>
-            </div>
-            <div class="result">
-                <div class="icon">🎯</div>
-                <h4>Targeted Practice</h4>
-                <p>Role/company-aware prompts increased session relevance vs. generic question banks.</p>
-            </div>
-            <div class="result">
-                <div class="icon">🧭</div>
-                <h4>Guided Feedback</h4>
-                <p>Actionable rubric with examples for structure, tone, and confidence.</p>
-            </div>
-        </div>
+        <ul class="checklist">
+            <li>Résumé-aware Questions: Generates HR/Manager/Technical prompts grounded in your actual experience and target role</li>
+            <li>Company Prep: Concise summaries of culture, values, and example interview themes to prime candidates</li>
+            <li>Mock Interviews: Webcam + timed sessions; structured rubrics for tone, clarity, and confidence</li>
+            <li>Technical Round: Monaco editor with sample tests; JS local runner (extensible to TS/Python via backend)</li>
+        </ul>
     </div>
 </section>
 
 <!-- Next -->
-<section class="content-section" style="background:#fff;">
-    <div class="container">
-        <div class="section-header">
-            <h2>Next Steps</h2>
+<section id="next" class="section section--alt">
+    <div class="container" style="text-align:center">
+        <div class="head">
+            <h2>What's next</h2>
             <div class="underline"></div>
         </div>
-        <ul class="checklist">
+        <ul class="checklist" style="max-width:620px; margin:10px auto 0; text-align:left">
             <li>User accounts and progress history (PostgreSQL/Firebase)</li>
             <li>Realtime voice & posture feedback (WebRTC + TF.js / Realtime API)</li>
             <li>Confidence scoring and improved analytics</li>
             <li>Public deployment (Vercel + Render)</li>
         </ul>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-    <div class="container">
-        <h2>Try the prototype</h2>
-        <p style="opacity:.8; max-width:720px; margin:6px auto 14px;">Best on desktop. Demo uses sample data and a local JS runner for technical questions.</p>
-        <a class="btn" href="https://youtu.be/1btN20MOyxc?si=06a5C1haO9EErw_T" target="_blank" rel="noopener">Watch Demo</a>
-        <a class="btn btn--ghost" href="https://www.hackathonparty.com/hackathons/26/projects/375" target="_blank" rel="noopener">Hackathon Page</a>
-        <a class="btn btn--ghost" href="projects.html">← Back to Projects</a>
+        <div class="chips" style="justify-content:center; margin-top:16px">
+            <a class="btn" href="projects.html">← Back to Projects</a>
+            <a class="btn primary" href="https://github.com/johanfortus/AI-Interviewer" target="_blank" rel="noopener">View code</a>
+        </div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-    <div class="footer-grid">
+<footer class="footer" role="contentinfo">
+    <div class="cols">
         <div>
             <h3>Contact</h3>
-            <a href="mailto:vanessa@email.com">Email</a>
-            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:vanessannserrano@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
         <div>
             <h3>Work</h3>
@@ -381,13 +224,42 @@ backend/
             <a href="about.html">About</a>
         </div>
     </div>
-    <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+    <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-    // Mobile menu
-    const t=document.querySelector('.nav__toggle'), l=document.querySelector('.nav__links');
-    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+    // Mobile menu toggle
+    (function() {
+        const toggle = document.querySelector('.nav__toggle');
+        const nav = document.getElementById('site-nav');
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(open));
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav')) {
+                nav.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        }, { passive: true });
+    })();
+
+    // Mark current page
+    (function() {
+        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        document.querySelectorAll('.nav__links a').forEach(a => {
+            const href = (a.getAttribute('href') || '').toLowerCase();
+            if (href.endsWith(path)) {
+                a.setAttribute('aria-current', 'page');
+            }
+        });
+    })();
+
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>

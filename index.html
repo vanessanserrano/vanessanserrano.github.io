@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!-- NAV -->
 <header class="nav" role="banner">
     <div class="nav__inner">
         <a class="logo" href="index.html" aria-label="Home">VS</a>
@@ -16,7 +15,7 @@
         <nav id="site-nav" class="nav__links" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/Vanessa_Serrano_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
         </nav>
 
         <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
@@ -33,15 +32,15 @@
                 <h1>Vanessa Serrano</h1>
 
                 <p class="hero__lede">
-                    Computer Science &amp; Digital Arts @ UF — UX-minded Frontend Engineer. Currently
-                    <a class="text-link" href="https://cinemaverde.org" target="_blank" rel="noopener">@CinemaVerde</a>; previously
+                    Computer Science &amp; Digital Arts <a class="text-link" href="https://www.ufl.edu/" target="_blank" rel="noopener">@UF</a> <br>UX Designer + Frontend Engineer. <br> Currently
+                    <a class="text-link" href="https://cinemaverde.org" target="_blank" rel="noopener">@CinemaVerde</a> previously
                     <a class="text-link" href="https://www.publix.com" target="_blank" rel="noopener">@Publix</a>.
                 </p>
 
                 <div class="social" aria-label="External links">
                     <a class="icon-btn" href="https://www.linkedin.com/in/vanessa-n-serrano" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
                     <a class="icon-btn" href="mailto:vanessannserrano@gmail.com" aria-label="Email">✉️</a>
-                    <a class="icon-btn" href="assets/Vanessa_Serrano_Resume.pdf" aria-label="Resume PDF" target="_blank" rel="noopener">CV</a>
+                    <a class="icon-btn" href="assets/resume.pdf" aria-label="Resume PDF" target="_blank" rel="noopener">CV</a>
                 </div>
             </div>
         </div>
@@ -52,13 +51,12 @@
         <div class="container">
             <h2 id="work-title">Highlighted Work</h2>
             <div class="grid">
-                <!-- PrepTalk (NEW) -->
-                <a class="card reveal" href="https://youtu.be/1btN20MOyxc" target="_blank" rel="noopener" aria-label="Open PrepTalk AI Interviewer demo on YouTube">
+                <a class="card reveal" href="project-preptalk.html" target="_blank" rel="noopener" aria-label="Open PrepTalk AI Interviewer">
                     <img class="thumb" loading="lazy" decoding="async"
-                         src="https://img.youtube.com/vi/1btN20MOyxc/hqdefault.jpg"
-                         alt="PrepTalk — AI Interviewer demo thumbnail" />
+                         src="assets/images/prep-talk.jpg"
+                         alt="ARC app mockups for post-response check-ins" />
                     <div class="card__body">
-                        <div class="card__eyebrow">Hackathon • Team</div>
+                        <div class="card__eyebrow">1st Place Hackathon • 2-Person Team</div>
                         <div class="card__title">PrepTalk — AI Interviewer</div>
                         <div class="card__meta">React + FastAPI + OpenAI · résumé parsing, mock interviews, feedback</div>
                     </div>
@@ -107,7 +105,7 @@
 
 <!-- FOOTER -->
 <footer class="footer" role="contentinfo">
-    <div class="cols" aria-label="Footer">
+    <div class="cols">
         <div>
             <h3>Contact</h3>
             <a href="mailto:vanessannserrano@gmail.com">Email</a>
@@ -115,12 +113,12 @@
         </div>
         <div>
             <h3>Work</h3>
-            <a href="assets/Vanessa_Serrano_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div>
             <h3>Navigation</h3>
-            <a href="index.html" aria-current="page">Home</a>
+            <a href="index.html">Home</a>
             <a href="projects.html">Projects</a>
             <a href="about.html">About</a>
         </div>
@@ -128,63 +126,119 @@
     <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
+<script>
+    // Auto-update copyright year
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+</script>
+
+<script>
+    // Auto-update copyright year
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+</script>
+
 <!-- Minimal JS -->
 <script>
     // Mobile menu
-    (function(){
+    (function () {
         const toggle = document.querySelector('.nav__toggle');
         const nav = document.getElementById('site-nav');
-        if(!toggle || !nav) return;
-        toggle.addEventListener('click', ()=>{
+        if (!toggle || !nav) return;
+        toggle.addEventListener('click', () => {
             const open = nav.classList.toggle('is-open');
             toggle.setAttribute('aria-expanded', String(open));
         });
-        document.addEventListener('click', (e)=>{
-            if(!e.target.closest('.nav')){
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav')) {
                 nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded','false');
+                toggle.setAttribute('aria-expanded', 'false');
             }
-        }, {passive:true});
+        }, {passive: true});
     })();
 
     // Mark current link
-    (function(){
+    (function () {
         const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav__links a').forEach(a=>{
-            const href = (a.getAttribute('href')||'').toLowerCase();
-            if(href.endsWith(path)) a.setAttribute('aria-current','page');
+        document.querySelectorAll('.nav__links a').forEach(a => {
+            const href = (a.getAttribute('href') || '').toLowerCase();
+            if (href.endsWith(path)) a.setAttribute('aria-current', 'page');
         });
     })();
 
     // Reveal on scroll (respects reduced motion)
-    (function(){
+    (function () {
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const revealSection = document.getElementById('work');
-        if(!revealSection) return;
-        if(prefersReduced){
+        if (!revealSection) return;
+        if (prefersReduced) {
             revealSection.classList.add('is-revealed');
-            document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-in'));
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
             return;
         }
         // Section fade
-        const sIO = new IntersectionObserver((entries)=>{
-            entries.forEach(e=>{
-                if(e.isIntersecting){ e.target.classList.add('is-revealed'); sIO.unobserve(e.target); }
+        const sIO = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('is-revealed');
+                    sIO.unobserve(e.target);
+                }
             });
         }, {threshold: .15, rootMargin: '0px 0px -10% 0px'});
         sIO.observe(revealSection);
 
         // Card lift
-        const cIO = new IntersectionObserver((entries)=>{
-            entries.forEach(e=>{
-                if(e.isIntersecting){ e.target.classList.add('is-in'); cIO.unobserve(e.target); }
+        const cIO = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('is-in');
+                    cIO.unobserve(e.target);
+                }
             });
         }, {threshold: .2});
-        document.querySelectorAll('.reveal').forEach(el=>cIO.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => cIO.observe(el));
     })();
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Reveal on scroll for cards
+        (function() {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // For section fade (index.html only)
+        const revealSection = document.getElementById('work');
+        if (revealSection) {
+        if (prefersReduced) {
+        revealSection.classList.add('is-revealed');
+    } else {
+        const sIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+        if (e.isIntersecting) {
+        e.target.classList.add('is-revealed');
+        sIO.unobserve(e.target);
+    }
+    });
+    }, {threshold: 0.15, rootMargin: '0px 0px -10% 0px'});
+        sIO.observe(revealSection);
+    }
+    }
+
+        // For card lift
+        if (prefersReduced) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
+    } else {
+        const cIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+        if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        cIO.unobserve(e.target);
+    }
+    });
+    }, {threshold: 0.2});
+        document.querySelectorAll('.reveal').forEach(el => cIO.observe(el));
+    }
+    })();
 </script>
 </body>
 </html>

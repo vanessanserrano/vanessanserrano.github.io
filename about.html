@@ -6,12 +6,137 @@
     <title>About — Vanessa Serrano</title>
     <meta name="description" content="I design and build calm, accessible interfaces. CS + DAS @ UF. Currently @CinemaVerde | Previously @Publix Technology." />
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* About page specific overrides */
+        .kv-2 .figure {
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .spotify {
+            width: 100%;
+            height: 352px;
+            border-radius: 12px;
+            border: 0;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            max-height: 200px;
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .now-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .now-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-align: center;
+        }
+
+        .now-sub {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: -8px;
+        }
+
+        .rec {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 500px;
+            background: var(--surface);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+        }
+
+        .rec::backdrop {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+        }
+
+        .rec form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .rec label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .rec input,
+        .rec select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--white);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .rec .row {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .kv-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .kv-2 .figure {
+                order: -1;
+                max-width: 300px;
+            }
+
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
 <header class="nav">
     <div class="nav__inner">
         <a class="logo" href="index.html">VS</a>
-        <nav class="nav__links">
+        <nav id="site-nav" class="nav__links">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -25,9 +150,9 @@
     <!-- Intro -->
     <section class="container kv-2">
         <div>
-            <h2>Hi, I’m Vanessa.</h2>
+            <h2>Hi, I'm Vanessa.</h2>
             <p class="muted">
-                I’m a CS + Digital Arts student focused on human-centered interfaces. I pair UX research with front-end engineering to ship clean, accessible products.
+                I'm a CS + Digital Arts student focused on human-centered interfaces. I pair UX research with front-end engineering to ship clean, accessible products.
                 Recent work spans a GS1 barcode tool at Publix, a first-responder app prototype, and a campus events experience for UF.
                 I value clarity, empathy, and calm design.
             </p>
@@ -40,8 +165,8 @@
             </div>
         </div>
 
-        <!-- Portrait / about image -->
-        <figure class="figure" style="aspect-ratio:3/4;">
+        <!-- Portrait -->
+        <figure class="figure" style="aspect-ratio:3/4; max-width:400px;">
             <img src="assets/images/vs_headshot.jpg" alt="Vanessa Serrano" style="width:100%;height:100%;object-fit:cover;" />
         </figure>
     </section>
@@ -76,29 +201,6 @@
         </div>
     </section>
 
-<!--    &lt;!&ndash; Photo Gallery &ndash;&gt;-->
-<!--    <section class="section container">-->
-<!--        <h2>Photo Gallery</h2>-->
-<!--        <p class="lead">A few snapshots beyond the desk.</p>-->
-
-<!--        &lt;!&ndash; Use your own images; add data-cap for captions &ndash;&gt;-->
-<!--        <div class="gallery" id="gallery">-->
-<!--            <img class="figure" src="assets/gallery/01.jpg" alt="Workshop snapshot" data-cap="Workshop snapshot" />-->
-<!--            <img class="figure" src="assets/gallery/02.jpg" alt="Sketching flows" data-cap="Sketching flows" />-->
-<!--            <img class="figure" src="assets/gallery/03.jpg" alt="Nature break" data-cap="Nature break" />-->
-<!--            <img class="figure" src="assets/gallery/04.jpg" alt="Hackathon team" data-cap="Hackathon team" />-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash; Lightbox dialog &ndash;&gt;-->
-<!--        <dialog id="lightbox" class="rec" aria-label="Image viewer">-->
-<!--            <img id="lbImg" alt="" style="width:100%;height:auto;border-radius:12px;" />-->
-<!--            <p id="lbCap" class="muted" style="margin:6px 0 0"></p>-->
-<!--            <div class="row">-->
-<!--                <button id="lbClose" class="btn">Close</button>-->
-<!--            </div>-->
-<!--        </dialog>-->
-<!--    </section>-->
-
     <!-- Currently… -->
     <section class="now container">
         <h2>Currently…</h2>
@@ -123,9 +225,14 @@
                 <p class="now-sub">Playlist of the month</p>
                 <iframe
                         class="spotify"
+                        style="border-radius:12px"
                         src="https://open.spotify.com/embed/playlist/3fnYbqVZ45oj1muHAdakM1?utm_source=generator"
-                        loading="lazy"
+                        width="100%"
+                        height="352"
+                        frameBorder="0"
+                        allowfullscreen=""
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"
                         title="Spotify playlist embed">
                 </iframe>
             </article>
@@ -177,9 +284,9 @@
         </div>
 
         <!-- Recommend button -->
-        <div class="center" style="margin-top:18px">
-            <button id="recBtn" class="btn btn--primary">Recommend media</button>
-        </div>
+<!--        <div class="center" style="margin-top:18px">-->
+<!--            <button id="recBtn" class="btn btn&#45;&#45;primary">Recommend media</button>-->
+<!--        </div>-->
     </section>
 
     <!-- Modal: Recommend -->
@@ -205,7 +312,7 @@
 
             <div>
                 <label for="link">Link (optional)</label>
-                <input id="link" name="link" placeholder="URL to Spotify, Goodreads, IMDb…" />
+                <input id="link" name="link" type="url" placeholder="URL to Spotify, Goodreads, IMDb…" />
             </div>
 
             <div class="row">
@@ -214,7 +321,7 @@
             </div>
 
             <p class="muted" style="font-size:.8rem;margin:6px 0 0">
-                No modal support? <a href="mailto:vanessa@email.com?subject=Media%20recommendation">Email me</a>.
+                No modal support? <a href="mailto:vanessannserrano@gmail.com?subject=Media%20recommendation">Email me</a>.
             </p>
         </form>
     </dialog>
@@ -225,8 +332,8 @@
     <div class="cols">
         <div>
             <h3>Contact</h3>
-            <a href="mailto:vanessa@email.com">Email</a>
-            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:vanessannserrano@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
         <div>
             <h3>Work</h3>
@@ -245,8 +352,19 @@
 
 <script>
     // mobile menu
-    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
-    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+    const t=document.querySelector('.nav__toggle'),l=document.getElementById('site-nav');
+    if(t&&l) {
+        t.addEventListener('click',()=>{
+            const open=l.classList.toggle('is-open');
+            t.setAttribute('aria-expanded',String(open));
+        });
+        document.addEventListener('click',(e)=>{
+            if(!e.target.closest('.nav')){
+                l.classList.remove('is-open');
+                t.setAttribute('aria-expanded','false');
+            }
+        },{passive:true});
+    }
 
     // active nav state
     (function(){
@@ -259,8 +377,18 @@
 
     // reveal cards
     (function(){
-        const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('is-in')}),{threshold:.12});
-        document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+        const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if(prefersReduced){
+            document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-in'));
+        }else{
+            const io=new IntersectionObserver(es=>es.forEach(e=>{
+                if(e.isIntersecting){
+                    e.target.classList.add('is-in');
+                    io.unobserve(e.target);
+                }
+            }),{threshold:.12});
+            document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+        }
     })();
 
     // Recommend dialog
@@ -269,41 +397,23 @@
         const recDlg = document.getElementById('recDialog');
         const recCancel = document.getElementById('recCancel');
         const recForm = document.getElementById('recForm');
+
         if (!recBtn || !recDlg) return;
+
         recBtn.addEventListener('click', () => recDlg.showModal());
         recCancel.addEventListener('click', () => recDlg.close());
+
         recForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const type = recForm.type.value.trim();
             const title = recForm.title.value.trim();
             const link = recForm.link.value.trim();
             const body = `Media recommendation\nType: ${type}\nTitle: ${title}\nLink: ${link || '(none)'}\n\nSent from vanessa-portfolio`;
-            const mailto = `mailto:vanessa@email.com?subject=${encodeURIComponent('Media recommendation')}&body=${encodeURIComponent(body)}`;
+            const mailto = `mailto:vanessannserrano@gmail.com?subject=${encodeURIComponent('Media recommendation')}&body=${encodeURIComponent(body)}`;
             window.open(mailto, '_blank');
             recDlg.close();
             recForm.reset();
         });
-    })();
-
-    // Lightbox for gallery
-    (function(){
-        const g = document.getElementById('gallery');
-        const dlg = document.getElementById('lightbox');
-        if(!g || !dlg) return;
-        const img = document.getElementById('lbImg');
-        const cap = document.getElementById('lbCap');
-        const closeBtn = document.getElementById('lbClose');
-
-        g.addEventListener('click', (e)=>{
-            const el = e.target.closest('img');
-            if(!el) return;
-            img.src = el.src;
-            img.alt = el.alt || '';
-            cap.textContent = el.dataset.cap || '';
-            dlg.showModal();
-        });
-        closeBtn.addEventListener('click', ()=> dlg.close());
-        dlg.addEventListener('click', (e)=>{ if(e.target === dlg) dlg.close(); });
     })();
 </script>
 </body>

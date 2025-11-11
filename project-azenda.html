@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="nav"><div class="nav__inner">
-    <a class="logo" href="index.html">VS</a>
-    <nav class="nav__links"><a href="about.html">About</a><a href="projects.html">Projects</a><a href="resume.pdf">Resume</a></nav>
-    <button class="nav__toggle" aria-label="Menu">Menu</button>
-</div></header>
+<header class="nav" role="banner">
+    <div class="nav__inner">
+        <a class="logo" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links" aria-label="Primary">
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+
+        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+            Menu
+        </button>
+    </div>
+</header>
 
 <main class="article">
     <div class="container project-hero">
@@ -106,20 +116,18 @@
     </div>
 </main>
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
     <div class="cols">
         <div>
             <h3>Contact</h3>
-            <a href="mailto:vanessa@email.com">Email</a>
-            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:vanessannserrano@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-
         <div>
             <h3>Work</h3>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">Github</a>
+            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-
         <div>
             <h3>Navigation</h3>
             <a href="index.html">Home</a>
@@ -127,17 +135,40 @@
             <a href="about.html">About</a>
         </div>
     </div>
-
-    <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
+    <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
-    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
-    const secs=[...document.querySelectorAll('.proj-section')], links=[...document.querySelectorAll('.toc a')];
-    const byId=id=>links.find(a=>a.getAttribute('href')==='#'+id);
-    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ links.forEach(a=>a.removeAttribute('aria-current')); const a=byId(e.target.id); if(a) a.setAttribute('aria-current','true'); } }),{rootMargin:'-30% 0px -60% 0px'});
-    secs.forEach(s=>io.observe(s));
+    // Mobile menu toggle
+    (function() {
+        const toggle = document.querySelector('.nav__toggle');
+        const nav = document.getElementById('site-nav');
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(open));
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav')) {
+                nav.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        }, { passive: true });
+    })();
+
+    // Mark current page in navigation
+    (function() {
+        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        document.querySelectorAll('.nav__links a').forEach(a => {
+            const href = (a.getAttribute('href') || '').toLowerCase();
+            if (href.endsWith(path)) {
+                a.setAttribute('aria-current', 'page');
+            }
+        });
+    })();
 </script>
 </body>
 </html>
