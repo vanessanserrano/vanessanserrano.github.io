@@ -4,19 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projects — Vanessa Serrano</title>
-    <meta name="description" content="Selected work across research, design, and front-end: ARC, Vendor Label Validation, PrepTalk, OptiPath, SwampPath, UF Events, RecipeGrind." />
+    <meta name="description" content="Selected work across research, design, and front-end: ARC, Vendor Label Validation, PrepTalk, SwampPath, UF Events, RecipeGrind." />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="nav">
+<header class="nav" role="banner">
     <div class="nav__inner">
-        <a class="logo" href="index.html">VS</a>
-        <nav class="nav__links">
+        <a class="logo" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf">Resume</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
         </nav>
-        <button class="nav__toggle" aria-label="Menu">Menu</button>
+
+        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+            Menu
+        </button>
     </div>
 </header>
 
@@ -26,6 +30,16 @@
         <p class="lead">A mix of internship work, hackathons, courses, and personal projects showing process and outcomes.</p>
 
         <div class="grid">
+            <!-- PrepTalk -->
+            <a class="card reveal" href="project-preptalk.html">
+                <img class="thumb" src="assets/images/prep-talk.jpg" alt="PrepTalk AI Interviewer demo screens" />
+                <div class="card__body">
+                    <div class="card__eyebrow">Hackathon • Finalist & 1st (Education)</div>
+                    <div class="card__title">PrepTalk — AI Interviewer</div>
+                    <div class="card__meta">React + TS • FastAPI • OpenAI • Résumé parser</div>
+                </div>
+            </a>
+
             <!-- ARC -->
             <a class="card reveal" href="project-arc.html">
                 <img class="thumb" src="assets/images/arc-cover.jpg" alt="ARC app mockups" />
@@ -40,31 +54,11 @@
             <a class="card reveal" href="project-vlv.html">
                 <img class="thumb" src="assets/images/vlv-cover.jpg" alt="Scanner UI for GS1 barcode" />
                 <div class="card__body">
-                    <div class="card__eyebrow">Internship • Dev</div>
-                    <div class="card__title">Vendor Label Validation</div>
+                    <div class="card__eyebrow">Publix Internship • Dev</div>
+                    <div class="card__title">Vendor Label Validation - Seafood Data Matrix Validator </div>
                     <div class="card__meta">Xamarin.Forms • GS1 • RadDataForm • 15m → 15s</div>
                 </div>
             </a>
-
-            <!-- PrepTalk -->
-            <a class="card reveal" href="project-preptalk.html">
-                <img class="thumb" src="assets/images/prep-talk.jpg" alt="PrepTalk AI Interviewer demo screens" />
-                <div class="card__body">
-                    <div class="card__eyebrow">Hackathon • Finalist & 1st (Education)</div>
-                    <div class="card__title">PrepTalk — AI Interviewer</div>
-                    <div class="card__meta">React + TS • FastAPI • OpenAI • Résumé parser</div>
-                </div>
-            </a>
-
-<!--            &lt;!&ndash; OptiPath &ndash;&gt;-->
-<!--            <a class="card reveal" href="project-optipath.html">-->
-<!--                <img class="thumb" src="assets/images/optipath-cover.jpg" alt="OptiPath route optimization UI" />-->
-<!--                <div class="card__body">-->
-<!--                    <div class="card__eyebrow">Personal • Case Study</div>-->
-<!--                    <div class="card__title">OptiPath — Route Optimization</div>-->
-<!--                    <div class="card__meta">Vue 3 + TS • Fuel-aware • Traffic & constraints</div>-->
-<!--                </div>-->
-<!--            </a>-->
 
             <!-- SwampPath -->
             <a class="card reveal" href="project-swamppath.html">
@@ -73,6 +67,15 @@
                     <div class="card__eyebrow">UF • Team Project</div>
                     <div class="card__title">SwampPath — Schedule Builder</div>
                     <div class="card__meta">Unified calendar + classes • Prereq awareness</div>
+                </div>
+            </a>
+
+            <a class="card reveal" href="project-eclipse.html">
+                <img class="thumb" src="assets/images/eclipse.jpg" alt="Eclipse gaming device marketing site" />
+                <div class="card__body">
+                    <div class="card__eyebrow">Digital Portfolio • Team Project</div>
+                    <div class="card__title">Eclipse Nova— Gaming Device Site</div>
+                    <div class="card__meta">Figma • Brand Identity • Marketing Design</div>
                 </div>
             </a>
 
@@ -103,16 +106,14 @@
     <div class="cols">
         <div>
             <h3>Contact</h3>
-            <a href="mailto:vanessa@email.com">Email</a>
-            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:vanessannserrano@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-
         <div>
             <h3>Work</h3>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">Github</a>
+            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-
         <div>
             <h3>Navigation</h3>
             <a href="index.html">Home</a>
@@ -120,25 +121,49 @@
             <a href="about.html">About</a>
         </div>
     </div>
-
     <p class="copyright">© 2025 Vanessa Serrano. All rights reserved.</p>
 </footer>
 
 <script>
-    const t=document.querySelector('.nav__toggle'),l=document.querySelector('.nav__links');
-    if(t&&l) t.addEventListener('click',()=>l.classList.toggle('is-open'));
+    // Mobile menu toggle
+    const t=document.querySelector('.nav__toggle'),l=document.getElementById('site-nav');
+    if(t&&l) {
+        t.addEventListener('click',()=>{
+            const open=l.classList.toggle('is-open');
+            t.setAttribute('aria-expanded',String(open));
+        });
+        document.addEventListener('click',(e)=>{
+            if(!e.target.closest('.nav')){
+                l.classList.remove('is-open');
+                t.setAttribute('aria-expanded','false');
+            }
+        },{passive:true});
+    }
+
+    // Mark current page
     (function(){
-        const p=location.pathname.split('/').pop()||'index.html';
+        const p=(location.pathname.split('/').pop()||'index.html').toLowerCase();
         document.querySelectorAll('.nav__links a').forEach(a=>{
-            const h=a.getAttribute('href');
-            if((p===''&&h==='index.html')||h===p) a.setAttribute('aria-current','page');
+            const h=(a.getAttribute('href')||'').toLowerCase();
+            if(h.endsWith(p)) a.setAttribute('aria-current','page');
         });
     })();
+
+    // Reveal on scroll
     (function(){
-        const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('is-in')}),{threshold:.12});
-        document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+        const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if(prefersReduced){
+            document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-in'));
+        }else{
+            const io=new IntersectionObserver(es=>es.forEach(e=>{
+                if(e.isIntersecting){
+                    e.target.classList.add('is-in');
+                    io.unobserve(e.target);
+                }
+            }),{threshold:.2});
+            document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+        }
     })();
 </script>
 </body>
 </html>
-
