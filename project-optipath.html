@@ -1,315 +1,534 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OptiPath — Route Optimization App</title>
-    <meta name="description" content="Multi-stop route planner with traffic, fuel, and precedence constraints. Research → prototype with export to Google/Apple Maps." />
+    <title>OptiPath — Vanessa Serrano</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+    />
 </head>
 <body>
-<!-- Nav -->
-<header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav" role="banner">
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a
+                    href="assets/resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="nav__resume"
+                    aria-label="Download resume"
+            >
+                Resume
+            </a>
         </nav>
 
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <button
+                class="nav__toggle"
+                aria-label="Toggle menu"
+                aria-controls="site-nav"
+                aria-expanded="false"
+        >
             Menu
         </button>
     </div>
 </header>
 
-<!-- Hero -->
-<header class="hero">
-    <div class="hero-content">
-        <h1>OptiPath — Route Optimization App</h1>
-        <p class="hero-sub">
-            Plan multi-stop journeys smarter: traffic-aware ETAs, precedence constraints, and fuel-aware inserts —
-            then export to Google or Apple Maps in one tap.
-        </p>
+<main>
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero__layout">
+                <div>
+                    <p class="project-hero__eyebrow">Senior Project · 3-Person Team</p>
+                    <h1>OptiPath</h1>
+                    <p class="project-hero__lede">
+                        A full-stack web application that helps users plan efficient multi-stop routes
+                        using real-time traffic, user constraints, and AI-assisted itinerary generation.
+                    </p>
 
-        <div class="meta-grid">
-            <div class="meta-card">
-                <label>Scope</label><div class="val">Personal project · Research → MVP</div>
+                    <a
+                            class="project-site-link"
+                            href="https://optipathproj.netlify.app/"
+                            target="_blank"
+                            rel="noopener"
+                    >
+                        View Live Site
+                    </a>
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item"><b>Role</b> UX Design, Front-End Development, Team Integration</div>
+                    <div class="meta-item"><b>Team</b> 3-person team</div>
+                    <div class="meta-item"><b>Focus</b> Route optimization, interaction design, constraints, real-world planning</div>
+                </div>
             </div>
-            <div class="meta-card">
-                <label>Role</label><div class="val">Full-stack SWE · Product Design · UX</div>
+
+            <div class="project-highlight-grid" style="margin-top: 2rem;">
+                <div class="project-highlight">
+                    <h3>Full-Stack Product</h3>
+                    <p>Built a route planning experience with real-time routing, mapping, and API integrations.</p>
+                </div>
+                <div class="project-highlight">
+                    <h3>AI-Assisted Planning</h3>
+                    <p>Integrated AI itinerary parsing to turn natural language into structured route input.</p>
+                </div>
+                <div class="project-highlight">
+                    <h3>Constraint-Based UX</h3>
+                    <p>Designed flows for start/end points, lock logic, fuel planning, and multi-stop control.</p>
+                </div>
             </div>
-            <div class="meta-card">
-                <label>Stack</label><div class="val">Vue 3 + TS · Google Maps APIs · Tailwind (site)</div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <section class="project-section">
+            <div class="project-wrap">
+                <div class="project-shell">
+                    <div class="project-main">
+                        <p class="project-kicker">Overview</p>
+                        <h2>What the project does</h2>
+                        <p>
+                            OptiPath is a route optimization and trip-planning tool designed for users
+                            who need to organize multiple destinations into the most efficient path.
+                            Rather than only solving for the mathematically shortest order of stops,
+                            the product was built around how people actually plan trips in real life.
+                        </p>
+                        <p>
+                            Users often have practical constraints: they may need to start from a fixed location,
+                            end at a specific destination, stop somewhere before another place, or plan around
+                            timing and fuel needs. OptiPath brings those real-world decisions into the route-planning experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <section class="project-section">
+            <div class="project-wrap">
+                <div class="project-shell">
+                    <div class="project-main">
+                        <p class="project-kicker">Problem</p>
+                        <h2>Why existing tools were not enough</h2>
+                        <p>
+                            Traditional navigation products like Google Maps are strong at generating directions,
+                            but they are much less flexible for complex, real-world route planning scenarios.
+                            When multiple stops, ordering dependencies, and personalized route preferences are involved,
+                            the planning experience becomes repetitive and frustrating.
+                        </p>
+
+                        <ul class="project-bullets">
+                            <li>Users manually reorder stops repeatedly</li>
+                            <li>Cannot enforce dependencies such as “go here before there”</li>
+                            <li>Struggle to estimate fuel needs or timing</li>
+                            <li>Cannot easily convert natural language into structured route input</li>
+                        </ul>
+
+                        <div class="project-callout">
+                            <p>
+                                The gap was not optimization alone — it was giving users a way to keep a route efficient
+                                while still respecting start points, end points, must-happen-before constraints,
+                                and real-world travel decisions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <section class="project-section">
+            <div class="project-wrap">
+                <div class="project-shell">
+                    <div class="project-main">
+                        <p class="project-kicker">Solution</p>
+                        <h2>Designing a smarter planning experience</h2>
+                        <p>
+                            OptiPath transforms route planning from a static list of destinations into an interactive
+                            decision-making tool. The app combines algorithmic route optimization with user control,
+                            giving people the ability to shape the trip instead of accepting a route blindly.
+                        </p>
+
+                        <ul class="project-bullets">
+                            <li>Optimizes multi-stop routes</li>
+                            <li>Allows users to define start and end points</li>
+                            <li>Supports ordering constraints between stops</li>
+                            <li>Uses real-time traffic and distance data</li>
+                            <li>Parses natural language into structured itinerary input</li>
+                            <li>Optionally inserts fuel stops based on vehicle data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">User Story</p>
+                <h2>Designing from a real user scenario</h2>
+
+                <p>
+                    One of the most important product insights came from thinking through a real use case,
+                    not just the algorithm.
+                </p>
+
+                <div class="project-callout">
+                    <p>
+                        A college student on a Friday night needs to stop at Target for a gift, Publix for a cake,
+                        get gas, pick up a friend, and then go to a birthday party. A purely time-based optimizer
+                        might reorder those stops in a way that is technically fast but practically useless.
+                    </p>
+                </div>
+
+                <p>
+                    That insight pushed the product beyond “best route calculation” and into a more user-centered
+                    planning tool. Instead of assuming the algorithm always knows best, the interface needed
+                    to support intent, dependencies, and fixed endpoints.
+                </p>
+
+                <ul class="project-bullets">
+                    <li>Enter multiple destinations</li>
+                    <li>Set a starting point and ending point</li>
+                    <li>Specify constraints such as “Stop A before Stop B”</li>
+                    <li>Quickly generate the most efficient usable route</li>
+                    <li>Understand total time, distance, and fuel needs</li>
+                </ul>
             </div>
         </div>
+    </section>
 
-        <div class="chip-row" aria-label="Key badges">
-            <span class="chip">Fuel-aware routing</span>
-            <span class="chip">Traffic-dependent ETAs</span>
-            <span class="chip">Precedence constraints</span>
-            <span class="chip">Maps export</span>
-        </div>
-    </div>
-</header>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">My Role</p>
+                <h2>What I contributed</h2>
 
-<!-- Demo -->
-<section class="content-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Demo</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="video-wrapper">
-            <!-- Replace with your video -->
-            <div class="shot">Add Loom / MP4 demo here</div>
-        </div>
-        <div class="chip-group">
-            <a class="a-chip" href="https://github.com/NafizChaw/OptiPath" target="_blank" rel="noopener">GitHub Repository →</a>
-            <a class="a-chip a-chip--ghost" href="#" target="_blank" rel="noopener">Figma File →</a>
-        </div>
-    </div>
-</section>
+                <p>
+                    On this 3-person team, I worked across both product thinking and implementation.
+                    My work focused on UX design, front-end development, and helping connect the interface
+                    with route logic so the final experience reflected real user needs.
+                </p>
 
-<!-- Challenge -->
-<section class="content-section" style="background:#fff;">
-    <div class="container">
-        <div class="section-header">
-            <h2>The Challenge</h2>
-            <div class="underline"></div>
+                <div class="project-highlight-grid">
+                    <div class="project-highlight">
+                        <h3>UX Design</h3>
+                        <p>Restructured the interface around the map and clarified the route-building workflow.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Front-End Development</h3>
+                        <p>Implemented interaction logic for start/end points, constraints, UI states, and route controls.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Feature Design</h3>
+                        <p>Helped define and shape lock-order logic, route control patterns, and fuel-related interaction design.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Team Integration</h3>
+                        <p>Worked across front-end and back-end decisions to align the user flow with optimization behavior.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="two-col">
-            <div class="card">
-                <h3>Problem</h3>
-                <p style="color:var(--text-light);margin-top:.5rem">
-                    Standard map apps don’t optimize complex multi-stop errands with constraints like
-                    “A before B”, “arrive by 6pm”, or “insert fuel when below 15%”.
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Design & UX Decisions</p>
+                <h2>How the experience evolved</h2>
+
+                <p>
+                    A major part of the project was improving usability. Early versions of the interface
+                    surfaced too much information at once and did not make the route itself feel central enough.
+                    I approached the redesign by reducing friction, increasing clarity, and giving users more direct control.
+                </p>
+
+                <div class="project-highlight-grid">
+                    <div class="project-highlight">
+                        <h3>Step-Based Flow</h3>
+                        <p>Moved from a more open-ended input experience toward a clearer select → confirm → optimize flow.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Sidebar Layout</h3>
+                        <p>Organized controls in a collapsible sidebar so the map remained visible and visually central.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Start / End Controls</h3>
+                        <p>Added explicit START and END badges and controls to clarify route direction and structure.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Drag & Drop Stops</h3>
+                        <p>Implemented draggable stop ordering to improve user control and support manual adjustment.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Lock / Constraint System</h3>
+                        <p>Introduced a lock-order feature so users could define dependencies and prevent invalid optimization outputs.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>AI Assistant</h3>
+                        <p>Added natural language itinerary parsing to reduce friction and make route setup more accessible.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Fuel Tracking</h3>
+                        <p>Included optional fuel planning to estimate range and automatically insert gas stops when needed.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Visual Feedback</h3>
+                        <p>Added travel times, distance summaries, badges, and loading states to make optimization results easier to understand.</p>
+                    </div>
+                </div>
+
+                <div class="case-gallery">
+                    <div class="case-gallery__group">
+                        <p class="case-gallery__label">Before</p>
+                        <div class="case-gallery__before">
+                            <figure>
+                                <img src="assets/images/old_optipath_1.png" alt="Earlier OptiPath interface concept">
+                                <figcaption>Early concept</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/images/old_optipath_2.png" alt="Earlier OptiPath interface concept">
+                                <figcaption>Early concept</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/images/old_optipath_3.png" alt="Earlier OptiPath interface concept">
+                                <figcaption>Early concept</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/images/old_optipath_4.png" alt="Earlier OptiPath interface concept">
+                                <figcaption>Early concept</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="case-gallery__group">
+                        <p class="case-gallery__label">After</p>
+                        <div class="case-gallery__after">
+                            <figure>
+                                <img src="assets/images/optipath_after.png" alt="Updated OptiPath interface with clearer route controls">
+                                <figcaption>Updated with a popup welcome to keep less navigations and pages.</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/images/optipath.png" alt="Updated OptiPath interface with stronger map focus">
+                                <figcaption>Updated design with stronger map focus and route visibility</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Technical Implementation</p>
+                <h2>How it was built</h2>
+
+                <div class="project-highlight-grid">
+                    <div class="project-highlight">
+                        <h3>Frontend</h3>
+                        <p>Vue 3, TypeScript, Vite, component-based architecture, interactive state-driven UI.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Backend</h3>
+                        <p>Node.js, Express, and Gemini API integration for itinerary parsing and AI-assisted input.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>APIs</h3>
+                        <p>Google Maps JavaScript API, Places API, Distance Matrix API, and directions-based routing services.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Implemented Features</h3>
+                        <p>Constraint logic, AI parsing, fuel estimation, route summaries, travel timing, and map-based visualization.</p>
+                    </div>
+                </div>
+
+                <p>
+                    On the technical side, I contributed to front-end interaction logic and feature implementation,
+                    including parts of the fueling feature and the UI required to support constrained route planning.
+                    This meant thinking through both interface behavior and the logic needed to keep route state,
+                    map state, and optimization outputs aligned.
+                </p>
+
+                <ul class="project-bullets">
+                    <li>How users define and reorder stops</li>
+                    <li>How start and end locations are fixed</li>
+                    <li>How must-come-before relationships are represented in the UI</li>
+                    <li>How those rules are passed into route optimization logic</li>
+                    <li>How optimization results are visualized clearly on the map and in the stop list</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Challenges</p>
+                <h2>What made the project difficult</h2>
+
+                <div class="project-highlight-grid">
+                    <div class="project-highlight">
+                        <h3>Route Optimization Complexity</h3>
+                        <p>Balancing startIndex, end constraints, and real-world travel time within an optimization flow.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Syncing UI + Algorithm</h3>
+                        <p>Keeping the visible order of stops, optimized results, and route state consistent after user edits.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>API Integration</h3>
+                        <p>Handling Google Maps limits, API key restrictions, and production differences between localhost and deployment.</p>
+                    </div>
+
+                    <div class="project-highlight">
+                        <h3>Deployment</h3>
+                        <p>Separating frontend and backend hosting, environment variables, and cross-origin configuration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Results</p>
+                <h2>Outcome & impact</h2>
+
+                <p>
+                    The final product supports more realistic route planning scenarios than a simple stop optimizer.
+                    By combining route efficiency with user-defined structure, OptiPath became a stronger and more practical planning tool.
+                </p>
+
+                <ul class="project-bullets">
+                    <li>Supports complex multi-stop route planning scenarios</li>
+                    <li>Reduces manual route adjustments</li>
+                    <li>Improves usability through clearer interaction patterns</li>
+                    <li>Adds accessibility through AI-assisted route input</li>
+                    <li>Works across desktop and mobile layouts</li>
+                </ul>
+
+                <p>
+                    This project strengthened my ability to work between UX and engineering:
+                    identifying product gaps, designing clearer flows, implementing interaction logic,
+                    and integrating external systems into a user-centered product.
                 </p>
             </div>
-            <div class="card">
-                <h3>Solution</h3>
-                <p style="color:var(--text-light);margin-top:.5rem">
-                    OptiPath composes constraint-aware ordering with traffic-dependent ETAs and
-                    fuel-range modeling, outputting clean links for native navigation apps.
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Future Improvements</p>
+                <h2>What I would build next</h2>
+
+                <ul class="project-bullets">
+                    <li>Improve mobile interaction patterns even further</li>
+                    <li>Add save and share route functionality</li>
+                    <li>Replace deprecated Google Maps services with newer APIs</li>
+                    <li>Explore stronger optimization models for more advanced routing scenarios</li>
+                    <li>Add user accounts and saved planning preferences</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Takeaways</p>
+                <h2>What this project taught me</h2>
+
+                <p>
+                    OptiPath reinforced how product design and engineering are strongest when they inform each other.
+                    The best solution was not simply a faster algorithm — it was a better user experience built around
+                    real-world constraints.
                 </p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Research -->
-<section class="content-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Research Insights</h2>
-            <div class="underline"></div>
-        </div>
-        <ul class="checklist">
-            <li>Most users plan errands around fixed appointments and preferred sequences.</li>
-            <li>Traffic sensitivity matters more than shortest geometric distance.</li>
-            <li>Fuel anxiety is real — automatic refuel inserts reduce cognitive load.</li>
-        </ul>
-    </div>
-</section>
-
-<!-- Design -->
-<section class="content-section" style="background:#fff;">
-    <div class="container">
-        <div class="section-header">
-            <h2>Design Process</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="two-col">
-            <div class="card">
-                <h3>Key Flows</h3>
-                <ul class="checklist" style="margin-top:.5rem">
-                    <li>Enter/paste stops → Set leave/arrive → Optimize → Export</li>
-                    <li>Enable fuel model → Add tank/MPG → Auto-insert refuel</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>UI Priorities</h3>
-                <ul class="checklist" style="margin-top:.5rem">
-                    <li>Map + stops list + route panel in one screen</li>
-                    <li>Single primary CTA per step with clear status</li>
-                    <li>High contrast green/white with accessible states</li>
+                <ul class="project-bullets">
+                    <li>Designing user-centered interfaces for complex workflows</li>
+                    <li>Building full-stack applications across front-end and back-end layers</li>
+                    <li>Integrating external APIs into a cohesive product experience</li>
+                    <li>Debugging real deployment issues beyond local development</li>
+                    <li>Balancing technical logic with usability and clarity</li>
                 </ul>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
-<!-- Development / Tech -->
-<section class="content-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Development</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="two-col">
-            <div class="card">
-                <h3>Architecture</h3>
-                <pre style="white-space:pre-wrap;background:#f8fafc;padding:12px;border-radius:8px;border:1px solid var(--border);margin-top:.5rem;font-size:.9rem">
-app/
-  pages: Main, Settings, Fuel, Results
-  components: MapComponent, StopsList, FuelSettings, ExportLinks
-  services: distanceMatrix.ts, optimize.ts, fuelTracker.ts
-  state: stops[], constraints, vehicle, profile
-</pre>
-            </div>
-            <div class="card">
-                <h3>Highlights</h3>
-                <ul class="checklist" style="margin-top:.5rem">
-                    <li>Constraint-aware TSP heuristic with precedence mapping</li>
-                    <li>Traffic via Google Distance Matrix (departureTime)</li>
-                    <li>Fuel splice based on capacity/MPG/thresholds</li>
-                    <li>Export builders for Google/Apple Maps URLs</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Key Features -->
-<section class="content-section" style="background:#fff;">
-    <div class="container">
-        <div class="section-header">
-            <h2>Key Features</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="two-col">
-            <div class="card">
-                <h3>Constraint-aware Optimization</h3>
-                <p style="color:var(--text-light);margin-top:.5rem">Respects A→B precedence and fixed endpoints in ordering.</p>
-            </div>
-            <div class="card">
-                <h3>Fuel-aware Routing</h3>
-                <p style="color:var(--text-light);margin-top:.5rem">Models range and inserts refuel with Places/Text Search.</p>
-            </div>
-        </div>
-        <div class="two-col" style="margin-top:1rem">
-            <div class="card">
-                <h3>Time Targets</h3>
-                <p style="color:var(--text-light);margin-top:.5rem">Leave/arrive times with traffic-aware ETAs; back-solve departures.</p>
-            </div>
-            <div class="card">
-                <h3>One-tap Export</h3>
-                <p style="color:var(--text-light);margin-top:.5rem">Open optimized itineraries in Google or Apple Maps.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Results -->
-<section class="content-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Results & Impact</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="results-grid">
-            <div class="result">
-                <div class="icon">⚡</div>
-                <h4>−18% Time</h4>
-                <p>Pilot errands finished faster vs. manual ordering.</p>
-            </div>
-            <div class="result">
-                <div class="icon">⛽</div>
-                <h4>−12% Fuel</h4>
-                <p>Range-aware inserts avoided backtracking detours.</p>
-            </div>
-            <div class="result">
-                <div class="icon">🧭</div>
-                <h4>+2.1× Throughput</h4>
-                <p>More stops comfortably handled per trip.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Next -->
-<section class="content-section" style="background:#fff;">
-    <div class="container">
-        <div class="section-header">
-            <h2>Next Steps</h2>
-            <div class="underline"></div>
-        </div>
-        <ul class="checklist">
-            <li>Live traffic refresh + incident avoidance</li>
-            <li>Account sync and multi-device persistence</li>
-            <li>Hard windows (e.g., store hours) and service times</li>
-        </ul>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-    <div class="container">
-        <h2>Try OptiPath</h2>
-        <p style="opacity:.9;max-width:740px;margin:6px auto 14px">
-            Explore the prototype and skim the repo to see constraint-aware ordering, fuel inserts, and export builders.
-        </p>
-        <a class="btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
-        <a class="btn btn--ghost" href="projects.html">← Back to Projects</a>
-    </div>
-</section>
-
-<!-- Footer -->
 <footer class="footer" role="contentinfo">
     <div class="cols">
+        <div class="footer-brand">
+            <div class="footer-brand__name">Vanessa Serrano</div>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+        </div>
+
         <div>
             <h3>Contact</h3>
             <a href="mailto:vanessannserrano@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
         <div>
             <h3>Work</h3>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
-        </div>
-        <div>
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
         </div>
     </div>
+
     <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-    // Mobile menu toggle
-    (function() {
-        const toggle = document.querySelector('.nav__toggle');
-        const nav = document.getElementById('site-nav');
-        if (!toggle || !nav) return;
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', String(open));
+    const toggle = document.querySelector(".nav__toggle");
+    const nav = document.getElementById("site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            nav.classList.toggle("is-open");
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav')) {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        }, { passive: true });
-    })();
-
-    // Mark current page in navigation
-    (function() {
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav__links a').forEach(a => {
-            const href = (a.getAttribute('href') || '').toLowerCase();
-            if (href.endsWith(path)) {
-                a.setAttribute('aria-current', 'page');
-            }
-        });
-    })();
+    }
 </script>
+
 </body>
 </html>

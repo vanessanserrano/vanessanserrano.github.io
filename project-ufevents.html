@@ -3,293 +3,446 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UF Events — Campus Events Hub</title>
-    <meta name="description" content="Research-to-prototype HCI project: a centralized campus events experience with fast discovery, filters, saves, reminders, and calendar planning." />
+    <title>UF Events — Vanessa Serrano</title>
+    <meta
+            name="description"
+            content="UF Events — Campus Events Hub. A student-first HCI project that centralizes campus event discovery, filtering, saves, reminders, and planning."
+    />
     <link rel="stylesheet" href="style.css" />
-
 </head>
-<body class="theme-ufe">
-<!-- Top Nav -->
-<header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
+<body class="project-page">
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav" role="banner">
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a
+                    href="assets/resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="nav__resume"
+                    aria-label="Download resume"
+            >
+                Resume
+            </a>
         </nav>
 
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <button
+                class="nav__toggle"
+                aria-label="Toggle menu"
+                aria-controls="site-nav"
+                aria-expanded="false"
+        >
             Menu
         </button>
     </div>
 </header>
 
-<!-- HERO -->
-<header class="case-hero">
-    <div class="container hero-content">
-        <h1>UF Events — Campus Events Hub</h1>
-        <p class="hero-sub">
-            A centralized, student-first way to discover and plan campus events across clubs, colleges, and departments.
-        </p>
-
-        <div class="meta-grid" role="list">
-            <div class="meta-card" role="listitem">
-                <label>Scope</label><div class="val">HCI course project (research → prototype)</div>
-            </div>
-            <div class="meta-card" role="listitem">
-                <label>Team</label><div class="val">Vanessa Serrano · Frederick Blanco · Andres Cortes</div>
-            </div>
-            <div class="meta-card" role="listitem">
-                <label>Tools</label><div class="val">Figma (research, wires, hi-fi prototype)</div>
-            </div>
-        </div>
-
-<!--        <div class="media" style="margin-top:18px">-->
-<!--            <img src="assets/images/ufevents-cover.jpg" alt="UF Events high-fidelity mockups" loading="lazy" />-->
-<!--        </div>-->
-    </div>
-</header>
-
-<!-- Sticky Tabs -->
-<!--<div class="case-tabs" aria-label="Section navigation">-->
-<!--    <div class="tab-row container">-->
-<!--        <a class="tab" href="#prototype">Prototype</a>-->
-<!--        <a class="tab" href="#overview">Overview</a>-->
-<!--        <a class="tab" href="#research">Research</a>-->
-<!--        <a class="tab" href="#personas">Personas</a>-->
-<!--        <a class="tab" href="#flows">Flows & Wires</a>-->
-<!--        <a class="tab" href="#solution">Solution</a>-->
-<!--        <a class="tab" href="#outcomes">Outcomes & Next</a>-->
-<!--        <a class="tab" href="#more">More</a>-->
-<!--    </div>-->
-<!--</div>-->
-
 <main>
-    <!-- PROTOTYPE -->
-    <section id="prototype" class="section section--alt">
+    <section class="project-hero">
         <div class="container">
-            <div class="head">
-                <h2>Interactive prototype</h2>
-                <div class="underline"></div>
-            </div>
+            <div class="project-hero__layout">
+                <div>
+                    <p class="project-hero__eyebrow">HCI Course Project &middot; Research to Prototype</p>
+                    <h1>UF Events</h1>
+                    <p class="project-hero__lede">
+                        A centralized campus events hub designed to help students discover,
+                        save, and plan campus events across clubs, colleges, and departments
+                        without relying on scattered social posts and disconnected sources.
+                    </p>
 
-            <div class="media media--tall">
-                <iframe
-                        title="UF Events — interactive prototype"
-                        allowfullscreen loading="lazy"
-                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FusC5UQhXPWuqM8bA1qMP9h%2FUser-Design%3Fnode-id%3D252-187%26node-type%3Dcanvas%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1%26starting-point-node-id%3D252%253A187%26show-proto-sidebar%3D1">
-                </iframe>
-            </div>
-
-            <div class="chips" style="margin-top:10px">
-                <a class="btn primary" href="https://www.figma.com/proto/usC5UQhXPWuqM8bA1qMP9h/User-Design?node-id=252-187&page-id=0%3A1&starting-point-node-id=252%3A187&scaling=scale-down&content-scaling=fixed&show-proto-sidebar=1" target="_blank" rel="noopener">
-                    Open in Figma →
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- OVERVIEW -->
-    <section id="overview" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Overview</h2>
-                <div class="underline"></div>
-            </div>
-
-            <p style="max-width:860px; color:var(--muted)">
-                Students—especially newcomers—struggle to find timely, accurate event information scattered across Instagram,
-                flyers, club sites, and email blasts. <strong>UF Events</strong> consolidates everything into one place with
-                powerful filtering, a searchable catalog, favorites/RSVP, and calendar planning to boost awareness and attendance.
-            </p>
-        </div>
-    </section>
-
-    <!-- RESEARCH -->
-    <section id="research" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Research insights</h2>
-                <div class="underline"></div>
-            </div>
-
-            <ul class="checklist">
-                <li>Students miss events due to fragmented sources and last-minute discovery.</li>
-                <li>Instagram is common but unreliable for full coverage; official pages are inconsistent; email is noisy.</li>
-                <li>Personalization matters: interests/major-based recommendations and reminders without inbox overload.</li>
-            </ul>
-
-            <div class="card note" style="margin-top:16px">
-                <strong>Design pillars</strong>
-                Fast discovery · Clear filters · Trustworthy details · Light-touch reminders.
-            </div>
-        </div>
-    </section>
-
-    <!-- PERSONAS -->
-    <section id="personas" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Personas</h2>
-                <div class="underline"></div>
-            </div>
-
-            <div class="split">
-                <div class="card">
-                    <h3>Jasmine — Organized planner</h3>
-                    <ul class="checklist">
-                        <li>Needs centralized, scheduled info; prefers calendar and week views.</li>
-                        <li>Wants integration with existing tools and interest-based suggestions.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Sal — Exploring campus</h3>
-                    <ul class="checklist">
-                        <li>Wants an easy way to find weekend events and meet people.</li>
-                        <li>Needs clear event details and simple reminders.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FLOWS & WIRES -->
-    <section id="flows" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Flows & wireframes</h2>
-                <div class="underline"></div>
-            </div>
-
-            <div class="split">
-                <div class="card">
-                    <h3>Key flows</h3>
-                    <ul class="checklist">
-                        <li>Discover → Filter by category/date → View details → Save/RSVP</li>
-                        <li>Search by keyword → Open event → Add to calendar → Reminder</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="media">
-                        <img src="assets/images/uf-wireflow-1.jpg" alt="UF Events wireflow 1" loading="lazy">
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://www.figma.com/proto/usC5UQhXPWuqM8bA1qMP9h/User-Design?node-id=252-187&page-id=0%3A1&starting-point-node-id=252%3A187&scaling=scale-down&content-scaling=fixed&show-proto-sidebar=1"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            View Prototype
+                        </a>
                     </div>
-                    <div class="media" style="margin-top:10px">
-                        <img src="assets/images/uf-wireflow-2.jpg" alt="UF Events wireflow 2" loading="lazy">
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <b>Scope</b>
+                        HCI course project, research through high-fidelity prototype
+                    </div>
+                    <div class="meta-item">
+                        <b>Team</b>
+                        Vanessa Serrano, Frederick Blanco, Andres Cortes
+                    </div>
+                    <div class="meta-item">
+                        <b>Tools</b>
+                        Figma, user research, wireframing, prototyping
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-highlight-grid" style="margin-top: 2rem;">
+                <div class="project-highlight">
+                    <h3>Student-Centered Discovery</h3>
+                    <p>Designed around the challenge of finding reliable campus events without juggling multiple sources.</p>
+                </div>
+
+                <div class="project-highlight">
+                    <h3>Planning + Personalization</h3>
+                    <p>Focused on filters, favorites, reminders, and recommendations that help students act on what they find.</p>
+                </div>
+
+                <div class="project-highlight">
+                    <h3>Research-Driven Interface</h3>
+                    <p>Used HCI research and personas to shape a more useful event-discovery experience for campus life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Overview</p>
+                    <h2>What the project does</h2>
+
+                    <p>
+                        UF Events is a campus events hub designed to make it easier for students to discover and plan events
+                        across the University of Florida. Instead of relying on Instagram posts, flyers, student group pages,
+                        and crowded email inboxes, the platform brings event information into one place.
+                    </p>
+
+                    <p>
+                        The concept combines searchable event listings, category filters, favorites, reminders, and calendar-based
+                        planning so students can find opportunities more easily and feel more connected to campus life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Problem</p>
+                    <h2>Why students miss events</h2>
+
+                    <p>
+                        Students often want to be more involved on campus, but event information is fragmented across too many channels.
+                        Important details are easy to miss, hard to compare, and often discovered too late to act on.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Campus event information is scattered across Instagram, flyers, websites, and email</li>
+                        <li>Students miss opportunities because discovery happens too late or inconsistently</li>
+                        <li>Existing sources are noisy, incomplete, or difficult to trust</li>
+                        <li>Students need better ways to filter events based on interests, timing, and relevance</li>
+                    </ul>
+
+                    <div class="project-callout">
+                        <p>
+                            The opportunity was not just listing events — it was creating a more
+                            <strong>organized, personalized, and actionable</strong> discovery experience.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOLUTION -->
-    <section id="solution" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Solution</h2>
-                <div class="underline"></div>
-            </div>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Research</p>
+                    <h2>What we learned</h2>
 
-            <ul class="checklist">
-                <li>Unified listing of campus events with clear categories and quick filters.</li>
-                <li>Interest-based recommendations, search, and favorites/RSVP.</li>
-                <li>Calendar preview, add-to-calendar, and light reminders (push/OS calendar).</li>
-                <li>Shareable event cards for socials or group chats.</li>
-            </ul>
-        </div>
-    </section>
+                    <p>
+                        Research showed that students do not lack interest in campus events — they lack a reliable and convenient system
+                        for keeping up with them. Discovery, trust, and timing all played a major role in whether students attended.
+                    </p>
 
-    <!-- OUTCOMES & NEXT -->
-    <section id="outcomes" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Outcomes & next</h2>
-                <div class="underline"></div>
-            </div>
+                    <ul class="project-bullets">
+                        <li>Students miss events because they rely on fragmented and last-minute sources</li>
+                        <li>Instagram is common but unreliable for complete coverage</li>
+                        <li>Official event pages are inconsistent and email announcements are easy to ignore</li>
+                        <li>Personalized recommendations and reminders are valuable, but should not feel spammy</li>
+                    </ul>
 
-            <ul class="checklist">
-                <li>Delivered high-fidelity prototype for evaluation and usability feedback.</li>
-                <li><strong>Next:</strong> connect official feeds, refine recommendations, pilot with first-year cohorts.</li>
-            </ul>
-
-            <div class="chips" style="margin-top:10px">
-                <a class="btn" href="projects.html">← Back to Projects</a>
+                    <div class="project-callout">
+                        <p>
+                            Our design pillars became <strong>fast discovery, trustworthy details, clear filtering,
+                            and light-touch reminders</strong>.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- MORE -->
-    <section id="more" class="section">
-        <div class="container" style="text-align:center">
-            <div class="head">
-                <h2>More projects</h2>
-                <div class="underline"></div>
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Personas</p>
+                    <h2>Who we designed for</h2>
+
+                    <p>
+                        We created personas to reflect different student event-planning behaviors and needs.
+                        These helped guide how the interface should support both highly organized planners and more spontaneous explorers.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Jasmine</h3>
+                            <p>Organized and schedule-driven. Needs clear event timing, calendar views, and easy planning support.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Sal</h3>
+                            <p>More exploratory and social. Wants an easy way to find what is happening and decide quickly.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Shared Need</h3>
+                            <p>Both benefit from centralized discovery, trustworthy event details, and less friction between finding and attending.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p style="color:var(--muted)">See additional UX & engineering work:</p>
-            <div class="chips" style="justify-content:center; margin-top:10px">
-                <a class="btn" href="project-arc.html">ARC — First Responder Care</a>
-                <a class="btn" href="project-vlv.html">Vendor Label Validation</a>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">UX Decisions</p>
+                    <h2>How the experience was designed</h2>
+
+                    <p>
+                        The design focused on helping students move quickly from browsing to planning. Rather than treating event discovery
+                        like a passive feed, the product was structured to support searching, filtering, saving, and scheduling in a more intentional way.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Unified Event Listings</h3>
+                            <p>Brought multiple campus event sources into one structured catalog experience.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Category + Date Filters</h3>
+                            <p>Made it easier to narrow events by interest, timeframe, and relevance.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Save / RSVP Flow</h3>
+                            <p>Created a path for students to move from discovery to commitment more easily.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Calendar Planning</h3>
+                            <p>Added support for event planning over time instead of one-off browsing only.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Search Support</h3>
+                            <p>Included keyword-based discovery for students who already have event types or organizations in mind.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Low-Noise Reminders</h3>
+                            <p>Focused on reminder patterns that help students remember events without becoming another source of overload.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Flows & Wireframes</p>
+                    <h2>How we mapped the interaction</h2>
+
+                    <p>
+                        We used flows and wireframes to define how students would move from discovery to action.
+                        These artifacts helped us clarify what information needed to appear first and how event planning should feel lightweight rather than complicated.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Discover → filter by category or date → open details → save or RSVP</li>
+                        <li>Search by keyword → view event details → add to calendar → receive reminder</li>
+                        <li>Support both exploration and direct event lookup</li>
+                    </ul>
+
+                    <div class="image-pair">
+                        <figure>
+                            <img src="assets/images/uf-wireflow-1.jpg" alt="UF Events wireflow showing discovery and planning flow">
+                            <figcaption>Wireflow for event discovery and planning.</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="assets/images/uf-wireflow-2.jpg" alt="UF Events wireflow showing search and event detail flow">
+                            <figcaption>Wireflow for search, event details, and next actions.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Prototype</p>
+                    <h2>Interactive prototype</h2>
+
+                    <div class="project-image">
+                        <iframe
+                                title="UF Events interactive prototype"
+                                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FusC5UQhXPWuqM8bA1qMP9h%2FUser-Design%3Fnode-id%3D252-187%26node-type%3Dcanvas%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1%26starting-point-node-id%3D252%253A187%26show-proto-sidebar%3D1"
+                                style="width:100%; aspect-ratio:16/9; border:0; display:block;"
+                                allowfullscreen
+                                loading="lazy"
+                        ></iframe>
+                    </div>
+
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://www.figma.com/proto/usC5UQhXPWuqM8bA1qMP9h/User-Design?node-id=252-187&page-id=0%3A1&starting-point-node-id=252%3A187&scaling=scale-down&content-scaling=fixed&show-proto-sidebar=1"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            Open in Figma
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Solution</p>
+                    <h2>What the final concept included</h2>
+
+                    <p>
+                        The final prototype focused on making campus event participation feel easier and more intentional.
+                        It combined discovery, organization, and planning into one product experience.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Centralized event listings with consistent, trusted details</li>
+                        <li>Search and filtering by category, date, or interest</li>
+                        <li>Favorites, RSVP-style interaction, and lightweight reminders</li>
+                        <li>Calendar integration and planning support</li>
+                        <li>Shareable event details for friends and group chats</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Outcome</p>
+                    <h2>What the project demonstrated</h2>
+
+                    <p>
+                        UF Events showed how a better information architecture and more thoughtful student experience could reduce the friction
+                        around getting involved on campus. The project demonstrated a strong research-to-prototype process focused on real student needs.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Delivered a high-fidelity prototype for evaluation and usability feedback</li>
+                        <li>Reframed campus event discovery as a planning problem, not just a listing problem</li>
+                        <li>Focused on practical student pain points around timing, trust, and overload</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Takeaways</p>
+                    <h2>What this project taught me</h2>
+
+                    <p>
+                        UF Events reinforced how much value comes from organizing scattered information into a more usable experience.
+                        The most important design work was not adding more features, but making discovery feel clearer, more trustworthy,
+                        and easier to act on.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Designing around fragmented information ecosystems</li>
+                        <li>Using personas and research to shape product priorities</li>
+                        <li>Reducing cognitive load through filtering and structure</li>
+                        <li>Designing lightweight reminder systems that support action without overload</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 </main>
 
-<!-- Footer -->
 <footer class="footer" role="contentinfo">
     <div class="cols">
+        <div class="footer-brand">
+            <div class="footer-brand__name">Vanessa Serrano</div>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+        </div>
+
         <div>
             <h3>Contact</h3>
             <a href="mailto:vanessannserrano@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
         <div>
             <h3>Work</h3>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div>
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-        </div>
     </div>
+
     <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
-<!-- Minimal JS: mobile menu + tab scrollspy -->
 <script>
-    // Mobile menu toggle
-    (function() {
-        const toggle = document.querySelector('.nav__toggle');
-        const nav = document.getElementById('site-nav');
-        if (!toggle || !nav) return;
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', String(open));
+    const toggle = document.querySelector(".nav__toggle");
+    const nav = document.getElementById("site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            nav.classList.toggle("is-open");
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav')) {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        }, { passive: true });
-    })();
-
-    // Mark current page in navigation
-    (function() {
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav__links a').forEach(a => {
-            const href = (a.getAttribute('href') || '').toLowerCase();
-            if (href.endsWith(path)) {
-                a.setAttribute('aria-current', 'page');
-            }
-        });
-    })();
+    }
 </script>
 </body>
 </html>

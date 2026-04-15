@@ -3,148 +3,422 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ARC — Action, Resources, Care</title>
-    <meta name="description" content="Confidential mobile support for first responders. Built in 36 hours at ShellHacks 2025." />
+    <title>ARC — Vanessa Serrano</title>
+    <meta
+            name="description"
+            content="ARC — Action, Resources, Care. Confidential mobile support for first responders after high-intensity calls."
+    />
     <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-arc">
-<header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
+<body class="project-page">
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav" role="banner">
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a
+                    href="assets/resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="nav__resume"
+                    aria-label="Download resume"
+            >
+                Resume
+            </a>
         </nav>
 
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <button
+                class="nav__toggle"
+                aria-label="Toggle menu"
+                aria-controls="site-nav"
+                aria-expanded="false"
+        >
             Menu
         </button>
     </div>
 </header>
 
-<header class="case-hero">
-    <div class="container hero-content">
-        <h1>ARC — Action, Resources, Care</h1>
-        <p class="hero-sub">Confidential mobile support for first responders after high-intensity calls. Breaking down barriers to mental health care.</p>
-        <div class="meta-grid" role="list">
-            <div class="meta-card" role="listitem"><label>Project</label><div class="val">ShellHacks 2025 (36 hours)</div></div>
-            <div class="meta-card" role="listitem"><label>Role</label><div class="val">UX Designer, Front-End Developer</div></div>
-            <div class="meta-card" role="listitem"><label>Stack</label><div class="val">React Native, TypeScript, Flask, MongoDB</div></div>
-        </div>
-    </div>
-</header>
-
 <main>
-    <!-- Demo -->
-    <section id="demo" class="section section--alt">
+    <section class="project-hero">
         <div class="container">
-            <div class="head">
-                <h2>See it in action</h2><div class="underline"></div>
-            </div>
-            <div class="media">
-                <video autoplay muted loop playsinline preload="metadata" aria-label="ARC prototype walkthrough">
-                    <source src="assets/arc-demo.mp4" type="video/mp4" />
-                </video>
-            </div>
-            <div class="chips">
-                <a class="chip" href="https://github.com/johanfortus/First-Responders-App" target="_blank" rel="noopener">GitHub →</a>
-            </div>
-        </div>
-    </section>
+            <div class="project-hero__layout">
+                <div>
+                    <p class="project-hero__eyebrow">ShellHacks 2025 &middot; 36-Hour Hackathon</p>
+                    <h1>ARC</h1>
+                    <p class="project-hero__lede">
+                        A confidential mobile support platform designed to help first responders
+                        process high-intensity calls, access trusted resources, and lower barriers
+                        to mental health care.
+                    </p>
 
-    <!-- Challenge -->
-    <section id="challenge" class="section">
-        <div class="container">
-            <div class="head"><h2>The challenge</h2><div class="underline"></div></div>
-            <p style="text-align:center; max-width:800px; margin:0 auto; color:var(--muted)">
-                First responders face intense trauma daily, yet support access is limited by stigma, awareness, and fragmented systems.
-            </p>
-            <div class="card note" style="margin-top:16px">
-                <strong style="color:var(--accent)">Our solution</strong>
-                ARC provides post-call check-ins, curated resources, and confidential connections to therapists or peer mentors.
-            </div>
-        </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research" class="section section--alt">
-        <div class="container">
-            <div class="head"><h2>Research insights</h2><div class="underline"></div></div>
-            <p style="text-align:center; color:var(--muted)">Surveyed 41 first responders to understand habits, comfort, and needs.</p>
-            <div class="stats">
-                <div class="stat"><span class="num">61%</span><div>Aware of resources, not using</div></div>
-                <div class="stat"><span class="num">40%</span><div>Stigma / fear of judgment</div></div>
-                <div class="stat"><span class="num">78%</span><div>Rated concept useful (≥3/5)</div></div>
-            </div>
-            <div class="card note" style="margin-top:16px">Top requests: peer mentor chat & therapist scheduling. Pillars: confidentiality, speed, trust.</div>
-        </div>
-    </section>
-
-    <!-- Design -->
-    <section id="design" class="section">
-        <div class="container">
-            <div class="head"><h2>Design process</h2><div class="underline"></div></div>
-            <div class="split">
-                <ul class="checklist">
-                    <li>Flows for onboarding, post-call check-ins, and resources</li>
-                    <li>Low-fi wires → high-fi prototype (Poppins, navy/orange)</li>
-                    <li>A11y: strong contrast, large touch targets</li>
-                    <li>Heuristic reviews for tone & flow</li>
-                </ul>
-                <div class="card"><strong>Artifacts</strong><p>Wireframes, component library, and interaction notes for crisis contexts.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dev -->
-    <section id="dev" class="section section--alt">
-        <div class="container">
-            <div class="head"><h2>Development</h2><div class="underline"></div></div>
-            <div class="split">
-                <div class="card">
-                    <h3>Architecture</h3>
-                    <p>React Native (Expo) front-end, Flask API, Auth0 auth, Expo Router navigation.</p>
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://github.com/johanfortus/First-Responders-App"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            View GitHub
+                        </a>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Key work</h3>
-                    <ul class="checklist">
-                        <li>Implemented Figma components in RN</li>
-                        <li>Prototype AI for transcript analysis & timed check-ins</li>
+
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <b>Role</b>
+                        UX Design, Front-End Development
+                    </div>
+                    <div class="meta-item">
+                        <b>Team</b>
+                        ShellHacks hackathon team
+                    </div>
+                    <div class="meta-item">
+                        <b>Stack</b>
+                        React Native, TypeScript, Flask, MongoDB
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-highlight-grid" style="margin-top: 2rem;">
+                <div class="project-highlight">
+                    <h3>Human-Centered Problem</h3>
+                    <p>Focused on emotional support, trust, and access for first responders after difficult calls.</p>
+                </div>
+
+                <div class="project-highlight">
+                    <h3>Research-Led Design</h3>
+                    <p>Used survey insight and care-context design decisions to shape a more credible user experience.</p>
+                </div>
+
+                <div class="project-highlight">
+                    <h3>Confidential Support Flow</h3>
+                    <p>Designed private, low-friction access to resources, mentors, and support after high-stress events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Overview</p>
+                    <h2>What the project does</h2>
+
+                    <p>
+                        ARC, short for Action, Resources, Care, is a mobile concept built to support first responders
+                        after high-intensity calls. The app was designed around a core reality: many first responders
+                        experience repeated exposure to trauma, but access to mental health support is often limited by stigma,
+                        time, trust, and fragmented systems.
+                    </p>
+
+                    <p>
+                        Instead of treating care as something users seek out only after a crisis escalates, ARC reframes support
+                        as something immediate, private, and integrated into the moments after difficult calls. The experience
+                        combines check-ins, trusted resources, and connection pathways into one mobile flow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Demo</p>
+                    <h2>Prototype walkthrough</h2>
+
+                    <div class="project-image">
+                        <video autoplay muted loop playsinline preload="metadata" style="width:100%; display:block;" aria-label="ARC prototype walkthrough">
+                            <source src="assets/arc-demo.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://github.com/johanfortus/First-Responders-App"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Problem</p>
+                    <h2>Why support often goes unused</h2>
+
+                    <p>
+                        First responders face intense emotional strain, but many support systems are underused.
+                        The challenge is not simply making resources exist — it is making them feel accessible,
+                        trustworthy, and safe to use in the moments when people actually need them.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Stigma and fear of judgment discourage people from asking for help</li>
+                        <li>Support resources are often fragmented or difficult to access quickly</li>
+                        <li>Users may not know what type of help is appropriate after a difficult call</li>
+                        <li>Emotional support tools must feel confidential, calm, and low-pressure</li>
+                    </ul>
+
+                    <div class="project-callout">
+                        <p>
+                            The opportunity was not just a wellness app — it was designing a support experience
+                            that respected <strong>privacy, urgency, trust, and emotional context</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Research</p>
+                    <h2>What we learned</h2>
+
+                    <p>
+                        Our direction was shaped by survey input and early problem research focused on first-responder needs,
+                        mental health barriers, and post-call behavior. The findings reinforced that speed and confidentiality
+                        were just as important as the actual resources themselves.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>61%</h3>
+                            <p>Aware of support resources, but not actively using them.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>40%</h3>
+                            <p>Reported stigma or fear of judgment as a major barrier.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>78%</h3>
+                            <p>Rated the concept as useful at 3/5 or higher.</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        The strongest signals pointed toward a need for confidential peer support, therapist access,
+                        and a product experience that felt immediate and emotionally safe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Solution</p>
+                    <h2>Designing a confidential support flow</h2>
+
+                    <p>
+                        ARC was designed as a calm, guided mobile experience that gives users a private entry point into care.
+                        Rather than overwhelming them with too many options, the flow was structured to make next steps feel clear,
+                        supportive, and appropriate to the moment.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Post-call emotional check-ins</li>
+                        <li>Confidential therapist and mentor connections</li>
+                        <li>Curated resources and guidance</li>
+                        <li>Private pathways that reduce pressure and stigma</li>
+                        <li>Support framed as immediate care, not only crisis intervention</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="section">
-        <div class="container">
-            <div class="head"><h2>Key features</h2><div class="underline"></div></div>
-            <ul class="checklist">
-                <li>Real-time post-call check-in with mood context</li>
-                <li>Confidential contacts: therapists, mentors, trusted</li>
-                <li>AI-powered severity cues & guided conversation</li>
-                <li>Curated resource hub (articles, videos)</li>
-                <li>Anonymous usage paths to reduce stigma</li>
-            </ul>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">My Role</p>
+                    <h2>What I contributed</h2>
+
+                    <p>
+                        My work focused on UX design and front-end development. I helped shape the mobile experience,
+                        organize key flows, and translate the design direction into a more structured and usable product concept.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>UX Design</h3>
+                            <p>Helped define flows for onboarding, check-ins, support access, and emotional-care pathways.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Front-End</h3>
+                            <p>Worked on implementing interface components and translating design decisions into mobile UI.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Care Context Design</h3>
+                            <p>Focused on tone, emotional clarity, privacy cues, and interface patterns appropriate for sensitive situations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Next -->
-    <section id="next" class="section section--alt">
-        <div class="container" style="text-align:center">
-            <div class="head"><h2>What’s next</h2><div class="underline"></div></div>
-            <ul class="checklist" style="max-width:620px; margin:10px auto 0; text-align:left">
-                <li>Richer AI for nuanced emotion detection</li>
-                <li>Follow-up reminders after tough calls</li>
-                <li>Trusted contact notifications</li>
-                <li>Pilot with local fire/EMS departments</li>
-            </ul>
-            <div class="chips" style="justify-content:center; margin-top:16px">
-                <a class="btn" href="projects.html">← Back to Projects</a>
-                <a class="btn primary" href="https://github.com/johanfortus/First-Responders-App" target="_blank" rel="noopener">View code</a>
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">UX Decisions</p>
+                    <h2>How the experience was designed</h2>
+
+                    <p>
+                        A major challenge was making the app feel supportive without becoming visually overwhelming or emotionally intrusive.
+                        The design needed to feel trustworthy, private, and calm while still guiding users toward action.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Low-Friction Flow</h3>
+                            <p>Reduced complexity in the path from difficult call to next-step support.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Confidential Tone</h3>
+                            <p>Used interface and content decisions that emphasized privacy and reduced stigma.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Accessible Mobile Patterns</h3>
+                            <p>Prioritized readable hierarchy, touch-friendly controls, and strong visual clarity.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Check-In Structure</h3>
+                            <p>Framed support through simple emotional check-ins rather than overwhelming diagnostic language.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Resource Navigation</h3>
+                            <p>Made resources feel easier to act on by reducing friction between awareness and access.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Trust Through Design</h3>
+                            <p>Focused on how pacing, wording, and visual calm could make support feel safer to use.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Technical Implementation</p>
+                    <h2>How it was built</h2>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Frontend</h3>
+                            <p>React Native and TypeScript for a mobile-first interface and structured navigation flow.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Backend</h3>
+                            <p>Flask API and MongoDB to support data handling and system structure.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Authentication</h3>
+                            <p>Auth0 for secure identity handling and protected access patterns.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Prototype AI</h3>
+                            <p>Explored transcript analysis and guided follow-up support through AI-assisted logic.</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        A key part of implementation was translating emotional-care design into actual mobile structure.
+                        The product needed to feel credible as both a concept and a working experience, even within hackathon time constraints.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Implemented Figma-informed mobile UI components</li>
+                        <li>Structured onboarding and post-call interaction flow</li>
+                        <li>Connected front-end experience with backend service logic</li>
+                        <li>Prototyped AI-assisted support behavior in a care context</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Outcome</p>
+                    <h2>What the project demonstrated</h2>
+
+                    <p>
+                        ARC showed how UX, engineering, and social impact can come together in one product concept.
+                        The project addressed a difficult real-world problem with a thoughtful mobile solution that emphasized trust,
+                        emotional context, and usability.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Centered confidentiality and trust in the care experience</li>
+                        <li>Addressed a meaningful support gap for first responders</li>
+                        <li>Combined research, UX, and front-end execution in a short timeline</li>
+                        <li>Demonstrated strong product thinking in a socially sensitive space</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Takeaways</p>
+                    <h2>What this project taught me</h2>
+
+                    <p>
+                        ARC reinforced how important it is to design around emotional context, not just functionality.
+                        In sensitive spaces, trust is part of the user experience — and product decisions need to support that from the start.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Designing products for emotionally high-stakes situations</li>
+                        <li>Balancing privacy, support, and usability in mobile UX</li>
+                        <li>Building from research insight toward interface decisions</li>
+                        <li>Translating design systems into front-end implementation under time pressure</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -152,57 +426,46 @@
 
 <footer class="footer" role="contentinfo">
     <div class="cols">
+        <div class="footer-brand">
+            <div class="footer-brand__name">Vanessa Serrano</div>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+        </div>
+
         <div>
             <h3>Contact</h3>
             <a href="mailto:vanessannserrano@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
         <div>
             <h3>Work</h3>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div>
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-        </div>
     </div>
+
     <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-    // Mobile menu toggle
-    (function() {
-        const toggle = document.querySelector('.nav__toggle');
-        const nav = document.getElementById('site-nav');
-        if (!toggle || !nav) return;
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', String(open));
+    const toggle = document.querySelector(".nav__toggle");
+    const nav = document.getElementById("site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            nav.classList.toggle("is-open");
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav')) {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        }, { passive: true });
-    })();
-
-    // Mark current page in navigation
-    (function() {
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav__links a').forEach(a => {
-            const href = (a.getAttribute('href') || '').toLowerCase();
-            if (href.endsWith(path)) {
-                a.setAttribute('aria-current', 'page');
-            }
-        });
-    })();
+    }
 </script>
 </body>
 </html>

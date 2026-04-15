@@ -3,188 +3,162 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RecipeGrind</title>
-    <meta name="description" content="Search + smart Pantry Mode: pick ingredients and instantly see what you can make and what's missing. React/TS + Node/Express." />
+    <title>RecipeGrind — Vanessa Serrano</title>
+    <meta
+            name="description"
+            content="RecipeGrind — Pantry-based recipe finder. A full-stack app that helps users cook with ingredients they already have."
+    />
     <link rel="stylesheet" href="style.css" />
-
 </head>
-<body class="theme-recipe">
-<!-- Nav -->
-<header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
+<body class="project-page">
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav">
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html">VS</a>
+        <nav class="nav__links nav__links--home">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="assets/resume.pdf" target="_blank" class="nav__resume">Resume</a>
         </nav>
-
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
-            Menu
-        </button>
     </div>
 </header>
-
-<!-- Hero -->
-<header class="case-hero">
-    <div class="container hero-content">
-        <h1>RecipeGrind</h1>
-        <p class="hero-sub">A web app with search and Pantry Mode: select ingredients and instantly see what you can cook now—and what’s missing.</p>
-
-        <div class="meta-grid" role="list">
-            <div class="meta-card" role="listitem">
-                <label>Role</label><div class="val">End-to-end — research, UX/UI, frontend, backend</div>
-            </div>
-            <div class="meta-card" role="listitem">
-                <label>Timeline</label><div class="val">2 weeks (MVP)</div>
-            </div>
-            <div class="meta-card" role="listitem">
-                <label>Stack</label><div class="val">Figma · React/TypeScript · MUI · TanStack Query · Node/Express · Prisma/Postgres · Render · GitHub Pages</div>
-            </div>
-        </div>
-
-<!--        <div class="media" style="margin-top:18px">-->
-<!--            <img src="assets/images/recipe-cover.jpg" alt="recipegrind Pantry Mode and results" loading="lazy" />-->
-<!--        </div>-->
-    </div>
-</header>
-
-<!-- Sticky tabs -->
-<!--<div class="case-tabs" aria-label="Section navigation">-->
-<!--    <div class="tab-row container">-->
-<!--        <a class="tab" href="#prototype">Prototype</a>-->
-<!--        <a class="tab" href="#problem">Problem</a>-->
-<!--        <a class="tab" href="#goals">Goals</a>-->
-<!--        <a class="tab" href="#research">Research</a>-->
-<!--        <a class="tab" href="#ia">IA & Flows</a>-->
-<!--        <a class="tab" href="#design">Design</a>-->
-<!--        <a class="tab" href="#build">Build</a>-->
-<!--        <a class="tab" href="#impact">Impact</a>-->
-<!--        <a class="tab" href="#next">Next</a>-->
-<!--        <a class="tab" href="#links">Links</a>-->
-<!--    </div>-->
-<!--</div>-->
 
 <main>
-    <!-- PROTOTYPE -->
-    <section id="prototype" class="section section--alt">
+
+    <!-- HERO -->
+    <section class="project-hero">
         <div class="container">
-            <div class="head">
-                <h2>Prototype</h2>
-                <div class="underline"></div>
+            <div class="project-hero__layout">
+
+                <div>
+                    <p class="project-hero__eyebrow">Full-Stack Project · 2 Week MVP</p>
+                    <h1>RecipeGrind</h1>
+
+                    <p class="project-hero__lede">
+                        A recipe web app that answers one simple question:
+                        <strong>“What can I cook with what I already have?”</strong>
+                        using Pantry Mode, search, and real-time filtering.
+                    </p>
+
+                    <div class="project-actions" style="justify-content:center;">
+                        <a class="project-site-link" href="https://vanessanserrano.github.io/recipegrind/" target="_blank">
+                            Live Site
+                        </a>
+                        <a class="project-site-link" href="https://github.com/vanessanserrano/recipegrind" target="_blank">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item"><b>Role</b> Full-stack development, UX/UI</div>
+                    <div class="meta-item"><b>Stack</b> React, TypeScript, Node, Express, Prisma</div>
+                    <div class="meta-item"><b>Focus</b> Pantry-based discovery + performance</div>
+                </div>
+
             </div>
 
-
-            <div class="media" style="margin-top:18px">
-                <img src="assets/images/recipe-cover.jpg" alt="recipegrind Pantry Mode and results" loading="lazy" />
+            <div class="project-highlight-grid" style="margin-top:2rem;">
+                <div class="project-highlight">
+                    <h3>Pantry Mode</h3>
+                    <p>Find recipes based on ingredients you already have.</p>
+                </div>
+                <div class="project-highlight">
+                    <h3>Fast Results</h3>
+                    <p>Cached queries + optimized filtering under 1 second.</p>
+                </div>
+                <div class="project-highlight">
+                    <h3>Real-World Use</h3>
+                    <p>Designed for quick decisions in everyday cooking.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-<!--            <div class="media media&#45;&#45;tall">-->
-<!--                <img src="assets/images/recipegrind-hifi.jpg" alt="High-fidelity mockups of recipegrind" loading="lazy">-->
-<!--            </div>-->
+    <!-- OVERVIEW -->
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Overview</p>
+                <h2>What it does</h2>
 
-            <div class="chips" style="margin-top:10px">
-<!--                <a class="btn" href="#" target="_blank" rel="noopener">View live demo →</a>-->
-<!--                <a class="btn" href="#" target="_blank" rel="noopener">Open Figma →</a>-->
-                <a class="btn" href="https://vanessanserrano.github.io/recipegrind/" target="_blank" rel="noopener">Website →</a>
-                <a class="btn" href="https://github.com/vanessanserrano/recipegrind" target="_blank" rel="noopener">GitHub repo →</a>
+                <p>
+                    RecipeGrind is a full-stack web application that helps users find recipes based on what they already have at home.
+                    Instead of searching by recipe name, users can input ingredients and instantly see matching meals.
+                </p>
+
+                <p>
+                    The goal was to reduce friction in everyday cooking decisions and make recipe discovery faster,
+                    more practical, and more aligned with real behavior.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- PROBLEM -->
-    <section id="problem" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Problem</h2>
-                <div class="underline"></div>
-            </div>
-            <p style="max-width:860px; color:var(--muted)">
-                Home cooks waste time jumping between tabs and recipes to find something that matches what’s actually in their pantry.
-                Most apps optimize for search by title, not <em>ingredients on hand</em>.
-            </p>
-        </div>
-    </section>
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Problem</p>
+                <h2>Why recipe apps fall short</h2>
 
-    <!-- GOALS -->
-    <section id="goals" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Goals</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="meta-grid">
-                <div class="meta-card"><label>Speed</label><div class="val">Cached results under 1s</div></div>
-                <div class="meta-card"><label>Path</label><div class="val">“What can I cook now?” is a primary route</div></div>
-                <div class="meta-card"><label>Clarity</label><div class="val">Readable steps/ingredients on mobile</div></div>
-            </div>
-        </div>
-    </section>
+                <ul class="project-bullets">
+                    <li>Users search by recipe name, not ingredients</li>
+                    <li>Too many tabs and comparisons required</li>
+                    <li>No clear answer to “what can I make right now?”</li>
+                    <li>Time constraints not prioritized</li>
+                </ul>
 
-    <!-- RESEARCH -->
-    <section id="research" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Research</h2>
-                <div class="underline"></div>
-            </div>
-            <ul class="checklist">
-                <li>6 interviews + competitive scan (NYT Cooking, Allrecipes, Tasty)</li>
-                <li>Users start from ingredients → Pantry as a top-level route</li>
-                <li>Time is a hard constraint → minutes slider + time chips on cards</li>
-                <li>Users skim image + title → denser cards with small thumbnails</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- IA & FLOWS -->
-    <section id="ia" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Information architecture & flows</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="split">
-                <div class="card">
-                    <h3>Routes</h3>
-                    <ul class="checklist">
-                        <li>Home (value prop)</li>
-                        <li>Finder (keywords/filters)</li>
-                        <li>Pantry (ingredients)</li>
-                        <li>Detail (ingredients + steps)</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Critical flows</h3>
-                    <ul class="checklist">
-                        <li>Search → Results → Detail</li>
-                        <li>Select ingredients → Results → Detail</li>
-                    </ul>
+                <div class="project-callout">
+                    <p>
+                        The gap: recipe apps optimize for inspiration — not for
+                        <strong>real-life decision making</strong>.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DESIGN -->
-    <section id="design" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Design system</h2>
-                <div class="underline"></div>
+    <!-- SOLUTION -->
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Solution</p>
+                <h2>Pantry-first experience</h2>
+
+                <ul class="project-bullets">
+                    <li>Select ingredients → instantly see recipes</li>
+                    <li>Highlight missing ingredients</li>
+                    <li>Filter by time and dietary needs</li>
+                    <li>Fast, scannable recipe cards</li>
+                </ul>
             </div>
-            <div class="split">
-                <div class="card">
-                    <ul class="checklist">
-                        <li>Accessible palette + type scale (mobile-first)</li>
-                        <li>Search bar, filters, result cards with time/diet chips</li>
-                        <li>Empty & error states for resilience</li>
-                        <li>Detail: large hero image, readable steps, ingredients list</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="media">
-                        <img src="assets/images/recipegrind-lowfi-1.jpg" alt="Low-fi card density variants" loading="lazy">
+        </div>
+    </section>
+
+    <!-- UX DECISIONS -->
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">UX Decisions</p>
+                <h2>Designing for speed + clarity</h2>
+
+                <div class="project-highlight-grid">
+                    <div class="project-highlight">
+                        <h3>Ingredient-first flow</h3>
+                        <p>Made Pantry Mode a primary entry point.</p>
+                    </div>
+                    <div class="project-highlight">
+                        <h3>Dense cards</h3>
+                        <p>Users skim — prioritize image + time + title.</p>
+                    </div>
+                    <div class="project-highlight">
+                        <h3>Time filters</h3>
+                        <p>Users care about how long recipes take.</p>
+                    </div>
+                    <div class="project-highlight">
+                        <h3>Mobile-first</h3>
+                        <p>Readable, quick interactions.</p>
                     </div>
                 </div>
             </div>
@@ -192,142 +166,81 @@
     </section>
 
     <!-- BUILD -->
-    <section id="build" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Build</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="split">
-                <div class="card">
-                    <h3>Frontend</h3>
-                    <ul class="checklist">
-                        <li>React + TypeScript + MUI</li>
-                        <li>Hash Router for GitHub Pages</li>
-                        <li>TanStack Query for async data + caching</li>
-                    </ul>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Technical</p>
+                <h2>How it was built</h2>
+
+                <div class="project-highlight-grid">
+                    <div class="project-highlight">
+                        <h3>Frontend</h3>
+                        <p>React + TypeScript + MUI</p>
+                    </div>
+                    <div class="project-highlight">
+                        <h3>Backend</h3>
+                        <p>Node + Express API</p>
+                    </div>
+                    <div class="project-highlight">
+                        <h3>Database</h3>
+                        <p>PostgreSQL + Prisma</p>
+                    </div>
+                    <div class="project-highlight">
+                        <h3>Performance</h3>
+                        <p>TanStack Query caching + debouncing</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Backend & infra</h3>
-                    <ul class="checklist">
-                        <li>Express proxy/cache to recipe API</li>
-                        <li>Prisma + Postgres for favorites</li>
-                        <li>API on Render · site on GitHub Pages</li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Impact</p>
+                <h2>Results</h2>
+
+                <div class="project-highlight-grid">
+                    <div class="project-highlight">
+                        <h3>2× Faster</h3>
+                        <p>Pantry flow vs keyword search</p>
+                    </div>
+                    <div class="project-highlight">
+                        <h3>Real Use</h3>
+                        <p>Users reported cooking more with available ingredients</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="card note" style="margin-top:16px">
-                <strong>Performance notes</strong>
-                Result lists are cached by normalized query keys; Pantry selections are debounced; images are responsive and lazy-loaded.
+    <!-- TAKEAWAYS -->
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-main">
+                <p class="project-kicker">Takeaways</p>
+                <h2>What I learned</h2>
+
+                <ul class="project-bullets">
+                    <li>Designing for real behavior > ideal workflows</li>
+                    <li>Speed is a UX feature</li>
+                    <li>Full-stack thinking improves product decisions</li>
+                    <li>Simple features can solve real problems</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- IMPACT -->
-    <section id="impact" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Impact</h2>
-                <div class="underline"></div>
-            </div>
-            <ul class="checklist">
-                <li>Pantry path reached recipe detail <strong>2× faster</strong> than keyword search (pilot)</li>
-                <li>Users reported cooking with “what I already have” more often</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- NEXT -->
-    <section id="next" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Next</h2>
-                <div class="underline"></div>
-            </div>
-            <ul class="checklist">
-                <li>Favorites + shopping list</li>
-                <li>Nutrition details</li>
-                <li>PWA + offline cache</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- LINKS -->
-    <section id="links" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Links</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="chips">
-                <a class="btn" href="#" target="_blank" rel="noopener">Live demo</a>
-                <a class="btn" href="#" target="_blank" rel="noopener">Figma file</a>
-                <a class="btn" href="https://github.com/vanessanserrano/recipegrind" target="_blank" rel="noopener">GitHub repo</a>
-            </div>
-
-            <div class="chips" style="margin-top:16px">
-                <a class="btn btn--ghost" href="projects.html">← Back to Projects</a>
-            </div>
-        </div>
-    </section>
 </main>
 
-<!-- Footer -->
-<footer class="footer" role="contentinfo">
+<footer class="footer">
     <div class="cols">
-        <div>
-            <h3>Contact</h3>
-            <a href="mailto:vanessannserrano@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-        <div>
-            <h3>Work</h3>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-            <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
-        </div>
-        <div>
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-        </div>
+        <div><h3>Contact</h3><a href="mailto:vanessannserrano@gmail.com">Email</a></div>
+        <div><h3>Work</h3><a href="assets/resume.pdf">Resume</a></div>
+        <div><h3>Navigation</h3><a href="projects.html">Projects</a></div>
     </div>
-    <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
-<!-- Minimal JS: mobile menu + scrollspy -->
-<script>
-    // Mobile menu toggle
-    (function() {
-        const toggle = document.querySelector('.nav__toggle');
-        const nav = document.getElementById('site-nav');
-        if (!toggle || !nav) return;
-
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', String(open));
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav')) {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        }, { passive: true });
-    })();
-
-    // Mark current page in navigation
-    (function() {
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav__links a').forEach(a => {
-            const href = (a.getAttribute('href') || '').toLowerCase();
-            if (href.endsWith(path)) {
-                a.setAttribute('aria-current', 'page');
-            }
-        });
-    })();
-</script>
 </body>
 </html>

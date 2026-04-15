@@ -3,333 +3,397 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Eclipse — Gaming Device Marketing Site</title>
-    <meta name="description" content="Marketing website for Eclipse, a hybrid gaming device concept. Digital portfolio class project featuring brand identity, product pages, and responsive design." />
+    <title>Eclipse — Vanessa Serrano</title>
+    <meta
+            name="description"
+            content="Eclipse — Gaming Device Marketing Site. A marketing website and brand system for a hybrid gaming device concept developed as a team class project."
+    />
     <link rel="stylesheet" href="style.css" />
-    <style>
-        .theme-eclipse {
-            --hero-a: #1a0d2e;
-            --hero-b: #2d1b4e;
-            --accent: #ff6b35;
-            --accent-2: #9d4edd;
-            --bg: #f7fafc;
-            --text: #1a0d2e;
-            --muted: #64748b;
-            --border: #e2e8f0;
-            --white: #ffffff;
-        }
-
-        .theme-eclipse .nav {
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .theme-eclipse .logo {
-            color: var(--hero-a);
-        }
-
-        .theme-eclipse .nav__links a:hover {
-            color: var(--accent);
-        }
-
-        .theme-eclipse .case-hero {
-            background: linear-gradient(135deg, var(--hero-a) 0%, var(--hero-b) 100%);
-        }
-
-        .theme-eclipse .case-hero::before {
-            background: radial-gradient(circle at 30% 30%, rgba(255, 107, 53, 0.35), transparent 60%),
-            radial-gradient(circle at 70% 70%, rgba(157, 78, 221, 0.25), transparent 55%);
-        }
-
-        .theme-eclipse .underline {
-            background: var(--accent);
-        }
-
-        .theme-eclipse .section-header h2 {
-            color: var(--hero-a);
-        }
-
-        .theme-eclipse .checklist li::before {
-            background: var(--accent);
-        }
-
-        .theme-eclipse .result {
-            border-top-color: var(--accent);
-        }
-
-        .theme-eclipse .result h4 {
-            color: var(--hero-a);
-        }
-
-        .theme-eclipse .result .icon {
-            background: var(--accent);
-        }
-
-        .theme-eclipse .chip {
-            background: var(--accent);
-        }
-
-        .theme-eclipse .chip:hover {
-            background: var(--accent-2);
-        }
-    </style>
 </head>
-<body class="theme-eclipse">
-<!-- Nav -->
-<header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
+<body class="project-page">
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav" role="banner">
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a
+                    href="assets/resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="nav__resume"
+                    aria-label="Download resume"
+            >
+                Resume
+            </a>
         </nav>
 
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <button
+                class="nav__toggle"
+                aria-label="Toggle menu"
+                aria-controls="site-nav"
+                aria-expanded="false"
+        >
             Menu
         </button>
     </div>
 </header>
 
-<!-- Hero -->
-<header class="case-hero">
-    <div class="container hero-content">
-        <h1>Eclipse — Gaming Device Marketing Site</h1>
-        <p class="hero-sub">
-            A marketing website for Eclipse, a hybrid gaming device concept combining Nintendo Switch portability with Steam Deck power. Class project showcasing brand identity, product positioning, and responsive web design.
-        </p>
+<main>
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero__layout">
+                <div>
+                    <p class="project-hero__eyebrow">Digital Portfolio Class &middot; 3-Person Team</p>
+                    <h1>Eclipse</h1>
+                    <p class="project-hero__lede">
+                        A marketing website for a fictional hybrid gaming device concept, combining
+                        product branding, responsive web design, and visual storytelling around a premium gaming identity.
+                    </p>
 
-        <div class="meta-grid" role="list">
-            <div class="meta-card" role="listitem">
-                <label>Project</label>
-                <div class="val">Digital Portfolio class · 3-person team</div>
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://www.figma.com/proto/nh3SGpjLA9jvVtQEk2TQ62/DIG?node-id=191-110&starting-point-node-id=191%3A178&t=TNzzgEGkvP4iaeXT-1"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            View Prototype
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <b>Project</b>
+                        Class team project for a fictional gaming device launch
+                    </div>
+                    <div class="meta-item">
+                        <b>Role</b>
+                        Web Design, Brand Identity, UX/UI
+                    </div>
+                    <div class="meta-item">
+                        <b>Tools</b>
+                        Figma, Prototyping, Design Systems
+                    </div>
+                </div>
             </div>
-            <div class="meta-card" role="listitem">
-                <label>Role</label>
-                <div class="val">Web Designer · Brand Identity · UX/UI</div>
-            </div>
-            <div class="meta-card" role="listitem">
-                <label>Tools</label>
-                <div class="val">Figma · Prototyping · Design Systems</div>
-            </div>
-        </div>
 
-        <div class="chip-row" aria-label="Key badges">
-            <span class="chip">Figma</span>
-            <span class="chip">Brand Design</span>
-            <span class="chip">Marketing Site</span>
-            <span class="chip">Responsive Design</span>
-            <span class="chip">Product Page</span>
-        </div>
-    </div>
-</header>
+            <div class="project-highlight-grid" style="margin-top: 2rem;">
+                <div class="project-highlight">
+                    <h3>Brand-Driven Web Design</h3>
+                    <p>Created the visual identity and marketing site around a bold product concept.</p>
+                </div>
 
-<!-- Demo -->
-<section id="demo" class="section section--alt">
-    <div class="container">
-        <div class="head">
-            <h2>Interactive prototype</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="media">
-            <iframe
-                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fnh3SGpjLA9jvVtQEk2TQ62%2FDIG%3Fnode-id%3D191-110%26starting-point-node-id%3D191%253A178%26t%3DTNzzgEGkvP4iaeXT-1"
-                    title="Eclipse marketing site prototype"
-                    frameborder="0"
-                    allowfullscreen
-                    loading="lazy"
-            ></iframe>
-        </div>
-        <div class="chips">
-            <a class="chip" href="https://www.figma.com/proto/nh3SGpjLA9jvVtQEk2TQ62/DIG?node-id=191-110&starting-point-node-id=191%3A178&t=TNzzgEGkvP4iaeXT-1" target="_blank" rel="noopener">Open in Figma →</a>
-        </div>
-    </div>
-</section>
+                <div class="project-highlight">
+                    <h3>Cross-Discipline Collaboration</h3>
+                    <p>Designed the web experience to work alongside teammates’ 3D product renders.</p>
+                </div>
 
-<!-- Challenge -->
-<section id="challenge" class="section">
-    <div class="container">
-        <div class="head">
-            <h2>The challenge</h2>
-            <div class="underline"></div>
-        </div>
-        <p style="text-align:center; max-width:800px; margin:0 auto; color:var(--muted)">
-            Create a cohesive marketing presence for a fictional gaming device that bridges the gap between portable and high-performance gaming.
-        </p>
-        <div class="card note" style="margin-top:16px">
-            <strong style="color:var(--accent)">Our approach</strong>
-            While teammates focused on 3D rendering the device hardware, I designed the complete marketing website with brand identity, product showcase, feature highlights, and responsive layouts.
-        </div>
-    </div>
-</section>
-
-<!-- Team -->
-<section id="team" class="section section--alt">
-    <div class="container">
-        <div class="head">
-            <h2>Team collaboration</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="split">
-            <div class="card">
-                <h3>My Role: Web Design</h3>
-                <ul class="checklist">
-                    <li>Brand identity and color system (dark purple, orange, black)</li>
-                    <li>Complete marketing website design in Figma</li>
-                    <li>Product page layouts and feature sections</li>
-                    <li>Responsive design for mobile and desktop</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Team Members: 3D Rendering</h3>
-                <ul class="checklist">
-                    <li>Created 3D model of Eclipse device</li>
-                    <li>Rendered product shots for marketing materials</li>
-                    <li>Designed device interface and controls</li>
-                    <li>Collaborated on overall product concept</li>
-                </ul>
+                <div class="project-highlight">
+                    <h3>Product Storytelling</h3>
+                    <p>Focused on how design, layout, and hierarchy could position a fictional device like a real product launch.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Design Process -->
-<section id="design" class="section">
-    <div class="container">
-        <div class="head">
-            <h2>Design process</h2>
-            <div class="underline"></div>
-        </div>
-        <ul class="checklist">
-            <li>Research: Analyzed Nintendo Switch and Steam Deck marketing to identify positioning gaps</li>
-            <li>Brand Identity: Developed dark purple/orange/black palette to convey premium gaming aesthetics</li>
-            <li>Information Architecture: Structured site with hero, features, specs, and CTA sections</li>
-            <li>Visual Design: Created high-contrast layouts emphasizing product renders and key features</li>
-            <li>Prototyping: Built interactive Figma prototype with navigation and hover states</li>
-        </ul>
-    </div>
-</section>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Overview</p>
+                    <h2>What the project does</h2>
 
-<!-- Key Features -->
-<section id="features" class="section section--alt">
-    <div class="container">
-        <div class="head">
-            <h2>Site features</h2>
-            <div class="underline"></div>
-        </div>
-        <ul class="checklist">
-            <li>Hero Section: Bold product introduction with 3D device render and primary CTA</li>
-            <li>Feature Highlights: Modular sections showcasing portability, performance, and battery life</li>
-            <li>Product Specifications: Technical details presented in accessible, scannable format</li>
-            <li>Responsive Design: Optimized layouts for mobile, tablet, and desktop viewports</li>
-            <li>Brand Consistency: Cohesive color system, typography, and component library throughout</li>
-        </ul>
-    </div>
-</section>
+                    <p>
+                        Eclipse is a marketing website created for a fictional hybrid gaming device concept —
+                        imagined as a product that combines the portability of the Nintendo Switch with the performance
+                        focus of the Steam Deck. The project centered on how to present that concept as a believable,
+                        polished, and visually compelling digital product launch.
+                    </p>
 
-<!-- Outcomes -->
-<section id="outcomes" class="section">
-    <div class="container">
-        <div class="head">
-            <h2>Outcomes & learnings</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="stats">
-            <div class="stat">
-                <span class="num">🎨</span>
-                <div>Complete Brand System</div>
-            </div>
-            <div class="stat">
-                <span class="num">📱</span>
-                <div>Responsive Layouts</div>
-            </div>
-            <div class="stat">
-                <span class="num">🤝</span>
-                <div>Cross-Discipline Collab</div>
+                    <p>
+                        The site was designed to communicate product value through branding, product highlights,
+                        responsive layouts, and a stronger sense of identity. Rather than functioning as a utility tool,
+                        this project focused on product storytelling, visual hierarchy, and web design for a launch-style experience.
+                    </p>
+                </div>
             </div>
         </div>
-        <p style="text-align:center; color:var(--muted); margin-top:1rem; max-width:720px; margin-left:auto; margin-right:auto;">
-            Successfully delivered a cohesive marketing presence that complemented the team's 3D work. Gained experience in brand identity design, product marketing, and cross-functional collaboration with 3D artists.
-        </p>
-    </div>
-</section>
+    </section>
 
-<!-- Reflection -->
-<section id="next" class="section section--alt">
-    <div class="container" style="text-align:center">
-        <div class="head">
-            <h2>Reflection</h2>
-            <div class="underline"></div>
-        </div>
-        <ul class="checklist" style="max-width:620px; margin:10px auto 0; text-align:left">
-            <li>Brand identity work requires balancing boldness with usability—too much contrast can hurt readability</li>
-            <li>Marketing sites need clear hierarchy and CTAs to guide user journey effectively</li>
-            <li>Collaborating with 3D artists taught me to design around high-quality assets and showcase them properly</li>
-            <li>Responsive design considerations should start in wireframing, not as an afterthought</li>
-        </ul>
-        <div class="chips" style="justify-content:center; margin-top:16px">
-            <a class="btn" href="projects.html">← Back to Projects</a>
-            <a class="btn primary" href="https://www.figma.com/proto/nh3SGpjLA9jvVtQEk2TQ62/DIG?node-id=191-110&starting-point-node-id=191%3A178&t=TNzzgEGkvP4iaeXT-1" target="_blank" rel="noopener">View Prototype</a>
-        </div>
-    </div>
-</section>
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Challenge</p>
+                    <h2>Designing a believable product launch</h2>
 
-<!-- Footer -->
+                    <p>
+                        The challenge was to create a cohesive marketing presence for a fictional device that did not yet exist,
+                        while still making the experience feel polished and realistic. That meant translating a product idea into a
+                        brand, a visual system, and a marketing site that could carry the concept convincingly.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Create a strong visual identity for a fictional gaming product</li>
+                        <li>Balance bold aesthetics with readability and usability</li>
+                        <li>Build a responsive layout that worked across screen sizes</li>
+                        <li>Design around 3D-rendered product assets created by teammates</li>
+                    </ul>
+
+                    <div class="project-callout">
+                        <p>
+                            The challenge was not only designing a website — it was making a fictional hardware concept
+                            feel <strong>credible, desirable, and launch-ready</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Team Collaboration</p>
+                    <h2>How the project was split</h2>
+
+                    <p>
+                        This was a collaborative class project where teammates focused on the physical product visualization
+                        while I focused on the website and digital identity. That split made the project especially useful as a lesson
+                        in designing around assets produced by another discipline.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>My Role</h3>
+                            <p>Designed the marketing site, visual language, product pages, and overall branded web experience.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Team Role</h3>
+                            <p>Created the 3D-rendered device model and supporting visual assets used in the site.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Shared Direction</h3>
+                            <p>Collaborated on the overall product concept and how the site should position Eclipse as a premium device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Design Process</p>
+                    <h2>How the site was designed</h2>
+
+                    <p>
+                        My process focused on building a cohesive visual identity first, then extending that identity across the website.
+                        The goal was to make the site feel bold and high-energy without losing clarity or structure.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Product Research</h3>
+                            <p>Reviewed how products like the Nintendo Switch and Steam Deck are positioned visually and competitively.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Brand Identity</h3>
+                            <p>Developed a dark purple, orange, and black palette to create a premium, gaming-oriented aesthetic.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Information Architecture</h3>
+                            <p>Structured the site around a launch-style flow: hero, product highlights, specs, and calls to action.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Visual Design</h3>
+                            <p>Built layouts that emphasized product renders, bold contrast, and clear section hierarchy.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Responsive Thinking</h3>
+                            <p>Designed layouts intended to scale across desktop and mobile while maintaining product focus.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Prototype Flow</h3>
+                            <p>Created an interactive Figma prototype to show navigation, visual transitions, and overall site structure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Prototype</p>
+                    <h2>Interactive prototype</h2>
+
+                    <div class="project-image">
+                        <iframe
+                                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fnh3SGpjLA9jvVtQEk2TQ62%2FDIG%3Fnode-id%3D191-110%26starting-point-node-id%3D191%253A178%26t%3DTNzzgEGkvP4iaeXT-1"
+                                title="Eclipse marketing site prototype"
+                                style="width:100%; aspect-ratio:16/9; border:0; display:block;"
+                                allowfullscreen
+                                loading="lazy"
+                        ></iframe>
+                    </div>
+
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://www.figma.com/proto/nh3SGpjLA9jvVtQEk2TQ62/DIG?node-id=191-110&starting-point-node-id=191%3A178&t=TNzzgEGkvP4iaeXT-1"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            Open in Figma
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Site Features</p>
+                    <h2>What the website emphasized</h2>
+
+                    <p>
+                        The site was designed to mirror the patterns of a real product marketing page:
+                        strong hero messaging, modular feature sections, clear visual hierarchy, and a consistent system
+                        for presenting the device as both desirable and understandable.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Hero section with 3D product imagery and primary call to action</li>
+                        <li>Feature sections highlighting portability, performance, and product value</li>
+                        <li>Product specification areas in a more scannable format</li>
+                        <li>Responsive layouts for different viewport sizes</li>
+                        <li>Consistent use of color, typography, and branded components</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Outcome</p>
+                    <h2>What the project demonstrated</h2>
+
+                    <p>
+                        Eclipse gave me hands-on experience in designing a marketing-oriented product site rather than a utility or workflow tool.
+                        It pushed me to think about how brand, visual polish, and product presentation influence the way users perceive value.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Complete Brand System</h3>
+                            <p>Built a clear visual identity around the fictional product concept.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Responsive Web Design</h3>
+                            <p>Designed layouts intended to scale across screen sizes while preserving product emphasis.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Cross-Discipline Collaboration</h3>
+                            <p>Worked with teammates producing 3D assets and shaped the web experience around those deliverables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Takeaways</p>
+                    <h2>What this project taught me</h2>
+
+                    <p>
+                        Eclipse strengthened my understanding of web design as product communication.
+                        It showed me how much good marketing design depends on hierarchy, asset presentation, and brand consistency —
+                        especially when the goal is to make a concept feel real.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Building stronger visual identity systems for web experiences</li>
+                        <li>Designing around high-value visual assets like 3D product renders</li>
+                        <li>Balancing bold aesthetics with readability and usability</li>
+                        <li>Creating responsive layouts that still feel premium and product-focused</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
 <footer class="footer" role="contentinfo">
     <div class="cols">
+        <div class="footer-brand">
+            <div class="footer-brand__name">Vanessa Serrano</div>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+        </div>
+
         <div>
             <h3>Contact</h3>
             <a href="mailto:vanessannserrano@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
         <div>
             <h3>Work</h3>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div>
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-        </div>
     </div>
+
     <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-    // Mobile menu toggle
-    (function() {
-        const toggle = document.querySelector('.nav__toggle');
-        const nav = document.getElementById('site-nav');
-        if (!toggle || !nav) return;
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', String(open));
+    const toggle = document.querySelector(".nav__toggle");
+    const nav = document.getElementById("site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            nav.classList.toggle("is-open");
         });
-
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav')) {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        }, { passive: true });
-    })();
-
-    // Mark current page
-    (function() {
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav__links a').forEach(a => {
-            const href = (a.getAttribute('href') || '').toLowerCase();
-            if (href.endsWith(path)) {
-                a.setAttribute('aria-current', 'page');
-            }
-        });
-    })();
-
-    // Update year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    }
 </script>
 </body>
 </html>

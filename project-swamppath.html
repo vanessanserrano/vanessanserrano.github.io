@@ -3,275 +3,461 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SwampPath — UF Schedule Planner</title>
-  <meta name="description" content="UF course-planning tool: unified calendar + class list, prerequisite awareness, multi-semester planning, and profile tracking." />
+  <title>SwampPath — Vanessa Serrano</title>
+  <meta
+          name="description"
+          content="SwampPath — UF Schedule Planner. A student-first planning tool that combines a live schedule builder, prerequisite awareness, and multi-semester course planning."
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-swamppath">
-<!-- Nav -->
-<header class="nav" role="banner">
-  <div class="nav__inner">
-    <a class="logo" href="index.html" aria-label="Home">VS</a>
+<body class="project-page">
 
-    <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav" role="banner">
+  <div class="nav__inner nav__inner--home">
+    <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
+
+    <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
-      <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a
+              href="assets/resume.pdf"
+              target="_blank"
+              rel="noopener"
+              class="nav__resume"
+              aria-label="Download resume"
+      >
+        Resume
+      </a>
     </nav>
 
-    <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+    <button
+            class="nav__toggle"
+            aria-label="Toggle menu"
+            aria-controls="site-nav"
+            aria-expanded="false"
+    >
       Menu
     </button>
   </div>
 </header>
 
-<!-- Hero -->
-<header class="case-hero">
-  <div class="container hero-content">
-    <h1>SwampPath — UF Schedule Planner</h1>
-    <p class="hero-sub">
-      A student-first planner for the University of Florida: unified calendar + selected classes,
-      prerequisite awareness, multi-semester planning, and a profile that keeps you on track.
-    </p>
+<main>
+  <section class="project-hero">
+    <div class="container">
+      <div class="project-hero__layout">
+        <div>
+          <p class="project-hero__eyebrow">HCI Course Project &middot; Research to Prototype</p>
+          <h1>SwampPath</h1>
+          <p class="project-hero__lede">
+            A student-first UF course planner that combines a live schedule builder,
+            prerequisite awareness, and multi-semester planning into one streamlined experience.
+          </p>
 
-    <div class="meta-grid" role="list">
-      <div class="meta-card" role="listitem">
-        <label>Scope</label>
-        <div class="val">HCI course project · Research → High-fi prototype</div>
+          <div class="project-actions" style="justify-content:center;">
+            <a
+                    class="project-site-link"
+                    href="https://github.com/Chris-Enlow/swamppath-project"
+                    target="_blank"
+                    rel="noopener"
+            >
+              View GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="project-meta">
+          <div class="meta-item">
+            <b>Scope</b>
+            HCI course project, research through high-fidelity prototype
+          </div>
+          <div class="meta-item">
+            <b>Team</b>
+            Vanessa Serrano + 2 collaborators
+          </div>
+          <div class="meta-item">
+            <b>Stack</b>
+            React, Vite, TypeScript, CSS, Local Storage
+          </div>
+        </div>
       </div>
-      <div class="meta-card" role="listitem">
-        <label>Team</label>
-        <div class="val">Vanessa Serrano · +2 collaborators</div>
-      </div>
-      <div class="meta-card" role="listitem">
-        <label>Stack</label>
-        <div class="val">React + Vite · TypeScript · CSS · Local Storage (demo)</div>
-      </div>
-    </div>
 
-    <div class="chip-row" aria-label="Key badges">
-      <span class="chip">UF Blue & Orange</span>
-      <span class="chip">Schedule Builder</span>
-      <span class="chip">Multi-Semester Planner</span>
-      <span class="chip">Prereq Awareness</span>
-    </div>
-  </div>
-</header>
+      <div class="project-highlight-grid" style="margin-top: 2rem;">
+        <div class="project-highlight">
+          <h3>Student-Centered UX</h3>
+          <p>Designed around the real pain points of planning schedules during high-pressure registration periods.</p>
+        </div>
 
-<section id="demo" class="section section--alt">
-  <div class="container">
-    <div class="head">
-      <h2>See it in action</h2>
-      <div class="underline"></div>
-    </div>
-    <div class="media">
-      <video autoplay muted loop playsinline preload="metadata" aria-label="SwampPath prototype walkthrough">
-        <source src="assets/swamppath.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="chips">
-      <a class="chip" href="https://github.com/Chris-Enlow/swamppath-project" target="_blank" rel="noopener">GitHub →</a>
-    </div>
-  </div>
-</section>
+        <div class="project-highlight">
+          <h3>Unified Planning Flow</h3>
+          <p>Brought class search, schedule building, and future-semester planning into one system.</p>
+        </div>
 
-<!-- Challenge -->
-<section id="challenge" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>The challenge</h2>
-      <div class="underline"></div>
-    </div>
-    <p style="text-align:center; max-width:800px; margin:0 auto; color:var(--muted)">
-      ONE.UF separates course selection from the calendar, making conflict checks and future planning slow and error-prone—especially during tight registration windows.
-    </p>
-    <div class="card note" style="margin-top:16px">
-      <strong style="color:var(--accent)">Our solution</strong>
-      SwampPath puts the weekly calendar and selected classes side-by-side, flags prerequisite issues, and lets students save multi-semester plans tied to their profile.
-    </div>
-  </div>
-</section>
-
-<!-- Research -->
-<section id="research" class="section section--alt">
-  <div class="container">
-    <div class="head">
-      <h2>Research insights</h2>
-      <div class="underline"></div>
-    </div>
-    <ul class="checklist">
-      <li>Students juggle tabs and spreadsheets to verify time conflicts and prerequisites.</li>
-      <li>Discovery often starts from requirements and professor preferences, not just course codes.</li>
-      <li>Saving "what-if" semester plans reduces stress when registration opens.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Design -->
-<section id="design" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>Design process</h2>
-      <div class="underline"></div>
-    </div>
-    <div class="split">
-      <ul class="checklist">
-        <li>Browse/Search Catalog → Add section → View calendar conflicts</li>
-        <li>Planner → Map future semesters → Save to Profile → Load into builder</li>
-        <li>Single-screen schedule building (calendar + selection list)</li>
-        <li>Conflict and prereq cues with clear copy</li>
-      </ul>
-      <div class="card">
-        <strong>UI Priorities</strong>
-        <p>UF brand coloring with accessible contrast. Clear conflict visualization and prerequisite warnings.</p>
+        <div class="project-highlight">
+          <h3>Academic Clarity</h3>
+          <p>Added prerequisite awareness and saved planning paths to reduce confusion and repeated effort.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Dev -->
-<section id="dev" class="section section--alt">
-  <div class="container">
-    <div class="head">
-      <h2>Development</h2>
-      <div class="underline"></div>
-    </div>
-    <div class="split">
-      <div class="card">
-        <h3>Architecture</h3>
-        <p>React + Vite with TypeScript. State management for selected courses, weekly view, and saved plans. Mock catalog with demo users.</p>
-      </div>
-      <div class="card">
-        <h3>Highlights</h3>
-        <ul class="checklist">
-          <li>Week grid with instant conflict visualization</li>
-          <li>Prerequisite checks (demo rules) and warnings</li>
-          <li>Multi-semester planner with quick load to schedule</li>
-          <li>Local storage for saved plans in the demo</li>
-        </ul>
+  <section class="project-band project-band--soft">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">Overview</p>
+          <h2>What the project does</h2>
+
+          <p>
+            SwampPath is a course-planning tool built for University of Florida students who need a faster,
+            clearer way to build schedules and think ahead across semesters. Instead of separating class search,
+            schedule building, and planning into disconnected systems, SwampPath brings those tasks together in one flow.
+          </p>
+
+          <p>
+            The product combines a live weekly calendar, selected course list, prerequisite awareness,
+            and multi-semester planning so students can make more informed scheduling decisions with less friction.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Features -->
-<section id="features" class="section">
-  <div class="container">
-    <div class="head">
-      <h2>Key features</h2>
-      <div class="underline"></div>
-    </div>
-    <ul class="checklist">
-      <li>Unified Schedule Builder: Live weekly calendar next to your selected classes for quick drag/remove and conflict checks</li>
-      <li>Personalized Catalog: Search by code/title/professor; toggle UF-specific filters; one-click add/remove</li>
-      <li>Prereq Awareness: Warns when prerequisites aren't met so you don't waste registration attempts</li>
-      <li>Planner & Profile: Map future semesters, save multiple plans, and reload them during registration windows</li>
-    </ul>
-  </div>
-</section>
+  <section class="project-band project-band--deep">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">Problem</p>
+          <h2>Why the existing experience was frustrating</h2>
 
-<!-- Results -->
-<section id="results" class="section section--alt">
-  <div class="container">
-    <div class="head">
-      <h2>Results & impact</h2>
-      <div class="underline"></div>
-    </div>
-    <div class="stats">
-      <div class="stat">
-        <span class="num">40%</span>
-        <div>Fewer Clicks</div>
-      </div>
-      <div class="stat">
-        <span class="num">📅</span>
-        <div>Faster Planning</div>
-      </div>
-      <div class="stat">
-        <span class="num">✅</span>
-        <div>Prereq Clarity</div>
+          <p>
+            ONE.UF separates core planning tasks in a way that makes schedule building slower and more stressful.
+            Students often have to jump between class lists, calendars, requirements, and personal notes just to answer basic planning questions.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Students juggle multiple tabs and spreadsheets to compare time conflicts and options</li>
+            <li>Calendar context and course selection are disconnected</li>
+            <li>Prerequisite awareness is not surfaced clearly during planning</li>
+            <li>Exploring “what-if” semester plans takes extra effort and mental overhead</li>
+          </ul>
+
+          <div class="project-callout">
+            <p>
+              The opportunity was not just improving course search — it was creating a planning experience
+              that made <strong>schedule decisions feel faster, clearer, and less stressful</strong>.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <p style="text-align:center; color:var(--muted); margin-top:1rem">
-      Side-by-side calendar + classes trimmed ~40% of clicks in a pilot vs. ONE.UF. Saved multi-semester plans reduced "where do these fit?" confusion.
-    </p>
-  </div>
-</section>
+  </section>
 
-<!-- Next -->
-<section id="next" class="section">
-  <div class="container" style="text-align:center">
-    <div class="head">
-      <h2>What's next</h2>
-      <div class="underline"></div>
-    </div>
-    <ul class="checklist" style="max-width:620px; margin:10px auto 0; text-align:left">
-      <li>Import real catalog + degree audit APIs</li>
-      <li>Conflict-free auto-suggestions and professor rating signals</li>
-      <li>Team plan sharing and advisor notes</li>
-    </ul>
-    <div class="chips" style="justify-content:center; margin-top:16px">
-      <a class="btn" href="projects.html">← Back to Projects</a>
-      <a class="btn primary" href="https://github.com/Chris-Enlow/swamppath-project" target="_blank" rel="noopener">View code</a>
-    </div>
-  </div>
-</section>
+  <section class="project-band project-band--soft">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">Solution</p>
+          <h2>Designing a better planning flow</h2>
 
-<!-- Footer -->
+          <p>
+            SwampPath was designed to support how students actually plan, not just how courses are listed in a system.
+            The interface centers around a live weekly schedule view paired with selected classes and future planning tools,
+            giving users immediate feedback as they build.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Browse and search the course catalog</li>
+            <li>Add sections and instantly see them in a weekly calendar</li>
+            <li>Detect time conflicts visually while building a schedule</li>
+            <li>Flag prerequisite issues before registration attempts</li>
+            <li>Save and revisit multi-semester plans tied to a student profile</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-band project-band--deep">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">Research</p>
+          <h2>What we learned</h2>
+
+          <p>
+            Research showed that students do not think about schedule planning as a single isolated task.
+            They are often balancing degree requirements, professor preferences, time conflicts, and future-semester strategy all at once.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Students use outside tools to keep track of requirements and compare options</li>
+            <li>Discovery often starts from requirements, timing, and professor preferences, not just course codes</li>
+            <li>Students benefit from saving alternate semester plans before registration opens</li>
+            <li>Seeing schedule conflicts immediately reduces repeated trial-and-error planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-band project-band--soft">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">My Role</p>
+          <h2>What I contributed</h2>
+
+          <p>
+            This project was developed as part of an HCI course team. My contributions focused on UX thinking,
+            interface structure, and helping shape the product into a more usable planning experience that felt practical for students.
+          </p>
+
+          <div class="project-highlight-grid">
+            <div class="project-highlight">
+              <h3>UX Design</h3>
+              <p>Helped define user needs, planning flows, and interface structure around real student pain points.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Interaction Design</h3>
+              <p>Focused on how the weekly schedule, class list, and planning tools should work together on one screen.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Prototype Direction</h3>
+              <p>Contributed to translating research insight into a clearer high-fidelity student planning concept.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-band project-band--deep">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">UX Decisions</p>
+          <h2>How the experience was designed</h2>
+
+          <p>
+            A major design goal was reducing the mental overhead of planning. The interface needed to make schedule consequences visible immediately,
+            so users could understand conflicts and possibilities without constantly switching context.
+          </p>
+
+          <div class="project-highlight-grid">
+            <div class="project-highlight">
+              <h3>Side-by-Side Builder</h3>
+              <p>Placed the live weekly calendar next to selected classes so changes were visible immediately.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Conflict Awareness</h3>
+              <p>Used clearer conflict cues so overlapping sections were easier to identify and resolve.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Prerequisite Warnings</h3>
+              <p>Surfaced prerequisite issues during planning instead of after a failed registration attempt.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Future Planning Support</h3>
+              <p>Added multi-semester planning so students could think beyond the current term.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Profile-Linked Planning</h3>
+              <p>Connected saved plans to a student profile concept to support continuity over time.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Student-Familiar Visuals</h3>
+              <p>Used a university-oriented visual language while keeping contrast and readability clear.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-band project-band--soft">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">Demo</p>
+          <h2>Prototype walkthrough</h2>
+
+          <div class="project-image">
+            <video autoplay muted loop playsinline preload="metadata" style="width:100%; display:block;" aria-label="SwampPath prototype walkthrough">
+              <source src="assets/swamppath.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="project-actions" style="justify-content:center;">
+            <a
+                    class="project-site-link"
+                    href="https://github.com/Chris-Enlow/swamppath-project"
+                    target="_blank"
+                    rel="noopener"
+            >
+              View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-band project-band--deep">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">Technical Implementation</p>
+          <h2>How it was built</h2>
+
+          <div class="project-highlight-grid">
+            <div class="project-highlight">
+              <h3>Frontend</h3>
+              <p>Built with React, Vite, and TypeScript to support a responsive planning interface.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>State Management</h3>
+              <p>Managed selected courses, weekly schedule data, and saved plan behavior in the demo environment.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Prototype Logic</h3>
+              <p>Included mock catalog data, prerequisite rules, and saved-plan loading flows.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Persistence</h3>
+              <p>Used local storage for saved plan behavior within the prototype.</p>
+            </div>
+          </div>
+
+          <p>
+            The technical work focused on making planning interactions feel immediate and understandable.
+            A core part of the build was linking selected courses, calendar rendering, and saved plan behavior into one interface.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Live weekly calendar rendering</li>
+            <li>Selected course state and add/remove behavior</li>
+            <li>Prerequisite warning logic for demo scenarios</li>
+            <li>Saved multi-semester planning via local storage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-band project-band--soft">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">Results</p>
+          <h2>What the project improved</h2>
+
+          <p>
+            In pilot evaluation, the side-by-side builder reduced clicks and made planning faster than the existing campus workflow.
+            More importantly, the product concept helped reduce uncertainty by making prerequisites, conflicts, and long-term planning easier to see.
+          </p>
+
+          <div class="project-highlight-grid">
+            <div class="project-highlight">
+              <h3>~40% Fewer Clicks</h3>
+              <p>Compared with the more fragmented planning flow in ONE.UF during pilot evaluation.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Faster Planning</h3>
+              <p>Users could make schedule decisions more quickly with side-by-side feedback.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Prerequisite Clarity</h3>
+              <p>Warnings reduced confusion around whether a course path was actually valid.</p>
+            </div>
+
+            <div class="project-highlight">
+              <h3>Lower Stress</h3>
+              <p>Saved future-semester planning reduced “where does this fit?” uncertainty.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-band project-band--deep">
+    <div class="project-wrap">
+      <div class="project-shell">
+        <div class="project-main">
+          <p class="project-kicker">Takeaways</p>
+          <h2>What this project taught me</h2>
+
+          <p>
+            SwampPath reinforced how much better student tools can feel when they are designed around workflow, not just system structure.
+            The biggest value came from reducing context switching and helping users understand the consequences of planning decisions in real time.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Designing interfaces for complex, high-frequency student workflows</li>
+            <li>Turning research pain points into concrete planning features</li>
+            <li>Using interface structure to reduce cognitive load</li>
+            <li>Balancing immediate schedule building with long-term academic planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
 <footer class="footer" role="contentinfo">
   <div class="cols">
+    <div class="footer-brand">
+      <div class="footer-brand__name">Vanessa Serrano</div>
+    </div>
+
+    <div>
+      <h3>Navigation</h3>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+    </div>
+
     <div>
       <h3>Contact</h3>
       <a href="mailto:vanessannserrano@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
     </div>
+
     <div>
       <h3>Work</h3>
       <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
       <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <div>
-      <h3>Navigation</h3>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-    </div>
   </div>
+
   <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-  // Mobile menu toggle
-  (function() {
-    const toggle = document.querySelector('.nav__toggle');
-    const nav = document.getElementById('site-nav');
-    if (!toggle || !nav) return;
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(open));
+  const toggle = document.querySelector(".nav__toggle");
+  const nav = document.getElementById("site-nav");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      nav.classList.toggle("is-open");
     });
-
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav')) {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    }, { passive: true });
-  })();
-
-  // Mark current page
-  (function() {
-    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    document.querySelectorAll('.nav__links a').forEach(a => {
-      const href = (a.getAttribute('href') || '').toLowerCase();
-      if (href.endsWith(path)) {
-        a.setAttribute('aria-current', 'page');
-      }
-    });
-  })();
-
-  // Update year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  }
 </script>
 </body>
 </html>

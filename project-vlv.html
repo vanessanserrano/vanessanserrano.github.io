@@ -3,375 +3,470 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vendor Label Validation — Publix Technology</title>
-    <meta name="description" content="GS1 barcode scanning tool built during Summer 2025 at Publix Technology. Xamarin.Forms app that reduced label validation from ~15 minutes to ~15 seconds with automated parsing and real-time checks." />
+    <title>Vendor Label Validation — Vanessa Serrano</title>
+    <meta
+            name="description"
+            content="Vendor Label Validation Tool built at Publix Technology. A GS1 barcode scanning workflow that reduced manual seafood label validation from ~15 minutes to ~15 seconds."
+    />
     <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-vlv">
-<!-- Top Nav -->
-<header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
+<body class="project-page">
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav" role="banner">
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a
+                    href="assets/resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="nav__resume"
+                    aria-label="Download resume"
+            >
+                Resume
+            </a>
         </nav>
 
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <button
+                class="nav__toggle"
+                aria-label="Toggle menu"
+                aria-controls="site-nav"
+                aria-expanded="false"
+        >
             Menu
         </button>
     </div>
 </header>
 
-<!-- HERO -->
-<header class="case-hero">
-    <div class="container hero-content">
-        <h1>Vendor Label Validation Tool</h1>
-        <p class="hero-sub">
-            Mobile GS1 barcode scanning that transforms a 15-minute manual seafood label check into an ~15-second automated workflow.
-        </p>
-
-        <div class="meta-grid" role="list">
-            <div class="meta-card" role="listitem">
-                <label>Company</label><div class="val">Publix Technology (Summer 2025)</div>
-            </div>
-            <div class="meta-card" role="listitem">
-                <label>Role</label><div class="val">UX Designer · Front-End Developer</div>
-            </div>
-            <div class="meta-card" role="listitem">
-                <label>Impact</label><div class="val">≈60× faster · Higher accuracy · Compliance ready</div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Sticky Tabs -->
-<!--<div class="case-tabs" aria-label="Section navigation">-->
-<!--    <div class="tab-row container">-->
-<!--        <a class="tab" href="#tech">Tech</a>-->
-<!--        <a class="tab" href="#challenge">Challenge</a>-->
-<!--        <a class="tab" href="#goals">Goals</a>-->
-<!--        <a class="tab" href="#research">Research</a>-->
-<!--        <a class="tab" href="#persona">Persona</a>-->
-<!--        <a class="tab" href="#ia">IA</a>-->
-<!--        <a class="tab" href="#design">Design & Prototype</a>-->
-<!--        <a class="tab" href="#dev">Development</a>-->
-<!--        <a class="tab" href="#results">Results</a>-->
-<!--        <a class="tab" href="#learn">Learnings</a>-->
-<!--        <a class="tab" href="#more">More</a>-->
-<!--    </div>-->
-<!--</div>-->
-
 <main>
-    <!-- TECH -->
-    <section id="tech" class="section section--alt">
+    <section class="project-hero">
         <div class="container">
-            <div class="head">
-                <h2>Technology stack</h2>
-                <div class="underline"></div>
+            <div class="project-hero__layout">
+                <div>
+                    <p class="project-hero__eyebrow">Publix Technology &middot; Summer 2025 Internship</p>
+                    <h1>Vendor Label Validation</h1>
+                    <p class="project-hero__lede">
+                        A mobile GS1 barcode scanning workflow that transformed seafood vendor label validation
+                        from a slow manual process into a real-time, mobile-first tool.
+                    </p>
+
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://www.figma.com/proto/wdfXEhDdfQpoVy2UlLEjlM/VLV-Walkthrough?node-id=5-31&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=40%3A3"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            View Prototype
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <b>Role</b>
+                        UX Design, Front-End Development
+                    </div>
+                    <div class="meta-item">
+                        <b>Team</b>
+                        Publix Technology internship project
+                    </div>
+                    <div class="meta-item">
+                        <b>Impact</b>
+                        ~15 min to ~15 sec, improved accuracy, stronger compliance support
+                    </div>
+                </div>
             </div>
 
-            <div class="cards">
-                <div class="card">C# / .NET</div>
-                <div class="card">Xamarin.Forms (MVVM)</div>
-                <div class="card">SQL</div>
-                <div class="card">Telerik RadDataForm</div>
-                <div class="card">GS1 DataMatrix parser</div>
-                <div class="card">Visual Studio</div>
-                <div class="card">Azure DevOps</div>
+            <div class="project-highlight-grid" style="margin-top: 2rem;">
+                <div class="project-highlight">
+                    <h3>Mobile Workflow Tool</h3>
+                    <p>Built for real warehouse and quality-assurance use on enterprise Android devices.</p>
+                </div>
+
+                <div class="project-highlight">
+                    <h3>GS1 Parsing + Validation</h3>
+                    <p>Turned complex barcode data into structured fields with real-time feedback and checks.</p>
+                </div>
+
+                <div class="project-highlight">
+                    <h3>Operational Impact</h3>
+                    <p>Reduced validation time dramatically while lowering manual entry errors and compliance risk.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CHALLENGE -->
-    <section id="challenge" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>The challenge</h2>
-                <div class="underline"></div>
-            </div>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Overview</p>
+                    <h2>What the project does</h2>
 
-            <div class="cards">
-                <div class="card">
-                    <h3>❌ Before</h3>
-                    <p style="color:var(--muted)">
-                        Associates manually cross-checked GTINs, vendor info, weights, and harvest data against internal systems.
-                        Each label could take up to 15 minutes, with frequent transcription errors and compliance risk.
+                    <p>
+                        Vendor Label Validation is a mobile workflow tool built during my internship at Publix Technology
+                        to improve how seafood labels are checked before approval. The tool scans GS1 barcodes,
+                        parses structured field data, and validates key information in real time so associates can quickly
+                        determine whether a label is compliant.
+                    </p>
+
+                    <p>
+                        Instead of manually comparing printed label information against internal requirements, users can scan once
+                        and immediately see relevant data, validation states, and warnings. The result is a faster, more reliable,
+                        and more operationally practical workflow.
                     </p>
                 </div>
-                <div class="card">
-                    <h3>✅ After</h3>
-                    <p style="color:var(--muted)">
-                        Barcode scan instantly parses GS1 Application Identifiers and validates fields in real time, surfacing warnings/errors and eliminating manual entry.
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Problem</p>
+                    <h2>Why the old workflow was inefficient</h2>
+
+                    <p>
+                        Before this tool, seafood vendor labels were validated manually. Associates had to compare GTINs,
+                        vendor information, weights, pack dates, and other details by hand, often across multiple systems.
+                        This process was slow, repetitive, and prone to transcription mistakes.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Each label could take up to <strong>15 minutes</strong> to validate manually</li>
+                        <li>Manual comparison increased the risk of input errors and missed issues</li>
+                        <li>Important compliance checks were harder to perform consistently</li>
+                        <li>The workflow was especially inefficient in fast-paced operational environments</li>
+                    </ul>
+
+                    <div class="project-callout">
+                        <p>
+                            The opportunity was not just scanning a barcode — it was designing a tool that made
+                            <strong>speed, clarity, and compliance</strong> work together in one experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Goals</p>
+                    <h2>What success looked like</h2>
+
+                    <p>
+                        The goal was to automate label validation through barcode scanning in a way that would save time,
+                        improve accuracy, and make the experience easier to use on the warehouse floor.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>&lt; 20s</h3>
+                            <p>Target validation time per label.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Real-Time Checks</h3>
+                            <p>Immediate feedback as structured barcode data populated the interface.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Fewer Errors</h3>
+                            <p>Reduce manual entry and improve consistency across validations.</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        The core hypothesis was that automating GS1 parsing and validation could reduce processing time by over 90%
+                        while improving trust in the workflow.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GOALS -->
-    <section id="goals" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Goals & success metrics</h2>
-                <div class="underline"></div>
-            </div>
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Research</p>
+                    <h2>What informed the design</h2>
 
-            <p style="text-align:center; color:var(--muted); max-width:800px; margin:0 auto">
-                <strong style="color:var(--accent)">Hypothesis:</strong> Automating validation via GS1 scanning will cut processing time by &gt;90% while improving accuracy and compliance.
-            </p>
+                    <p>
+                        I grounded the work in conversations with internal developers and seafood QA stakeholders,
+                        research into GS1 barcode requirements, and observation of the workflow context where the tool would actually be used.
+                    </p>
 
-            <div class="stats" style="margin-top:18px">
-                <div class="stat"><span class="num">&lt; 20s</span><div>Target validation time</div></div>
-                <div class="stat"><span class="num">100%</span><div>GS1 scan accuracy</div></div>
-                <div class="stat"><span class="num">0</span><div>Manual data entry errors</div></div>
-                <div class="stat"><span class="num">👍</span><div>Positive field feedback</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RESEARCH -->
-    <section id="research" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Research & discovery</h2>
-                <div class="underline"></div>
-            </div>
-
-            <ul class="checklist">
-                <li>Interviews with internal devs & seafood QA specialists to map pain points</li>
-                <li>Deep dive into GS1 AI spec (01 GTIN, 10 Lot, 310x Net Weight, 11/13 Dates…)</li>
-                <li>Time-motion analysis of current workflow to identify bottlenecks</li>
-                <li>Field shadowing in warehouse environments (lighting, gloves, device handling)</li>
-            </ul>
-
-            <div class="card note" style="margin-top:16px">
-                <strong>Key insight</strong>
-                Most common rejection reasons: incorrect weights, missing pack dates, incomplete vendor details.
-                Automated parsing + validation catches issues immediately and prevents rework.
-            </div>
-        </div>
-    </section>
-
-    <!-- PERSONA -->
-    <section id="persona" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>User persona & job story</h2>
-                <div class="underline"></div>
-            </div>
-
-            <div class="card" style="background:linear-gradient(135deg,var(--hero-a),var(--hero-b)); color:#fff">
-                <strong style="display:block; font-size:1.15rem; margin-bottom:.4rem">Publix QA Associate</strong>
-                <p style="opacity:.95; font-size:1.05rem">
-                    “When a seafood shipment arrives, I want to validate vendor labels quickly and accurately so I can approve
-                    loads without manual entry errors, ensuring quality and compliance.”
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- IA -->
-    <section id="ia" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Information architecture</h2>
-                <div class="underline"></div>
-            </div>
-
-            <ul class="checklist">
-                <li>Home → Vendor Label Validation</li>
-                <li>Scan Barcode → Parse GS1 → Display structured fields</li>
-                <li>Real-time validation → Clear indicators (valid / warning / error)</li>
-                <li>History of scans → Detailed record for audits</li>
-                <li>Graceful fallbacks for invalid/incomplete data</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- DESIGN & PROTOTYPE -->
-    <section id="design" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Design & prototype</h2>
-                <div class="underline"></div>
-            </div>
-
-            <ul class="checklist">
-                <li>Telerik RadDataForm for grouped, scannable field layout on mobile</li>
-                <li>Key fields: GTIN, Vendor, Stewardship, Harvest Method, Weight, Pack Date, State of Origin</li>
-                <li>Color-coded validation states (green/valid, yellow/warn, red/error)</li>
-                <li>High contrast + large targets for floor conditions</li>
-            </ul>
-
-            <div class="media" style="margin-top:18px">
-                <iframe
-                        src="https://embed.figma.com/proto/wdfXEhDdfQpoVy2UlLEjlM/VLV-Walkthrough?node-id=5-31&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=40%3A3&embed-host=share"
-                        title="VLV Figma prototype" allowfullscreen loading="lazy">
-                </iframe>
-            </div>
-            <div class="chips">
-                <a class="btn primary" target="_blank" rel="noopener"
-                   href="https://www.figma.com/proto/wdfXEhDdfQpoVy2UlLEjlM/VLV-Walkthrough?node-id=5-31&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=40%3A3">
-                    Open in Figma →
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- DEVELOPMENT -->
-    <section id="dev" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Development highlights</h2>
-                <div class="underline"></div>
-            </div>
-
-            <div class="split">
-                <div class="card">
-                    <h3>GS1 parsing engine</h3>
-                    <p style="color:var(--muted)">Implemented comprehensive AI parsing with domain validation:</p>
-                    <ul class="checklist">
-                        <li><strong>01</strong> GTIN · product identification</li>
-                        <li><strong>10</strong> Lot Number · batch tracking</li>
-                        <li><strong>310x</strong> Net Weight · unit/precision handling</li>
-                        <li><strong>11/13</strong> Production/Pack Dates · freshness rules</li>
+                    <ul class="project-bullets">
+                        <li>Interviews with internal devs and seafood QA specialists</li>
+                        <li>Review of GS1 Application Identifier formats and parsing requirements</li>
+                        <li>Workflow analysis to identify bottlenecks and repeated manual steps</li>
+                        <li>Consideration of field conditions like gloves, lighting, and quick scanning interactions</li>
                     </ul>
-                </div>
 
-                <div class="card">
-                    <h3>Display & data binding</h3>
-                    <ul class="checklist">
-                        <li>SKU → product image binding</li>
-                        <li>Weight conversion (e.g., <code>001550</code> → 15.50 lbs)</li>
-                        <li>Date formatting (YYMMDD → mm/dd/yy)</li>
-                        <li>Null/invalid enum fallbacks</li>
-                        <li>Real-time validation feedback as fields populate</li>
-                    </ul>
+                    <div class="project-callout">
+                        <p>
+                            A key insight was that the most common label issues involved missing or incorrect data fields,
+                            so the interface needed to surface <strong>structured feedback immediately</strong>, not after the fact.
+                        </p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="card" style="margin-top:18px">
-                <h3>Custom validation logic</h3>
-                <ul class="checklist">
-                    <li>Required presence: GTIN, Vendor, Pack Date</li>
-                    <li>State-of-origin rules (e.g., USA/RTC constraints on certain SKUs)</li>
-                    <li>Quantity vs Weight (≥1 required; both preferred)</li>
-                    <li>Date sanity checks (no future pack dates)</li>
-                    <li>Harvest method compliance</li>
-                </ul>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">User Context</p>
+                    <h2>Who this was designed for</h2>
+
+                    <p>
+                        The primary user was a Publix QA associate responsible for checking vendor labels quickly and accurately
+                        before approving seafood loads. This meant the tool had to support fast scanning, immediate interpretation,
+                        and confidence in the result without adding unnecessary friction.
+                    </p>
+
+                    <div class="project-callout">
+                        <p>
+                            “When a seafood shipment arrives, I want to validate vendor labels quickly and accurately so I can approve loads
+                            without manual entry errors, ensuring quality and compliance.”
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- RESULTS -->
-    <section id="results" class="section section--alt">
-        <div class="container">
-            <div class="head">
-                <h2>Results & impact</h2>
-                <div class="underline"></div>
-            </div>
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">UX Decisions</p>
+                    <h2>How the workflow was designed</h2>
 
-            <div class="cards">
-                <div class="card"><h3>⚡ 60× faster</h3><p style="color:var(--muted)">~15 min → ~15 sec per label</p></div>
-                <div class="card"><h3>✓ Accuracy</h3><p style="color:var(--muted)">Automated parsing removes transcription errors</p></div>
-                <div class="card"><h3>📱 Mobile-first</h3><p style="color:var(--muted)">Android enterprise devices for warehouse floors</p></div>
-                <div class="card"><h3>🔒 Compliance</h3><p style="color:var(--muted)">Real-time checks before approval</p></div>
-                <div class="card"><h3>📊 Audit trail</h3><p style="color:var(--muted)">Complete scan history & records</p></div>
-                <div class="card"><h3>💚 Trust</h3><p style="color:var(--muted)">Clear indicators + raw data fallbacks</p></div>
+                    <p>
+                        A major design challenge was making complex parsed data feel easy to understand on a mobile device.
+                        The interface needed to prioritize speed and clarity while still surfacing enough detail for confident validation.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Grouped Field Layout</h3>
+                            <p>Used a structured mobile form layout so related data could be scanned quickly and read with less effort.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Validation States</h3>
+                            <p>Introduced clear visual indicators for valid, warning, and error states.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>High Contrast + Large Targets</h3>
+                            <p>Designed for floor conditions where speed, visibility, and touch accuracy matter.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Graceful Fallbacks</h3>
+                            <p>Supported incomplete or invalid scan data without breaking the user flow.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Scan History</h3>
+                            <p>Provided a way to review detailed records and support audit-related use cases.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Mobile Readability</h3>
+                            <p>Focused on hierarchy and field grouping so users could interpret results at a glance.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-image">
+                        <iframe
+                                src="https://embed.figma.com/proto/wdfXEhDdfQpoVy2UlLEjlM/VLV-Walkthrough?node-id=5-31&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=40%3A3&embed-host=share"
+                                title="Vendor Label Validation Figma prototype"
+                                style="width:100%; aspect-ratio:16/9; border:0; display:block;"
+                                allowfullscreen
+                                loading="lazy"
+                        ></iframe>
+                    </div>
+
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://www.figma.com/proto/wdfXEhDdfQpoVy2UlLEjlM/VLV-Walkthrough?node-id=5-31&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=40%3A3"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            Open in Figma
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- LEARNINGS -->
-    <section id="learn" class="section">
-        <div class="container">
-            <div class="head">
-                <h2>Key learnings</h2>
-                <div class="underline"></div>
-            </div>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Technical Implementation</p>
+                    <h2>How it was built</h2>
 
-            <ul class="checklist">
-                <li><strong>Design for imperfect data:</strong> Real GS1 labels vary widely; fallbacks and explicit errors build trust.</li>
-                <li><strong>Field testing matters:</strong> Lighting, gloves, and scanning posture change design constraints.</li>
-                <li><strong>Enterprise a11y is mandatory:</strong> Contrast + target sizes are non-negotiable.</li>
-                <li><strong>Parser robustness:</strong> Extensive sample coverage prevents production surprises.</li>
-                <li><strong>Stakeholder alignment:</strong> Regular QA syncs ensured validation matched compliance rules.</li>
-            </ul>
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Core Stack</h3>
+                            <p>C#, .NET, Xamarin.Forms, SQL, and Telerik RadDataForm for enterprise mobile UI.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>GS1 Parser</h3>
+                            <p>Implemented parsing for key GS1 identifiers such as GTIN, lot number, weight, and dates.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Data Binding</h3>
+                            <p>Connected parsed values to product fields, validation rules, and user-facing feedback states.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Validation Logic</h3>
+                            <p>Added custom checks for required fields, date rules, weight handling, and compliance-related constraints.</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        A key part of implementation was making parser output meaningful inside the UI. It was not enough to extract values —
+                        the tool also needed to convert them into readable, validated field states that users could trust immediately.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>GTIN parsing and product identification</li>
+                        <li>Lot number and batch tracking support</li>
+                        <li>Weight conversion and readable display formatting</li>
+                        <li>Date parsing and freshness-related rules</li>
+                        <li>Fallback handling for invalid or missing values</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- MORE -->
-    <section id="more" class="section section--alt">
-        <div class="container" style="text-align:center">
-            <div class="head">
-                <h2>More projects</h2>
-                <div class="underline"></div>
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Results</p>
+                    <h2>Outcome and impact</h2>
+
+                    <p>
+                        The final tool reduced validation time from roughly 15 minutes to about 15 seconds per label,
+                        while improving reliability and making compliance checks easier to perform consistently.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>~60× Faster</h3>
+                            <p>Reduced time from ~15 minutes to ~15 seconds per label.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Improved Accuracy</h3>
+                            <p>Automated parsing removed many opportunities for manual transcription mistakes.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Mobile-First Workflow</h3>
+                            <p>Made validation practical in the operational environment where it actually happens.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Stronger Compliance</h3>
+                            <p>Surfaced validation issues earlier so corrections could happen before approval.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p style="color:var(--muted)">Explore more UX & engineering work:</p>
-            <div class="chips" style="justify-content:center; margin-top:10px">
-                <a class="btn" href="projects.html">← Back to Projects</a>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Takeaways</p>
+                    <h2>What this project taught me</h2>
+
+                    <p>
+                        Vendor Label Validation reinforced how powerful UX and engineering can be when they are shaped around a real operational workflow.
+                        The strongest outcome came from translating a technical parsing problem into a product that felt faster, clearer, and more trustworthy for the people using it.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Designing for imperfect, real-world operational data</li>
+                        <li>Building enterprise tools that balance speed and reliability</li>
+                        <li>Translating parsing logic into clear user-facing feedback</li>
+                        <li>Designing mobile workflows for warehouse and QA contexts</li>
+                        <li>Working with stakeholders to align product behavior with compliance needs</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 </main>
 
-<!-- Footer -->
 <footer class="footer" role="contentinfo">
     <div class="cols">
+        <div class="footer-brand">
+            <div class="footer-brand__name">Vanessa Serrano</div>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+        </div>
+
         <div>
             <h3>Contact</h3>
             <a href="mailto:vanessannserrano@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
         <div>
             <h3>Work</h3>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div>
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-        </div>
     </div>
+
     <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-    // Mobile menu toggle
-    (function() {
-        const toggle = document.querySelector('.nav__toggle');
-        const nav = document.getElementById('site-nav');
-        if (!toggle || !nav) return;
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', String(open));
+    const toggle = document.querySelector(".nav__toggle");
+    const nav = document.getElementById("site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            nav.classList.toggle("is-open");
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav')) {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        }, { passive: true });
-    })();
-
-    // Mark current page in navigation
-    (function() {
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav__links a').forEach(a => {
-            const href = (a.getAttribute('href') || '').toLowerCase();
-            if (href.endsWith(path)) {
-                a.setAttribute('aria-current', 'page');
-            }
-        });
-    })();
+    }
 </script>
 </body>
 </html>

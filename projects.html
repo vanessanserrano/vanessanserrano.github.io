@@ -9,33 +9,64 @@
 </head>
 <body>
 <header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+        <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a
+                    href="assets/resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="nav__resume"
+                    aria-label="Download resume"
+            >
+                Resume
+            </a>
         </nav>
 
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <button
+                class="nav__toggle"
+                aria-label="Toggle menu"
+                aria-controls="site-nav"
+                aria-expanded="false"
+        >
             Menu
         </button>
     </div>
 </header>
 
-<main class="section">
-    <div class="container">
-        <h2>Projects</h2>
-        <p class="lead">A mix of internship work, hackathons, courses, and personal projects showing process and outcomes.</p>
+<main class="projects-page">
+    <section class="projects-hero">
+        <div class="container projects-hero__inner">
+            <p class="projects-hero__eyebrow">Selected Work</p>
+            <h1 class="projects-hero__title">Projects</h1>
+            <p class="projects-hero__lead">
+                A mix of internship work, hackathons, courses, and personal projects.
+            </p>
+        </div>
+    </section>
 
-        <div class="grid">
+    <section class="projects-gallery">
+        <div class="container">
+            <div class="projects-gallery__panel">
+                <div class="grid grid--projects-page">
+            <!-- Optipath -->
+            <a class="card reveal" href="project-optipath.html">
+                <img class="thumb" src="assets/images/optipath.png" alt="Optipath demo screens" />
+                <div class="card__body">
+                    <div class="card__eyebrow">Senior Proj • Full Stack</div>
+                    <div class="card__title">Optipath</div>
+                    <div class="card__meta">Vue 3, TypeScript, Vite, API</div>
+                </div>
+            </a>
             <!-- PrepTalk -->
             <a class="card reveal" href="project-preptalk.html">
-                <img class="thumb" src="assets/images/prep-talk.jpg" alt="PrepTalk AI Interviewer demo screens" />
+                <img class="thumb" src="assets/images/preptalk.png" alt="PrepTalk AI Interviewer demo screens" />
                 <div class="card__body">
-                    <div class="card__eyebrow">Hackathon • Finalist & 1st (Education)</div>
-                    <div class="card__title">PrepTalk — AI Interviewer</div>
+                    <div class="card__eyebrow">Hackathon • Finalist & 1st</div>
+                    <div class="card__title">PrepTalk</div>
                     <div class="card__meta">React + TS • FastAPI • OpenAI • Résumé parser</div>
                 </div>
             </a>
@@ -45,7 +76,7 @@
                 <img class="thumb" src="assets/images/arc-cover.jpg" alt="ARC app mockups" />
                 <div class="card__body">
                     <div class="card__eyebrow">Hackathon • Prototyping</div>
-                    <div class="card__title">ARC — After Response Care</div>
+                    <div class="card__title">ARC</div>
                     <div class="card__meta">React Native + Flask • 40+ interviews • Crisis UX</div>
                 </div>
             </a>
@@ -62,7 +93,7 @@
 
             <!-- SwampPath -->
             <a class="card reveal" href="project-swamppath.html">
-                <img class="thumb" src="assets/images/swamp-path.jpg" alt="SwampPath scheduling screens" />
+                <img class="thumb" src="assets/images/swamp_path.png" alt="SwampPath scheduling screens" />
                 <div class="card__body">
                     <div class="card__eyebrow">UF • Team Project</div>
                     <div class="card__title">SwampPath — Schedule Builder</div>
@@ -98,8 +129,10 @@
                     <div class="card__meta">React/TS • Node/Express • Pantry Mode</div>
                 </div>
             </a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </main>
 
 <footer class="footer">

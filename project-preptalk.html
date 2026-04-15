@@ -3,263 +3,431 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PrepTalk — AI Interviewer</title>
-    <meta name="description" content="Finalist and 1st Place (Education Track). Full-stack platform that simulates personalized interviews, analyzes résumés, generates role/company-aware questions, and gives AI feedback." />
+    <title>PrepTalk — Vanessa Serrano</title>
+    <meta
+            name="description"
+            content="PrepTalk — AI Interviewer. Finalist and 1st Place (Education Track). Full-stack platform for personalized interview prep, company-aware questions, and structured AI feedback."
+    />
     <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-preptalk">
-<!-- Nav -->
-<header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
+<body class="project-page">
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav" role="banner">
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a
+                    href="assets/resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="nav__resume"
+                    aria-label="Download resume"
+            >
+                Resume
+            </a>
         </nav>
 
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <button
+                class="nav__toggle"
+                aria-label="Toggle menu"
+                aria-controls="site-nav"
+                aria-expanded="false"
+        >
             Menu
         </button>
     </div>
 </header>
 
-<!-- Hero -->
-<header class="case-hero">
-    <div class="container hero-content">
-        <h1>PrepTalk — AI Interviewer</h1>
-        <p class="hero-sub">AI-powered interview prep that analyzes résumés, generates tailored questions by role/company, and simulates realistic interviews with live feedback.</p>
+<main>
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero__layout">
+                <div>
+                    <p class="project-hero__eyebrow">Hackathon Finalist &middot; 1st Place (Education Track)</p>
+                    <h1>PrepTalk</h1>
+                    <p class="project-hero__lede">
+                        An AI-powered interview prep platform that analyzes résumés, generates role-
+                        and company-aware questions, and simulates realistic interview practice with structured feedback.
+                    </p>
 
-        <div class="meta-grid" role="list">
-            <div class="meta-card" role="listitem">
-                <label>Project</label>
-                <div class="val">Hackathon finalist · 1st Place (Education Track)</div>
+                    <div class="project-actions" style="justify-content:center;">
+                        <a
+                                class="project-site-link"
+                                href="https://youtu.be/1btN20MOyxc?si=06a5C1haO9EErw_T"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            Watch Demo
+                        </a>
+                        <a
+                                class="project-site-link"
+                                href="https://github.com/johanfortus/AI-Interviewer"
+                                target="_blank"
+                                rel="noopener"
+                        >
+                            View GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <b>Role</b>
+                        UX Design, Front-End Development
+                    </div>
+                    <div class="meta-item">
+                        <b>Team</b>
+                        Hackathon team
+                    </div>
+                    <div class="meta-item">
+                        <b>Stack</b>
+                        React, TypeScript, FastAPI, OpenAI
+                    </div>
+                </div>
             </div>
-            <div class="meta-card" role="listitem">
-                <label>Role</label>
-                <div class="val">UX Designer · Front-End Developer</div>
-            </div>
-            <div class="meta-card" role="listitem">
-                <label>Stack</label>
-                <div class="val">React + TypeScript (Vite, Tailwind), FastAPI, OpenAI</div>
-            </div>
-        </div>
 
-        <div class="chip-row" aria-label="Tech badges">
-            <span class="chip">React</span>
-            <span class="chip">TypeScript</span>
-            <span class="chip">Tailwind</span>
-            <span class="chip">FastAPI</span>
-            <span class="chip">OpenAI</span>
-            <span class="chip">Monaco Editor</span>
-        </div>
-    </div>
-</header>
+            <div class="project-highlight-grid" style="margin-top: 2rem;">
+                <div class="project-highlight">
+                    <h3>Personalized Questions</h3>
+                    <p>Generated interview questions using résumé content, role, and company context.</p>
+                </div>
 
-<!-- Awards Banner -->
-<section class="award">
-    <div class="container">
-        <h3>🏆 Finalist · 1st Place (Education Track)</h3>
-        <p>Recognized for impact on equitable interview preparation and practical, end-to-end execution.</p>
-    </div>
-</section>
+                <div class="project-highlight">
+                    <h3>Mock Interview Flow</h3>
+                    <p>Created a guided prep and interview experience with realistic structure and feedback.</p>
+                </div>
 
-<!-- Demo -->
-<section id="demo" class="section section--alt">
-    <div class="container">
-        <div class="head">
-            <h2>See it in action</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="media">
-            <iframe
-                    src="https://www.youtube.com/embed/1btN20MOyxc"
-                    title="PrepTalk — AI Interviewer demo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-            ></iframe>
-        </div>
-        <div class="chips">
-            <a class="chip" href="https://youtu.be/1btN20MOyxc?si=06a5C1haO9EErw_T" target="_blank" rel="noopener">Watch Demo →</a>
-            <a class="chip" href="https://www.hackathonparty.com/hackathons/26/projects/375" target="_blank" rel="noopener">Hackathon Page →</a>
-            <a class="chip" href="https://github.com/johanfortus/AI-Interviewer" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-    </div>
-</section>
-
-<!-- Challenge -->
-<section id="challenge" class="section">
-    <div class="container">
-        <div class="head">
-            <h2>The challenge</h2>
-            <div class="underline"></div>
-        </div>
-        <p style="text-align:center; max-width:800px; margin:0 auto; color:var(--muted)">
-            Interview prep is stressful and time-consuming. Candidates lack realistic practice, tailored questions, and actionable feedback in a single place—especially without mentors or mock-interview access.
-        </p>
-        <div class="card note" style="margin-top:16px">
-            <strong style="color:var(--accent)">Our solution</strong>
-            PrepTalk analyzes a résumé, generates role/company-aware questions, and runs mock interviews (HR/Manager/Technical) with webcam and technical coding rounds—then returns structured feedback.
-        </div>
-    </div>
-</section>
-
-<!-- Research -->
-<section id="research" class="section section--alt">
-    <div class="container">
-        <div class="head">
-            <h2>Research insights</h2>
-            <div class="underline"></div>
-        </div>
-        <ul class="checklist">
-            <li>Candidates spend hours searching for "likely questions" yet get little personalized practice.</li>
-            <li>Students want concise company context (culture, values) before mock interviews.</li>
-            <li>Immediate, specific feedback (structure, tone, confidence) drives improvement.</li>
-        </ul>
-    </div>
-</section>
-
-<!-- Design -->
-<section id="design" class="section">
-    <div class="container">
-        <div class="head">
-            <h2>Design process</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="split">
-            <ul class="checklist">
-                <li>Interview Start → upload résumé, choose role/company, select round type</li>
-                <li>Prep Page → résumé feedback, company snapshot, practice tips</li>
-                <li>Interview → HR/Manager rounds or Technical editor with prompts</li>
-                <li>Minimal layout with clear timers and prompts</li>
-            </ul>
-            <div class="card">
-                <strong>UI Priorities</strong>
-                <p>High-contrast controls and large touch targets. Panelized feedback with examples and next steps.</p>
+                <div class="project-highlight">
+                    <h3>Accessible Prep Tool</h3>
+                    <p>Designed to reduce barriers for students who lack mentors or formal mock interview practice.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Dev -->
-<section id="dev" class="section section--alt">
-    <div class="container">
-        <div class="head">
-            <h2>Development</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="split">
-            <div class="card">
-                <h3>Architecture</h3>
-                <p>React Native (Expo) front-end, Flask API, Auth0 auth, Expo Router navigation.</p>
-            </div>
-            <div class="card">
-                <h3>Key work</h3>
-                <ul class="checklist">
-                    <li>Structured prompts for reliable JSON (questions, rubrics)</li>
-                    <li>Webcam integration for live mock sessions</li>
-                    <li>Monaco editor + local JS runner for technical tasks</li>
-                    <li>CORS + endpoint testing via Postman before wiring UI</li>
-                </ul>
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Overview</p>
+                    <h2>What the project does</h2>
+
+                    <p>
+                        PrepTalk is an interview preparation platform built to help users practice more effectively
+                        with personalized, structured support. Instead of relying on generic question banks or scattered resources,
+                        the product brings résumé analysis, company context, tailored interview questions, and mock interview feedback into one flow.
+                    </p>
+
+                    <p>
+                        The goal was to create an experience that felt practical and immediately useful — especially for students
+                        and early-career candidates preparing for interviews without easy access to mentors, coaching, or realistic practice environments.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Features -->
-<section id="features" class="section">
-    <div class="container">
-        <div class="head">
-            <h2>Key features</h2>
-            <div class="underline"></div>
-        </div>
-        <ul class="checklist">
-            <li>Résumé-aware Questions: Generates HR/Manager/Technical prompts grounded in your actual experience and target role</li>
-            <li>Company Prep: Concise summaries of culture, values, and example interview themes to prime candidates</li>
-            <li>Mock Interviews: Webcam + timed sessions; structured rubrics for tone, clarity, and confidence</li>
-            <li>Technical Round: Monaco editor with sample tests; JS local runner (extensible to TS/Python via backend)</li>
-        </ul>
-    </div>
-</section>
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Problem</p>
+                    <h2>Why interview prep feels fragmented</h2>
 
-<!-- Next -->
-<section id="next" class="section section--alt">
-    <div class="container" style="text-align:center">
-        <div class="head">
-            <h2>What's next</h2>
-            <div class="underline"></div>
-        </div>
-        <ul class="checklist" style="max-width:620px; margin:10px auto 0; text-align:left">
-            <li>User accounts and progress history (PostgreSQL/Firebase)</li>
-            <li>Realtime voice & posture feedback (WebRTC + TF.js / Realtime API)</li>
-            <li>Confidence scoring and improved analytics</li>
-            <li>Public deployment (Vercel + Render)</li>
-        </ul>
-        <div class="chips" style="justify-content:center; margin-top:16px">
-            <a class="btn" href="projects.html">← Back to Projects</a>
-            <a class="btn primary" href="https://github.com/johanfortus/AI-Interviewer" target="_blank" rel="noopener">View code</a>
-        </div>
-    </div>
-</section>
+                    <p>
+                        Interview preparation is often spread across disconnected tools and resources. Candidates may search for likely questions,
+                        read company pages, revise résumés, and practice answers separately — but still lack feedback that feels personalized or realistic.
+                    </p>
 
-<!-- Footer -->
+                    <ul class="project-bullets">
+                        <li>Practice is often generic instead of tailored to the user’s background</li>
+                        <li>Company research and interview prep usually happen in separate places</li>
+                        <li>Most students do not have access to realistic mock interviews or useful feedback</li>
+                        <li>Technical and behavioral preparation are rarely integrated into one flow</li>
+                    </ul>
+
+                    <div class="project-callout">
+                        <p>
+                            The opportunity was not just generating questions with AI — it was designing a single product
+                            that made interview prep feel more <strong>personal, realistic, and actionable</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Solution</p>
+                    <h2>Designing an end-to-end prep experience</h2>
+
+                    <p>
+                        PrepTalk was designed as a guided system rather than a single-screen tool. The experience moves users
+                        from setup into preparation and then into interview simulation, helping them feel more prepared at each step.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Upload résumé and enter target role or company</li>
+                        <li>Generate tailored interview questions</li>
+                        <li>Review company-aware prep context</li>
+                        <li>Run behavioral or technical mock interview flows</li>
+                        <li>Receive structured feedback and improvement guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">My Role</p>
+                    <h2>What I contributed</h2>
+
+                    <p>
+                        My work focused on UX design and front-end development. I helped shape the interview-prep flow,
+                        organize the experience into clearer stages, and build the interface so users could move from setup
+                        to practice in a way that felt intuitive and usable.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>UX Design</h3>
+                            <p>Structured the flow into setup, prep, and interview stages to reduce confusion and support progression.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Front-End</h3>
+                            <p>Worked on the interface and interaction patterns that supported guided prep, question display, and user flow.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Product Thinking</h3>
+                            <p>Focused on how personalization, realism, and feedback could work together as one cohesive experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">UX Decisions</p>
+                    <h2>How the experience was structured</h2>
+
+                    <p>
+                        One of the biggest design priorities was keeping the product from feeling overwhelming. Interview prep already carries stress,
+                        so the interface needed to feel clear, guided, and focused rather than overloaded with too many choices at once.
+                    </p>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Step-Based Flow</h3>
+                            <p>Separated setup, prep, and interview stages to create a clearer mental model for users.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Personalization First</h3>
+                            <p>Used résumé, role, and company input as the basis for a more relevant prep experience.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Panelized Feedback</h3>
+                            <p>Organized outputs into readable sections so users could quickly understand next steps.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Behavioral + Technical Support</h3>
+                            <p>Designed the product to support multiple interview types instead of a one-size-fits-all flow.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Confidence Through Structure</h3>
+                            <p>Made the experience feel more approachable by reducing ambiguity and clarifying progression.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Usability Under Time Pressure</h3>
+                            <p>Prioritized clean layout and direct actions for a fast-paced hackathon build that still felt polished.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Demo</p>
+                    <h2>See it in action</h2>
+
+                    <div class="project-image">
+                        <iframe
+                                src="https://www.youtube.com/embed/1btN20MOyxc"
+                                title="PrepTalk — AI Interviewer demo"
+                                style="width:100%; aspect-ratio:16/9; border:0; display:block;"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                        ></iframe>
+                    </div>
+
+                    <div class="project-actions" style="justify-content:center;">
+                        <a class="project-site-link" href="https://youtu.be/1btN20MOyxc?si=06a5C1haO9EErw_T" target="_blank" rel="noopener">YouTube Demo</a>
+                        <a class="project-site-link" href="https://www.hackathonparty.com/hackathons/26/projects/375" target="_blank" rel="noopener">Hackathon Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Technical Implementation</p>
+                    <h2>How it was built</h2>
+
+                    <div class="project-highlight-grid">
+                        <div class="project-highlight">
+                            <h3>Frontend</h3>
+                            <p>React, TypeScript, and Vite for a responsive interface and structured client-side flow.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Backend</h3>
+                            <p>FastAPI used to support AI-powered interview generation and feedback workflows.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>AI Layer</h3>
+                            <p>OpenAI-powered prompts were used to generate tailored interview questions and responses.</p>
+                        </div>
+
+                        <div class="project-highlight">
+                            <h3>Technical Round</h3>
+                            <p>Monaco Editor supported coding-focused interview practice in the product experience.</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        A key part of development was making the AI outputs feel usable inside the interface, not just technically functional.
+                        That meant thinking carefully about prompt structure, result formatting, and how users would actually move through the prep process.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Prompt structure for consistent question generation</li>
+                        <li>Front-end state and flow between prep stages</li>
+                        <li>Readable display of tailored questions and feedback</li>
+                        <li>Technical interview support through editor-based interaction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--deep">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Outcome</p>
+                    <h2>Recognition and impact</h2>
+
+                    <p>
+                        PrepTalk was recognized as a finalist and received 1st Place in the Education Track.
+                        The project stood out because it paired a practical problem with a clear end-to-end solution:
+                        helping people prepare for interviews in a more equitable, personalized, and realistic way.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Finalist recognition at the hackathon</li>
+                        <li>1st Place in the Education Track</li>
+                        <li>Combined UX, AI, and front-end execution in one product</li>
+                        <li>Addressed a real accessibility and opportunity gap in interview preparation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-band project-band--soft">
+        <div class="project-wrap">
+            <div class="project-shell">
+                <div class="project-main">
+                    <p class="project-kicker">Takeaways</p>
+                    <h2>What this project taught me</h2>
+
+                    <p>
+                        PrepTalk reinforced how valuable it is to design AI-powered products around usability and trust.
+                        The strongest part of the project was not just the AI generation itself, but how that intelligence
+                        was shaped into a product flow that felt practical, supportive, and easy to use.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Designing AI experiences that feel clear and useful</li>
+                        <li>Structuring guided flows for higher-stress tasks</li>
+                        <li>Building front-end systems around dynamic generated content</li>
+                        <li>Balancing speed of implementation with usability in a hackathon setting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
 <footer class="footer" role="contentinfo">
     <div class="cols">
+        <div class="footer-brand">
+            <div class="footer-brand__name">Vanessa Serrano</div>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+        </div>
+
         <div>
             <h3>Contact</h3>
             <a href="mailto:vanessannserrano@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
         <div>
             <h3>Work</h3>
             <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div>
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-        </div>
     </div>
+
     <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-    // Mobile menu toggle
-    (function() {
-        const toggle = document.querySelector('.nav__toggle');
-        const nav = document.getElementById('site-nav');
-        if (!toggle || !nav) return;
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', String(open));
+    const toggle = document.querySelector(".nav__toggle");
+    const nav = document.getElementById("site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            nav.classList.toggle("is-open");
         });
-
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav')) {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        }, { passive: true });
-    })();
-
-    // Mark current page
-    (function() {
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav__links a').forEach(a => {
-            const href = (a.getAttribute('href') || '').toLowerCase();
-            if (href.endsWith(path)) {
-                a.setAttribute('aria-current', 'page');
-            }
-        });
-    })();
-
-    // Update year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    }
 </script>
 </body>
 </html>

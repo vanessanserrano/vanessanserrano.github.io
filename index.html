@@ -4,160 +4,205 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Vanessa Serrano — Portfolio</title>
-    <meta name="description" content="CS + Digital Arts student building clean, human-centered products. I translate research into shipped interfaces." />
+    <meta
+            name="description"
+            content="Vanessa Serrano — UX Engineer and Front-End Developer building thoughtful digital experiences."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="nav" role="banner">
-    <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Home">VS</a>
+<a class="skip-link" href="#content">Skip to main content</a>
 
-        <nav id="site-nav" class="nav__links" aria-label="Primary">
+<header class="nav" role="banner">
+    <div class="nav__inner nav__inner--home">
+        <a class="logo logo--home" href="index.html" aria-label="Home">VS</a>
+
+        <nav id="site-nav" class="nav__links nav__links--home" aria-label="Primary">
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a
+                    href="assets/resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="nav__resume"
+                    aria-label="Download resume"
+            >
+                Resume
+            </a>
         </nav>
 
-        <button class="nav__toggle" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <button
+                class="nav__toggle"
+                aria-label="Toggle menu"
+                aria-controls="site-nav"
+                aria-expanded="false"
+        >
             Menu
         </button>
     </div>
 </header>
 
 <main id="content">
-    <!-- HERO -->
-    <section class="hero hero--intro" id="about">
-        <div class="container">
-            <div class="hero__panel">
-                <h1>Vanessa Serrano</h1>
-
-                <p class="hero__lede">
-                    Computer Science &amp; Digital Arts <a class="text-link" href="https://www.ufl.edu/" target="_blank" rel="noopener">@UF</a> <br>UX Designer + Frontend Engineer. <br> Currently
-                    <a class="text-link" href="https://cinemaverde.org" target="_blank" rel="noopener">@CinemaVerde</a> previously
-                    <a class="text-link" href="https://www.publix.com" target="_blank" rel="noopener">@Publix</a>.
+    <section class="hero hero--home">
+        <div class="container container--hero">
+            <div class="hero__home-inner">
+                <p class="hero__eyebrow">
+                    Recent UF Computer Science + Digital Arts Grad
                 </p>
 
-                <div class="social" aria-label="External links">
-                    <a class="icon-btn" href="https://www.linkedin.com/in/vanessa-n-serrano" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
-                    <a class="icon-btn" href="mailto:vanessannserrano@gmail.com" aria-label="Email">✉️</a>
-                    <a class="icon-btn" href="assets/resume.pdf" aria-label="Resume PDF" target="_blank" rel="noopener">CV</a>
+                <div class="hero__name-composition">
+                    <h1 class="hero__name-main">
+                        <span class="hero__name-line">Vanessa</span>
+                        <span class="hero__name-line">Serrano</span>
+                    </h1>
+
+                    <div class="name-marquee name-marquee--bg" aria-hidden="true">
+                        <div class="name-marquee__fade name-marquee__fade--left"></div>
+                        <div class="name-marquee__fade name-marquee__fade--right"></div>
+
+                        <div class="name-marquee__track">
+                            <div class="name-marquee__group">
+                                <span>Vanessa Serrano</span>
+                                <span>Vanessa Serrano</span>
+                                <span>Vanessa Serrano</span>
+                            </div>
+                            <div class="name-marquee__group">
+                                <span>Vanessa Serrano</span>
+                                <span>Vanessa Serrano</span>
+                                <span>Vanessa Serrano</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+<!--                <p class="hero__lede hero__lede&#45;&#45;home">-->
+<!--                    Open to Work. Open to Relocate.-->
+<!--                </p>-->
+
+                <div class="hero__cta-row">
+                    <a class="btn btn--primary" href="projects.html">View Projects</a>
+                    <a class="btn btn--secondary" href="about.html">About Me</a>
+                </div>
+
+                <a href="#work" class="scroll-indicator" aria-label="Scroll to highlighted projects">
+                    <span class="scroll-indicator__arrow">↓</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- WORK -->
     <section id="work" class="section reveal-on-scroll" aria-labelledby="work-title">
+        <!-- keep your existing work section here -->
         <div class="container">
-            <h2 id="work-title">Highlighted Work</h2>
-            <div class="grid">
+            <div class="section-heading section-heading--home">
+                <p class="section-heading__eyebrow">Selected Work</p>
+                <h2 id="work-title">Highlighted Projects</h2>
+            </div>
+
+            <div class="grid grid--projects-home">
                 <a class="card reveal" href="project-preptalk.html" target="_blank" rel="noopener" aria-label="Open PrepTalk AI Interviewer">
-                    <img class="thumb" loading="lazy" decoding="async"
-                         src="assets/images/prep-talk.jpg"
-                         alt="ARC app mockups for post-response check-ins" />
+                    <img
+                            class="thumb"
+                            loading="lazy"
+                            decoding="async"
+                            src="assets/images/preptalk.png"
+                            alt="PrepTalk AI interviewer preview"
+                    />
                     <div class="card__body">
-                        <div class="card__eyebrow">1st Place Hackathon • 2-Person Team</div>
+                        <div class="card__eyebrow">1st Place Hackathon · 2-Person Team</div>
                         <div class="card__title">PrepTalk — AI Interviewer</div>
-                        <div class="card__meta">React + FastAPI + OpenAI · résumé parsing, mock interviews, feedback</div>
+                        <div class="card__meta">React + FastAPI + OpenAI · résumé parsing, mock interviews, AI feedback</div>
                     </div>
                 </a>
 
-                <!-- ARC -->
-                <a class="card reveal" href="project-arc.html" aria-label="Open ARC: After Response Care case study">
-                    <img class="thumb" loading="lazy" decoding="async"
-                         src="assets/images/arc-cover.jpg"
-                         alt="ARC app mockups for post-response check-ins" />
+                <a class="card reveal" href="project-arc.html" aria-label="Open ARC case study">
+                    <img
+                            class="thumb"
+                            loading="lazy"
+                            decoding="async"
+                            src="assets/images/arc-cover.jpg"
+                            alt="ARC project preview"
+                    />
                     <div class="card__body">
-                        <div class="card__eyebrow">Hackathon • 4-person team</div>
-                        <div class="card__title">ARC: After Response Care</div>
-                        <div class="card__meta">React Native + Flask • 40+ interviews • Crisis UX</div>
+                        <div class="card__eyebrow">Hackathon · 4-Person Team</div>
+                        <div class="card__title">ARC — After Response Care</div>
+                        <div class="card__meta">React Native + Flask · crisis UX, research, mobile experience design</div>
                     </div>
                 </a>
 
-                <!-- Vendor Label Validation -->
                 <a class="card reveal" href="project-vlv.html" aria-label="Open Vendor Label Validation case study">
-                    <img class="thumb" loading="lazy" decoding="async"
-                         src="assets/images/vlv-cover.jpg"
-                         alt="Scanner UI for GS1 barcode validation" />
+                    <img
+                            class="thumb"
+                            loading="lazy"
+                            decoding="async"
+                            src="assets/images/vlv-cover.jpg"
+                            alt="Vendor Label Validation project preview"
+                    />
                     <div class="card__body">
-                        <div class="card__eyebrow">Publix Technology • Internship</div>
+                        <div class="card__eyebrow">Publix Technology · Internship</div>
                         <div class="card__title">Vendor Label Validation</div>
-                        <div class="card__meta">Xamarin.Forms • GS1 • RadDataForm • 15m → 15s</div>
+                        <div class="card__meta">Xamarin.Forms · GS1 barcode validation · reduced workflow from 15 min to 15 sec</div>
                     </div>
                 </a>
-
-                <!-- (Optional) bring back UF Events later
-                <a class="card reveal" href="project-ufevents.html">
-                  <img class="thumb" loading="lazy" decoding="async"
-                       src="assets/images/ufevents-cover.jpg"
-                       alt="UF Events prototype screens" />
-                  <div class="card__body">
-                    <div class="card__eyebrow">UX • Design</div>
-                    <div class="card__title">UF Events App</div>
-                    <div class="card__meta">Research • Wireframes • Prototype</div>
-                  </div>
-                </a>
-                -->
             </div>
         </div>
     </section>
 </main>
 
-<!-- FOOTER -->
 <footer class="footer" role="contentinfo">
     <div class="cols">
+        <div class="footer-brand">
+            <div class="footer-brand__name">Vanessa Serrano</div>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+        </div>
+
         <div>
             <h3>Contact</h3>
             <a href="mailto:vanessannserrano@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/vanessa-n-serrano" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
         <div>
             <h3>Work</h3>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             <a href="https://github.com/vanessanserrano" target="_blank" rel="noopener">GitHub</a>
-        </div>
-        <div>
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
         </div>
     </div>
+
     <p class="copyright">© <span id="year"></span> Vanessa Serrano</p>
 </footer>
 
 <script>
-    // Auto-update copyright year
     const yearSpan = document.getElementById('year');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 </script>
 
 <script>
-    // Auto-update copyright year
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-</script>
-
-<!-- Minimal JS -->
-<script>
-    // Mobile menu
     (function () {
         const toggle = document.querySelector('.nav__toggle');
         const nav = document.getElementById('site-nav');
         if (!toggle || !nav) return;
+
         toggle.addEventListener('click', () => {
             const open = nav.classList.toggle('is-open');
             toggle.setAttribute('aria-expanded', String(open));
         });
+
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.nav')) {
                 nav.classList.remove('is-open');
                 toggle.setAttribute('aria-expanded', 'false');
             }
-        }, {passive: true});
+        }, { passive: true });
     })();
 
-    // Mark current link
     (function () {
         const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
         document.querySelectorAll('.nav__links a').forEach(a => {
@@ -166,17 +211,17 @@
         });
     })();
 
-    // Reveal on scroll (respects reduced motion)
     (function () {
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const revealSection = document.getElementById('work');
         if (!revealSection) return;
+
         if (prefersReduced) {
             revealSection.classList.add('is-revealed');
             document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
             return;
         }
-        // Section fade
+
         const sIO = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
@@ -184,10 +229,10 @@
                     sIO.unobserve(e.target);
                 }
             });
-        }, {threshold: .15, rootMargin: '0px 0px -10% 0px'});
+        }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+
         sIO.observe(revealSection);
 
-        // Card lift
         const cIO = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
@@ -195,49 +240,9 @@
                     cIO.unobserve(e.target);
                 }
             });
-        }, {threshold: .2});
+        }, { threshold: 0.2 });
+
         document.querySelectorAll('.reveal').forEach(el => cIO.observe(el));
-    })();
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Reveal on scroll for cards
-        (function() {
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        // For section fade (index.html only)
-        const revealSection = document.getElementById('work');
-        if (revealSection) {
-        if (prefersReduced) {
-        revealSection.classList.add('is-revealed');
-    } else {
-        const sIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-        if (e.isIntersecting) {
-        e.target.classList.add('is-revealed');
-        sIO.unobserve(e.target);
-    }
-    });
-    }, {threshold: 0.15, rootMargin: '0px 0px -10% 0px'});
-        sIO.observe(revealSection);
-    }
-    }
-
-        // For card lift
-        if (prefersReduced) {
-        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
-    } else {
-        const cIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-        if (e.isIntersecting) {
-        e.target.classList.add('is-in');
-        cIO.unobserve(e.target);
-    }
-    });
-    }, {threshold: 0.2});
-        document.querySelectorAll('.reveal').forEach(el => cIO.observe(el));
-    }
     })();
 </script>
 </body>
