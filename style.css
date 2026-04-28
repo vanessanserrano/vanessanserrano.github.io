@@ -1294,7 +1294,7 @@ dialog.rec {
 .hero__name-line {
     display: block;
     font-family: var(--font-heading);
-    font-size: clamp(4.5rem, 12vw, 9.5rem);
+    font-size: clamp(3rem, 10vw, 9.5rem);
     line-height: 0.88;
     color: var(--navy-900);
 }
@@ -1621,7 +1621,7 @@ dialog.rec {
    ----------------------------------------- */
 .project-meta {
     width: 100%;
-    max-width: 980px;
+    max-width: 768px;
     margin: 1.6rem auto 0;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1904,5 +1904,394 @@ dialog.rec {
 @media (max-width: 768px) {
     .project-two-col {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* ================================
+   GLOBAL FIXES — paste at bottom
+================================ */
+
+/* 1. Contrast fix */
+:root {
+    --ink-soft: rgba(255, 245, 217, 0.88);
+    --ink-muted: rgba(255, 245, 217, 0.72);
+}
+
+/* Keep muted text decorative only */
+.card__meta,
+.hero__eyebrow,
+.project-hero__lede,
+.about-hero__lede,
+.about-item p,
+.footer a {
+    color: var(--ink-soft);
+}
+
+/* 2. Homepage hero mobile clipping fix */
+.hero__name-line {
+    font-size: clamp(3rem, 10vw, 9.5rem);
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 430px) {
+    .hero__name-line {
+        font-size: clamp(3rem, 15vw, 4.5rem);
+        line-height: 0.9;
+    }
+
+    .hero__home-inner {
+        padding-inline: 0.25rem;
+    }
+}
+
+/* 3. Project meta should collapse sooner */
+@media (max-width: 768px) {
+    .project-meta {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 4. Project highlight grid should auto-fit */
+.project-highlight-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* 5. Footer smoother collapse */
+@media (max-width: 900px) {
+    .footer .cols,
+    .footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer .cols,
+    .footer .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-brand__name {
+        font-size: clamp(2rem, 8vw, 5.8rem);
+    }
+}
+
+/* 6. Scroll arrow: hidden by default on shorter screens */
+@media (max-height: 760px) {
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* 7. Better anchor jump */
+#work {
+    scroll-margin-top: 96px;
+}
+
+/* ==================================================
+   MOBILE OVERFLOW + CENTERING FIXES
+   Paste at VERY bottom of style.css
+================================================== */
+
+/* Prevent page-wide horizontal cutoff */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Better mobile nav spacing */
+@media (max-width: 720px) {
+    .nav__inner,
+    .nav__inner--home {
+        padding: 1rem 1.5rem 0.75rem;
+    }
+
+    .logo--home {
+        font-size: clamp(2.8rem, 15vw, 4rem);
+    }
+
+    .nav__toggle {
+        font-size: 1.35rem;
+    }
+}
+
+/* HOME: stop Vanessa/Serrano from breaking/cutting */
+@media (max-width: 720px) {
+    .container--hero {
+        min-height: auto;
+        padding-inline: 1.25rem;
+    }
+
+    .hero--home {
+        min-height: auto;
+        padding: 5.5rem 0 3rem;
+    }
+
+    .hero__home-inner {
+        min-height: auto;
+        padding: 3rem 0 5rem;
+        gap: 1.15rem;
+    }
+
+    .hero__name-composition {
+        overflow: visible;
+    }
+
+    .hero__name-main {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .hero__name-line {
+        font-size: clamp(4.1rem, 21vw, 6.2rem);
+        line-height: 0.88;
+        white-space: nowrap;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .name-marquee--bg {
+        display: none;
+    }
+
+    .hero__eyebrow {
+        max-width: 32ch;
+        margin: 0 auto;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .hero__cta-row {
+        margin-top: 1rem;
+    }
+
+    .scroll-indicator {
+        bottom: 1.75rem;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 390px) {
+    .hero__name-line {
+        font-size: clamp(3.5rem, 19vw, 5rem);
+    }
+
+    .hero__cta-row .btn {
+        min-width: 190px;
+    }
+}
+
+/* PROJECTS PAGE: stop title from running off edge */
+@media (max-width: 720px) {
+    .projects-hero {
+        padding: 4rem 0 2rem;
+        overflow: hidden;
+    }
+
+    .projects-hero__inner {
+        padding-inline: 1.25rem;
+    }
+
+    .projects-hero__eyebrow {
+        font-size: 0.9rem;
+        letter-spacing: 0.16em;
+    }
+
+    .projects-hero__title {
+        font-size: clamp(4.2rem, 22vw, 6.4rem);
+        line-height: 0.9;
+        white-space: nowrap;
+        transform: scaleX(0.82);
+        transform-origin: center;
+    }
+
+    .projects-hero__lead {
+        max-width: 29ch;
+        font-size: 1.25rem;
+        line-height: 1.55;
+    }
+}
+
+/* ABOUT PAGE: stop Vanessa Serrano from touching edges */
+@media (max-width: 720px) {
+    .about-hero {
+        overflow: hidden;
+        padding: 4.5rem 0 2.5rem;
+    }
+
+    .about-hero__title {
+        max-width: none;
+        width: 100%;
+        font-size: clamp(4.2rem, 21vw, 6rem);
+        line-height: 0.9;
+        white-space: nowrap;
+        transform: scaleX(0.82);
+        transform-origin: center;
+    }
+
+    .about-hero__role {
+        max-width: 20ch;
+        font-size: 1.35rem;
+        line-height: 1.35;
+    }
+
+    .about-hero__lede {
+        max-width: 30ch;
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+}
+
+/* PROJECT CARDS: center images and text */
+@media (max-width: 720px) {
+    .projects-gallery__panel {
+        padding: 1.25rem;
+    }
+
+    .grid--projects-page {
+        justify-items: center;
+    }
+
+    .grid--projects-page .card,
+    .grid--projects-home .card {
+        width: 100%;
+        max-width: 360px;
+        margin-inline: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .thumb,
+    .grid--projects-page .thumb,
+    .grid--projects-home .thumb {
+        width: 100%;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: cover;
+    }
+
+    .card__body {
+        justify-items: center;
+        text-align: center;
+    }
+
+    .card__title {
+        max-width: 11ch;
+    }
+
+    .card__meta {
+        max-width: 24ch;
+    }
+}
+
+/* CASE STUDY HERO TITLES: no edge cutoff */
+@media (max-width: 720px) {
+    .project-hero {
+        overflow: hidden;
+    }
+
+    .project-hero h1 {
+        font-size: clamp(4.1rem, 19vw, 6rem);
+        line-height: 0.9;
+        white-space: nowrap;
+        transform: scaleX(0.86);
+        transform-origin: center;
+    }
+
+    .project-hero__lede {
+        max-width: 30ch;
+    }
+}
+
+/* =========================================
+   FIX: HERO / TITLES (NO CUT OFF)
+========================================= */
+
+@media (max-width: 720px) {
+
+    /* Allow wrapping instead of forcing overflow */
+    .hero__name-line,
+    .projects-hero__title,
+    .about-hero__title,
+    .project-hero h1 {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: keep-all;
+        transform: none;
+    }
+
+    /* Better responsive scaling */
+    .hero__name-line {
+        font-size: clamp(3.2rem, 14vw, 5.2rem);
+        line-height: 0.95;
+    }
+
+    .projects-hero__title {
+        font-size: clamp(3rem, 12vw, 4.5rem);
+        line-height: 0.95;
+    }
+
+    .about-hero__title {
+        font-size: clamp(3rem, 12vw, 4.5rem);
+        line-height: 0.95;
+    }
+
+    .project-hero h1 {
+        font-size: clamp(3rem, 12vw, 4.5rem);
+        line-height: 0.95;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .nav__inner--home {
+        padding: 0.85rem 1.25rem;
+    }
+
+    .logo--home {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+    }
+
+    .nav__toggle {
+        font-size: 1.1rem;
+    }
+}
+
+/* ABOUT TITLE FIX */
+@media (max-width: 720px) {
+
+    /* Allow wrapping instead of forcing overflow */
+    .hero__name-line,
+    .about-hero__title,
+    .about-hero__title,
+    .about-hero h1 {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: keep-all;
+        transform: none;
+    }
+
+    /* Better responsive scaling */
+    .hero__name-line {
+        font-size: clamp(3.2rem, 14vw, 5.2rem);
+        line-height: 0.95;
+    }
+
+    .about-hero__title {
+        font-size: clamp(3rem, 12vw, 4.5rem);
+        line-height: 0.95;
+    }
+
+    .about-hero__title {
+        font-size: clamp(3rem, 12vw, 4.5rem);
+        line-height: 0.95;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(3rem, 12vw, 4.5rem);
+        line-height: 0.95;
     }
 }
